@@ -284,7 +284,7 @@ activities.addEventListener("change", function() {
 function updateUsersCategoryChartWithDB(dataIndex)
 {
 
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=22&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
@@ -382,7 +382,7 @@ function myFunction0202(item, index) {
                 
 //        $.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=100&type=json", function(data) {  
 //        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getjsondatabanwire", function(data) {  
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {  
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=0&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {  
             
             $.each(data, function(key, value){
             
@@ -411,8 +411,8 @@ function myFunction0202(item, index) {
          //  if greater   then obtain the next
          //  if equal or less, then keep the current group og data, display the message: the most current data available, and the current Date, previousDate
 
-//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {              
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference="+previousGroupNumber+"&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {                  
+//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {              
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference="+previousGroupNumber+"&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found

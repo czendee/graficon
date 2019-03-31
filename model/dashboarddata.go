@@ -27,7 +27,7 @@ func GetDatadash0201(db *sql.DB, reference string,reference02 string,dato01 stri
 //	statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01   WHERE  reference= '%s'  order by Created_at ASC;", reference)
 //	statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01   WHERE  Numsecuecial_grupoddatos= %s  order by Created_at ASC;", reference)
 //    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01    order by Created_at ASC;")
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01  WHERE  Numsecuecial_grupoddatos= %s  order by Numsecuecial;",reference)
+    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01  WHERE  Numsecuecial_grupoddatos= %s  and graphnbr = '%s' order by Numsecuecial;",reference, reference02)
  	log.Print("GetDatadash0201 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetDatadash0201 02.1!\n")
@@ -59,7 +59,7 @@ func GetMaxGroupNumberDatadash0201(db *sql.DB, reference string,reference02 stri
     valueresult ="0"
 	log.Print("GetMaxGroupNumberDatadash0201 01!\n")
 
-    statement := fmt.Sprintf("select max(numsecuecial_grupoddatos)  as gruponumero from banwiredash02graph01 where numsecuecial_grupoddatos>%s group by numsecuecial_grupoddatos;",reference)
+    statement := fmt.Sprintf("select max(numsecuecial_grupoddatos)  as gruponumero from banwiredash02graph01 where numsecuecial_grupoddatos>%s and graphnbr = '%s' group by numsecuecial_grupoddatos;",reference,reference02)
  	log.Print("GetMaxGroupNumberDatadash0201 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetMaxGroupNumberDatadash0201 02.1!\n")
@@ -90,7 +90,7 @@ func GetMaxGroupNumberDatadash0202(db *sql.DB, reference string,reference02 stri
     valueresult ="0"
 	log.Print("GetMaxGroupNumberDatadash0202 01!\n")
 
-    statement := fmt.Sprintf("select max(numsecuecial_grupoddatos)  as gruponumero from banwiredash02graph02 where numsecuecial_grupoddatos>%s group by numsecuecial_grupoddatos;",reference)
+    statement := fmt.Sprintf("select max(numsecuecial_grupoddatos)  as gruponumero from banwiredash02graph02 where numsecuecial_grupoddatos>%s  and graphnbr = '%s' group by numsecuecial_grupoddatos;",reference,reference02)
  	log.Print("GetMaxGroupNumberDatadash0202 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetMaxGroupNumberDatadash0202 02.1!\n")
@@ -123,7 +123,7 @@ func GetDatadash0202(db *sql.DB, reference string,reference02 string,dato01 stri
 //	statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01   WHERE  reference= '%s'  order by Created_at ASC;", reference)
 //	statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01   WHERE  Numsecuecial_grupoddatos= %s  order by Created_at ASC;", reference)
 //    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01    order by Created_at ASC;")
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  Numsecuecial_grupoddatos= %s  order by Numsecuecial;",reference)
+    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  Numsecuecial_grupoddatos= %s and graphnbr = '%s'  order by Numsecuecial;",reference, reference02)
  	log.Print("GetDatadash0202 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetDatadash0202 02.1!\n")
