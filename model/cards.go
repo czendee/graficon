@@ -4,7 +4,7 @@ import (
 //    "errors"
 	"fmt"
 	"log"
-	miu "banwire/dash/dashboard_banwire/util"
+	miu "banwire/dash/dashboard_front/util"
 	
 )
 type Card struct {

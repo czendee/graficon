@@ -5,12 +5,12 @@ import (
 	"net/http"
 	"fmt"
 	"log"
-	"banwire/dash/dashboard_banwire/db"
-	"banwire/dash/dashboard_banwire/net"
-	modelito "banwire/dash/dashboard_banwire/model"
+	"banwire/dash/dashboard_front/db"
+	"banwire/dash/dashboard_front/net"
+	modelito "banwire/dash/dashboard_front/model"
 
-    "banwire/dash/dashboard_banwire/model"
-	"banwire/dash/dashboard_banwire/model/pgsql"
+    "banwire/dash/dashboard_front/model"
+	"banwire/dash/dashboard_front/model/pgsql"
     "encoding/json"
 
     //start: para dashboard
@@ -58,6 +58,9 @@ func init() {
 
 //    r.Handle("/v1/getjsondatabanwire", netHandle(getJsonDataBanwire, nil)).Methods("GET")     //logicbusiness.go
     r.Handle("/v1/getDash02Grafica01", netHandle(v1handleGETDash02Grafica01, nil)).Methods("GET")     //logicbusiness.go
+
+    r.Handle("/v1/getDash02Grafica02", netHandle(v1handleGETDash02Grafica02, nil)).Methods("GET")     //logicbusiness.go    
+
 
     r.Handle("/v1/dash01", netHandle(dash01Handler, nil)).Methods("GET")     
     r.Handle("/v1/dash02", netHandle(dash02Handler, nil)).Methods("GET")     
@@ -369,7 +372,7 @@ func v1handleGETDash02Grafica02 (w http.ResponseWriter, r *http.Request) {
     
     var requestData modelito.RequestDash02Grafica02
     errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash02Grafica02(r,errorGeneral)
+requestData,errorGeneral =obtainParmsProcessDash02Grafica02(r,errorGeneral) //logicrequest.go
 
 	////////////////////////////////////////////////validate parms
 	/// START

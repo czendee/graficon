@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 	"log"
-	"banwire/dash/dashboard_banwire/db"
-//	"banwire/dash/dashboard_banwire/net"
-	modelito "banwire/dash/dashboard_banwire/model"
+	"banwire/dash/dashboard_front/db"
+//	"banwire/dash/dashboard_front/net"
+	modelito "banwire/dash/dashboard_front/model"
 //	"time"
 //	"encoding/json"
 	 _ "github.com/lib/pq"   //use go get github.com/lib/pq
@@ -212,6 +212,9 @@ func v1ProcessDash01Grafica02(w http.ResponseWriter, requestData modelito.Reques
 
 // v1ProcessDash02Grafica01  receive and handle the request from client, access DB
 func v1ProcessDash02Grafica01(w http.ResponseWriter, requestData modelito.RequestDash02Grafica01) (string,string){
+
+    	log.Print("v1ProcessDash02Grafica01 entre")
+
 	defer func() {
 		db.Connection.Close(nil)
 	}()
@@ -233,7 +236,7 @@ func v1ProcessDash02Grafica01(w http.ResponseWriter, requestData modelito.Reques
 
 		/// START
 	        result ="OK realizarpago"+requestData.Dash0201reference+"    :    " +requestData.Dash0201reference2+"    :    " +requestData.Dash0201Dato01+"    :    " +requestData.Dash0201Dato02+"    :    " +requestData.Dash0201Dato03+"    :    "
-		    log.Print("CZ    handler Listening test realizarpago:"+result)
+		    log.Print("CZ    handler Listening: realiza consulta dash02diagram01:"+result)
 		    
 		     log.Print("CZ   STEP Validate paramters request")
 		    errorGeneral= validaReqDash02Grafica01(requestData)   //in the logicrequest.go
@@ -251,9 +254,36 @@ func v1ProcessDash02Grafica01(w http.ResponseWriter, requestData modelito.Reques
     }
 
 	////////////////////////////////////////////////DB	
+//A. first check if a most recent group is available
+
+    var existMoreRecent string
+    existMoreRecent="0"
 	if errorGeneral==""{//continue next step
 
+        log.Print("CZ   STEP Consume DB")
+        if(Config_dbStringType=="mysql"){//mysql
+            existMoreRecent,errorGeneral =logicDBMysqlCheckMoreRecent0201(requestData, errorGeneral)  //in logicdbmysql.go
+        }else{//postgres
+                existMoreRecent,errorGeneral =logicDBCheckMoreRecent0201(requestData, errorGeneral)  //in logicdb.go            
+        }
+         
+    }				    
+    if errorGeneral!="" && errorGeneralNbr==""{
+    	//prepare response with error 305
+    	log.Print("CZ    Prepare Response with 350. Error checking more recent group data for dash02diag01:"+errorGeneral)
+    	errorGeneral="ERROR:305 -  Error checking more recent group data for dash02diag01 -"	+errorGeneral
+	    errorGeneralNbr="305"
+    }
+ 
+
+//B. get the most recent data group
+	if errorGeneral=="" && existMoreRecent !="0" {//continue next step, only if more recent data group is available
+
        	    	log.Print("CZ   STEP Consume DB")
+                   
+                   requestData.Dash0201reference = existMoreRecent  //set the group number found, as reference
+
+                   log.Print("v1ProcessDash02Grafica01 grop found"+requestData.Dash0201reference)
                    if(Config_dbStringType=="mysql"){//mysql
                         valoresParaResponder,errorGeneral =logicDBMysqlProcessDash02Grafica01(requestData, errorGeneral)  //in logicdbmysql.go
                    }else{//postgres
@@ -265,8 +295,8 @@ func v1ProcessDash02Grafica01(w http.ResponseWriter, requestData modelito.Reques
     }				    
     if errorGeneral!="" && errorGeneralNbr==""{
     	//prepare response with error 310
-    	log.Print("CZ    Prepare Response with 310. Error obtaining cards:"+errorGeneral)
-    	errorGeneral="ERROR:310 -  Error obtaining cards -"	+errorGeneral
+    	log.Print("CZ    Prepare Response with 310. Error obtaining data dash02diag01:"+errorGeneral)
+    	errorGeneral="ERROR:310 -  Error obtaining data dash02diag01 -"	+errorGeneral
 	    errorGeneralNbr="310"
     }
 
@@ -275,26 +305,43 @@ func v1ProcessDash02Grafica01(w http.ResponseWriter, requestData modelito.Reques
     log.Print("CZ    handler DB Listening test v1ProcessDash02Grafica01  2")					
 
 	//////////    format the response
+    //mo
     if errorGeneral==""{//continue next step
-		log.Print("CZ   STEP Validate Parms")
-			/// START
-		fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)
-		
-		log.Print("CZ    handler Listening test v1ProcessDash02Grafica01  3")	
-		
-		result ="OK get Dash0101reference: "+requestData.Dash0201reference+"resultado"
-		//////////    write the response
-		w.Header().Set("Content-Type", "application/json")
-		 w.Write(fieldDataBytesJson)
-		 
-		 log.Print("CZ    handler Listening test v1ProcessDash02Grafica01  4"+"<html><body>"+ result+"</body></html>")
-			         
-        if err!=nil{
-        	log.Print("Eror en generando response")
-            errorGeneral= err.Error()
-        }		
-		
-		/// END
+        if existMoreRecent == "0"{  //no more recnet group data available
+            fieldDataBytesJson,err := getJsonResponseDatadashNoRecentDataV1()   //logicresponse.go
+            result ="OK get Dash0101reference: No more recent data"
+            if err!=nil{
+                log.Print("Eror en generando response")
+                errorGeneral= err.Error()
+            }		
+            //////////    write the response
+            w.Header().Set("Content-Type", "application/json")
+            w.Write(fieldDataBytesJson)
+        }else{   //more recent data available
+
+            log.Print("CZ   STEP Validate Parms")
+                /// START
+            fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)   //logicresponse.go
+            
+            log.Print("CZ    handler Listening test v1ProcessDash02Grafica01  3")	
+            
+            result ="OK get Dash0101reference: "+requestData.Dash0201reference+"resultado"
+            if err!=nil{
+                log.Print("Eror en generando response")
+                errorGeneral= err.Error()
+            }		
+            //////////    write the response
+            w.Header().Set("Content-Type", "application/json")
+            w.Write(fieldDataBytesJson)
+        }    
+
+        
+        log.Print("CZ    handler Listening test v1ProcessDash02Grafica01  4"+"<html><body>"+ result+"</body></html>")
+                    
+        
+        /// END
+
+
 
     }				    
 		 
@@ -313,6 +360,8 @@ func v1ProcessDash02Grafica01(w http.ResponseWriter, requestData modelito.Reques
 
 // v1ProcessDash02Grafica02  receive and handle the request from client, access DB
 func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.RequestDash02Grafica02) (string,string){
+    	log.Print("v1ProcessDash02Grafica02 entre")
+
 	defer func() {
 		db.Connection.Close(nil)
 	}()
@@ -320,9 +369,9 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
     var errorGeneral string
     var	errorGeneralNbr string
 
-//    var resultadoDash01Grafica02 modelito.ExitoDataDash02Grafica02
 
-    var valoresParaResponder  []modelito.Card
+
+    var valoresParaResponder  []modelito.Datadash
     
     errorGeneral=""
 
@@ -334,7 +383,7 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
 
 		/// START
 	        result ="OK realizarpago"+requestData.Dash0202reference+"    :    " +requestData.Dash0202reference2+"    :    " +requestData.Dash0202Dato01+"    :    " +requestData.Dash0202Dato02+"    :    " +requestData.Dash0202Dato03+"    :    "
-		    log.Print("CZ    handler Listening test realizarpago:"+result)
+		    log.Print("CZ    handler Listening: realiza consulta dash02diagram02:"+result)
 		    
 		     log.Print("CZ   STEP Validate paramters request")
 		    errorGeneral= validaReqDash02Grafica02(requestData)   //in the logicrequest.go
@@ -352,17 +401,49 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
     }
 
 	////////////////////////////////////////////////DB	
+//A. first check if a most recent group is available
+
+    var existMoreRecent string
+    existMoreRecent="0"
 	if errorGeneral==""{//continue next step
 
+        log.Print("CZ   STEP Consume DB")
+        if(Config_dbStringType=="mysql"){//mysql
+            existMoreRecent,errorGeneral =logicDBMysqlCheckMoreRecent0202(requestData, errorGeneral)  //in logicdbmysql.go
+        }else{//postgres
+                existMoreRecent,errorGeneral =logicDBCheckMoreRecent0202(requestData, errorGeneral)  //in logicdb.go            
+        }
+         
+    }				    
+    if errorGeneral!="" && errorGeneralNbr==""{
+    	//prepare response with error 305
+    	log.Print("CZ    Prepare Response with 350. Error checking more recent group data for dash02diag02:"+errorGeneral)
+    	errorGeneral="ERROR:305 -  Error checking more recent group data for dash02diag02 -"	+errorGeneral
+	    errorGeneralNbr="305"
+    }
+ 
+
+//B. get the most recent data group
+	if errorGeneral=="" && existMoreRecent !="0" {//continue next step, only if more recent data group is available
+
        	    	log.Print("CZ   STEP Consume DB")
-         valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02(requestData, errorGeneral) 
+                   
+                   requestData.Dash0202reference = existMoreRecent  //set the group number found, as reference
+
+                   log.Print("v1ProcessDash02Grafica02 grop found"+requestData.Dash0202reference)
+                   if(Config_dbStringType=="mysql"){//mysql
+                        valoresParaResponder,errorGeneral =logicDBMysqlProcessDash02Grafica02(requestData, errorGeneral)  //in logicdbmysql.go
+                   }else{//postgres
+                         valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02(requestData, errorGeneral)  //in logicdb.go            
+                   }
+         
 
 
     }				    
     if errorGeneral!="" && errorGeneralNbr==""{
     	//prepare response with error 310
-    	log.Print("CZ    Prepare Response with 310. Error obtaining cards:"+errorGeneral)
-    	errorGeneral="ERROR:310 -  Error obtaining cards -"	+errorGeneral
+    	log.Print("CZ    Prepare Response with 310. Error obtaining data dash02diag02:"+errorGeneral)
+    	errorGeneral="ERROR:310 -  Error obtaining data dash02diag02 -"	+errorGeneral
 	    errorGeneralNbr="310"
     }
 
@@ -371,26 +452,43 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
     log.Print("CZ    handler DB Listening test v1ProcessDash02Grafica02  2")					
 
 	//////////    format the response
+    //mo
     if errorGeneral==""{//continue next step
-		log.Print("CZ   STEP Validate Parms")
-			/// START
-		fieldDataBytesJson,err := getJsonResponseV2(valoresParaResponder)
-		
-		log.Print("CZ    handler Listening test v1ProcessDash02Grafica02  3")	
-		
-		result ="OK get Dash0101reference: "+requestData.Dash0202reference+"resultado"
-		//////////    write the response
-		w.Header().Set("Content-Type", "application/json")
-		 w.Write(fieldDataBytesJson)
-		 
-		 log.Print("CZ    handler Listening test v1ProcessDash02Grafica02  4"+"<html><body>"+ result+"</body></html>")
-			         
-        if err!=nil{
-        	log.Print("Eror en generando response")
-            errorGeneral= err.Error()
-        }		
-		
-		/// END
+        if existMoreRecent == "0"{  //no more recnet group data available
+            fieldDataBytesJson,err := getJsonResponseDatadashNoRecentDataV1()   //logicresponse.go
+            result ="OK get Dash0202reference: No more recent data"
+            if err!=nil{
+                log.Print("Eror en generando response")
+                errorGeneral= err.Error()
+            }		
+            //////////    write the response
+            w.Header().Set("Content-Type", "application/json")
+            w.Write(fieldDataBytesJson)
+        }else{   //more recent data available
+
+            log.Print("CZ   STEP Validate Parms")
+                /// START
+            fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)   //logicresponse.go
+            
+            log.Print("CZ    handler Listening test v1ProcessDash02Grafica02  3")	
+            
+            result ="OK get Dash0202reference: "+requestData.Dash0202reference+"resultado"
+            if err!=nil{
+                log.Print("Eror en generando response")
+                errorGeneral= err.Error()
+            }		
+            //////////    write the response
+            w.Header().Set("Content-Type", "application/json")
+            w.Write(fieldDataBytesJson)
+        }    
+
+        
+        log.Print("CZ    handler Listening test v1ProcessDash02Grafica02  4"+"<html><body>"+ result+"</body></html>")
+                    
+        
+        /// END
+
+
 
     }				    
 		 

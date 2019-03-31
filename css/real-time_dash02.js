@@ -6,6 +6,10 @@ var valueRotacionOriginal=20000;
 var valuePasarNext=150000;
 var valuePasarNextOriginal=150000;
 
+var previousGroupNumber=0;//used to keep track of what group was displayed previously
+
+var previousGroupNumber0202=0;//used to keep track of what group was displayed previously
+
 
 function show_selected2() {
     alert("aj");
@@ -15,11 +19,51 @@ function show_selected2() {
     document.getElementById('display').innerHTML = valueRotacion;
 }
 
+/*
+function show_selected3() {
+    alert("aj 03");
+    var selector = document.getElementById('id_of_select');
+    valueRotacion= selector[selector.selectedIndex].value;
 
+
+}
+
+function show_selected_rotacion3() {
+    alert("aj 03");
+    var selector = document.getElementById('id_of_selectRotacion');
+    valueRotacion= selector[selector.selectedIndex].value;
+
+}
+*/
 
 $(function () {
-document.getElementById('btn').addEventListener('click', show_selected2);;
-document.getElementById('btn02').addEventListener('click', go_next2);;
+//document.getElementById('btn').addEventListener('click', show_selected2);;
+//document.getElementById('btn02').addEventListener('click', go_next2);;
+//document.getElementById('id_of_select').addEventListener('click', show_selected3);;
+//document.getElementById('id_of_selectRotacion').addEventListener('click', show_selected_rotacion3);;
+
+var activities = document.getElementById("id_of_selectRotacion");
+
+activities.addEventListener("change", function() {
+    alert("aj id_of_selectRotacion");
+
+    var selector = document.getElementById('id_of_selectRotacion');
+    valueRotacion= selector[selector.selectedIndex].value;
+    alert("aj id_of_selectRotacion:"+valueRotacion);
+
+});
+
+var activities = document.getElementById("id_of_select");
+
+activities.addEventListener("change", function() {
+    alert("aj id_of_select");
+
+    var selector = document.getElementById('id_of_select');
+    valuePasarNext= selector[selector.selectedIndex].value;
+    alert("aj id_of_select:"+valuePasarNext);
+
+});
+
 
 	var activeUsers = 99,
 			pageViewsPerSecondLowerLimit,
@@ -43,226 +87,80 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
 	var data = [
 		{
 			activeUsers: 99,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
 
-			device: [
-				{ name: "PC", users: 39 },
-				{ name: "Comercio", users: 5 },
-				{ name: "Mobile", users: 11 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 38 },
-				{ name: "Direct", users: 8 },
-				{ name: "Paid", users: 5 },
-				{ name: "Referral", users: 4 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 8 },
 				{ name: "Women Clothing", users: 9 },
 				{ name: "Gadgets", users: 10 },
 				{ name: "Books", users: 5 },
 				{ name: "Others", users: 23 }
-			],
-			states: [
-				{ name: "Others", users: 16 },
-				{ name: "Pennsylvania", users: 4 },
-				{ name: "Florida", users: 5 },
-				{ name: "Texas", users: 7 },
-				{ name: "New York", users: 11 },
-				{ name: "California", users: 12 },
 			]
+            
 		},
 		{
 			activeUsers: 56,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
-
-			device: [
-				{ name: "PC", users: 40 },
-				{ name: "Comercio", users: 5 },
-				{ name: "Mobile", users: 11 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 39 },
-				{ name: "Direct", users: 8 },
-				{ name: "Paid", users: 5 },
-				{ name: "Referral", users: 4 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 9 },
 				{ name: "Women Clothing", users: 9 },
 				{ name: "Gadgets", users: 10 },
 				{ name: "Books", users: 5 },
 				{ name: "Others", users: 23 }
-			],
-			states: [
-				{ name: "Others", users: 17 },
-				{ name: "Pennsylvania", users: 4 },
-				{ name: "Florida", users: 5 },
-				{ name: "Texas", users: 7 },
-				{ name: "New York", users: 11 },
-				{ name: "California", users: 12 },
 			]
+            
 		},
 		{
 			activeUsers: 57,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
-
-			device: [
-				{ name: "PC", users: 41 },
-				{ name: "Comercio", users: 5 },
-				{ name: "Mobile", users: 11 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 39 },
-				{ name: "Direct", users: 9 },
-				{ name: "Paid", users: 5 },
-				{ name: "Referral", users: 4 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 8 },
 				{ name: "Women Clothing", users: 9 },
 				{ name: "Gadgets", users: 11 },
 				{ name: "Books", users: 5 },
 				{ name: "Others", users: 24 }
-			],
-			states: [
-				{ name: "Others", users: 17 },
-				{ name: "Pennsylvania", users: 4 },
-				{ name: "Florida", users: 5 },
-				{ name: "Texas", users: 7 },
-				{ name: "New York", users: 12 },
-				{ name: "California", users: 12 },
 			]
+            
 		},
 		{
 			activeUsers: 58,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
-
-			device: [
-				{ name: "PC", users: 42 },
-				{ name: "Comercio", users: 5 },
-				{ name: "Mobile", users: 11 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 40 },
-				{ name: "Direct", users: 8 },
-				{ name: "Paid", users: 6 },
-				{ name: "Referral", users: 4 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 9 },
 				{ name: "Women Clothing", users: 10 },
 				{ name: "Gadgets", users: 11 },
 				{ name: "Books", users: 4 },
 				{ name: "Others", users: 24 }
-			],
-			states: [
-				{ name: "Others", users: 17 },
-				{ name: "Pennsylvania", users: 4 },
-				{ name: "Florida", users: 6 },
-				{ name: "Texas", users: 7 },
-				{ name: "New York", users: 12 },
-				{ name: "California", users: 12 },
 			]
+            
 		},
 		{
 			activeUsers: 59,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 4,
 
-			device: [
-				{ name: "PC", users: 43 },
-				{ name: "Comercio", users: 4 },
-				{ name: "Mobile", users: 12 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 41 },
-				{ name: "Direct", users: 8 },
-				{ name: "Paid", users: 6 },
-				{ name: "Referral", users: 4 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 9 },
 				{ name: "Women Clothing", users: 10 },
 				{ name: "Gadgets", users: 11 },
 				{ name: "Books", users: 5 },
 				{ name: "Others", users: 24 }
-			],
-			states: [
-				{ name: "Others", users: 17 },
-				{ name: "Pennsylvania", users: 4 },
-				{ name: "Florida", users: 6 },
-				{ name: "Texas", users: 7 },
-				{ name: "New York", users: 12 },
-				{ name: "California", users: 13 },
 			]
 		},
 		{
 			activeUsers: 60,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 4,
 
-			device: [
-				{ name: "PC", users: 43 },
-				{ name: "Comercio", users: 5 },
-				{ name: "Mobile", users: 12 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 40 },
-				{ name: "Direct", users: 9 },
-				{ name: "Paid", users: 6 },
-				{ name: "Referral", users: 5 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 9 },
 				{ name: "Women Clothing", users: 10 },
 				{ name: "Gadgets", users: 12 },
 				{ name: "Books", users: 5 },
 				{ name: "Others", users: 24 }
-			],
-			states: [
-				{ name: "Others", users: 18 },
-				{ name: "Pennsylvania", users: 3 },
-				{ name: "Florida", users: 6 },
-				{ name: "Texas", users: 8 },
-				{ name: "New York", users: 12 },
-				{ name: "California", users: 13 },
 			]
 		},
 		{
 			activeUsers: 61,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 5,
 
-			device: [
-				{ name: "PC", users: 44 },
-				{ name: "Comercio", users: 5 },
-				{ name: "Mobile", users: 12 }
-			],
-			trafficMedium: [
-				{ name: "Organic", users: 42 },
-				{ name: "Direct", users: 9 },
-				{ name: "Paid", users: 5 },
-				{ name: "Referral", users: 5 }
-			],
 			categories: [
 				{ name: "Men Clothing", users: 9 },
 				{ name: "Women Clothing", users: 10 },
 				{ name: "Gadgets", users: 12 },
 				{ name: "Books", users: 5 },
 				{ name: "Others", users: 25 }
-			],
-			states: [
-				{ name: "Others", users: 18 },
-				{ name: "Pennsylvania", users: 3 },
-				{ name: "Florida", users: 6 },
-				{ name: "Texas", users: 8 },
-				{ name: "New York", users: 13 },
-				{ name: "California", users: 13 },
 			]
 		}
 	];
@@ -275,93 +173,6 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
 		"#d9695f",
 		"#e05850",
 	]);
-	
-	// CanvasJS doughnut chart to show device type of active users
-	var usersDeviceDoughnutChart = new CanvasJS.Chart("users-device-doughnut-chart", {
-		animationDuration: 800,
-		animationEnabled: true,
-		backgroundColor: "transparent",
-		colorSet: "customColorSet",
-		theme: "theme2",
-		legend: {
-			fontFamily: "calibri",
-			fontSize: 14,
-			horizontalAlign: "left",
-			verticalAlign: "center",
-			itemTextFormatter: function (e) {
-				return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-			} 
-		},
-		title: {
-			dockInsidePlotArea: true,
-			fontSize: 99,
-			fontWeight: "normal",
-			horizontalAlign: "center",
-			verticalAlign: "center",
-			text: "55"
-		},
-		toolTip: {
-			cornerRadius: 0,
-			fontStyle: "normal",
-			contentFormatter: function (e) {
-				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
-			} 
-		},
-		data: [
-			{
-				innerRadius: "80%",
-				radius: "90%",
-				legendMarkerType: "square",
-				showInLegend: true,
-				startAngle: 90,
-				type: "doughnut",
-				dataPoints: [
-					{  y: 39, name: "PC" },
-					{  y: 5, name: "Comercio" },
-					{  y: 11, name: "Mobile" }
-				]
-			}
-		]
-	});
-	
-	// CanvasJS pie chart to traffic medium of active users
-	var usersMediumPieChart = new CanvasJS.Chart("users-medium-pie-chart", {
-		animationDuration: 800,
-		animationEnabled: true,
-		backgroundColor: "transparent",
-		colorSet: "customColorSet",
-		legend: {
-			fontFamily: "calibri",
-			fontSize: 14,
-			horizontalAlign: "left",
-			verticalAlign: "center",
-			itemTextFormatter: function (e) {
-				return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-			}
-		},
-		toolTip: {
-			cornerRadius: 0,
-			fontStyle: "normal",
-			contentFormatter: function (e) {
-				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";  
-			} 
-		},
-		data: [
-			{
-				legendMarkerType: "square",
-				radius: "90%",
-				showInLegend: true,
-				startAngle: 90,
-				type: "pie",
-				dataPoints: [
-					{  y: 38, name:"Organic" },
-					{  y: 8, name:"Direct" },
-					{  y: 5, name:"Paid" },
-					{  y: 4, name:"Referral" }
-				]
-			}
-		]
-	});
 
 	// CanvasJS pie chart to active users by category
 	var usersCategoryPieChart = new CanvasJS.Chart("users-category-pie-chart", {
@@ -445,52 +256,13 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
 		]
 	});
 
-	// CanvasJS column chart to show live page views per second
-	var pageViewsPerSecondColumnChart = new CanvasJS.Chart("page-views-per-second-column-chart", {
-		animationDuration: 800,
-		animationEnabled: true,
-		backgroundColor: "transparent",
-		axisX: {						
-			interval: 1,
-			intervalType: "second",
-			labelAutoFit: false,
-			labelFontColor: "#717171",
-			lineColor: "#a2a2a2",
-			tickColor: "transparent",
-			tickLength: 2,
-			labelFormatter: function(e) {
-				var diff, currentTime = (new Date()).getTime();
-				diff = Math.floor((e.value.getTime() - currentTime) / 1000);
-				return diff % 15 < 0 ? "" : diff + " sec";
-			}
-		},
-		axisY: {
-			gridThickness: 0,
-			labelFontColor: "#717171",
-			lineColor: "#a2a2a2",
-			tickColor: "#a2a2a2"
-		},
-		toolTip: {
-			cornerRadius: 0,
-			fontStyle: "normal",
-		},
-		data: [
-			{
-				color: "#CD5740",
-				xValueFormatString: "hh:mm:ss TT",
-				type: "column",
-				dataPoints : pageViewsPerSecondDataPoints
-			}
-		]
-	});
 
-	
 	//----------------------------------------------------------------------------------//
 	var allCharts = [
-		usersDeviceDoughnutChart,
-		usersMediumPieChart,
+//		usersDeviceDoughnutChart,
+//		usersMediumPieChart,
 		usersCategoryPieChart,
-		pageViewsPerSecondColumnChart,
+//		pageViewsPerSecondColumnChart,
 		pageViewsPerMinuteColumnChart
 		
 	];
@@ -509,16 +281,82 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
 	}
 	
 
-	
+function updateUsersCategoryChartWithDB(dataIndex)
+{
+
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {                  
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0202 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0202) //set the values in the  graph points ,below
+
+                    //pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"+value[1]); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 usersCategoryPieChart.render();
+
+            }
+        });
+      
+        usersCategoryPieChart.render();
+
+}
+
+
+function myFunction0202(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   usersCategoryPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersCategoryPieChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+//	pageViewsPerMinuteDataPoints.push({ x: parseInt(item["data_valuec"]),y: parseInt(item["data_valuea"]) });
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    //        pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+
+    })
+*/
+
+}
+
 	// update all charts with revelant demo data, except "Page Views Per Second" and "Page Views Per Minute" charts
 	function updateCharts(dataIndex) {
 		activeUsers = data[dataIndex].activeUsers;
-		pageViewsPerSecondLowerLimit = data[dataIndex].pageViewsPerSecondLowerLimit;
-		pageViewsPerSecondUpperLimit = data[dataIndex].pageViewsPerSecondUpperLimit;
+//		pageViewsPerSecondLowerLimit = data[dataIndex].pageViewsPerSecondLowerLimit;
+//		pageViewsPerSecondUpperLimit = data[dataIndex].pageViewsPerSecondUpperLimit;
 
 //dash02 no tiene		updateUsersDeviceChart(dataIndex);
 //dash02 no tiene		updateUsersMediumPieChart(dataIndex);
-		updateUsersCategoryChart(dataIndex);
+		// usar datos demo     updateUsersCategoryChart(dataIndex);
+        //usar datos de la db
+        updateUsersCategoryChartWithDB(dataIndex);
 		
 	}
 	
@@ -534,29 +372,6 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
 		timeoutIdUpdateCharts = setTimeout(function () {
 			updateChartsAtRandomIntervals();
 		}, updateChartsInterval);
-	}
-	
-	// populate "Chart 0202 " charts with initial data
-	function populateChart0202() {
-
-		var time1, time2;
-		
-        console.log("json banwire populateChart0202 "); 
-        
-		for (var i = 0; i < 60; i++) {
-			time1 = new Date((new Date).getTime() - ((59 - i) * 1000)); // for pageViewsPerSecond chart 
-			time1.setMilliseconds(0);
-			
-			time2 = new Date((new Date).getTime() - ((59 - i) * 60 * 1000)); // for pageViewsPerMinute chart
-			time2.setSeconds(0);
-			
-			pageViewsPerSecondDataPoints.push({ x: time1, y: initialDataPageViewsPerSecond[i] });
-//			pageViewsPerMinuteDataPoints.push({ x: time2, y: initialDataPageViewsPerMinute[i] });
-		}
-	
-		pageViewsPerSecondColumnChart.render();
-
-     
 	}
 
 
@@ -582,41 +397,43 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
 	}
 
 
-	// update "updateChart0202" chart every second 
-	function updateChart0202() {
-		var time1, time2;
-		time1 = new Date();
-		time1.setMilliseconds(0);
-		
-		yValuePageViewsPerSecond = generateRandomNumber(pageViewsPerSecondLowerLimit, pageViewsPerSecondUpperLimit); 
-		
-		pageViewsPerSecondDataPoints.push({ x: time1, y: yValuePageViewsPerSecond });
-    
-    if (pageViewsPerSecondDataPoints.length > 60)
-    	pageViewsPerSecondDataPoints.shift();
-
-		pageViewsPerSecondColumnChart.render();		
-
-}
-
 	// update "updateChart0201" chart every set of seconds 
 	function updateChart0201() {
 			console.log("updateChart0201: json banwire recent GET");
             
 //        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getjsondatabanwire", function(data) {  
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {              
+         //send the  previousGroupNumber=0;
+         // datePreviousGroupNumber=0;
+         // currentPreviousGroupNumber=0;
+
+         //the first time, previousGroupNumber will be cero, 
+         // the service will decide if max available is greater than previousGroupNumber
+         //  if greater   then obtain the next
+         //  if equal or less, then keep the current group og data, display the message: the most current data available, and the current Date, previousDate
+
+//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {              
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference="+previousGroupNumber+"&reference2=nono&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber, so use the current data in javascript
 
             $.each(data, function(key, value){
                 if(linea ==0){//primera linea, viene estatus Success or Error
 
-             
                 }
                 if(linea ==1){//second linea, viene estatus value 1 or Error
-
-             
+                     var statusResultado= value;
+                     exito=statusResultado
                 }
-                if(linea ==2){//third linea, viene an array with the result data
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
                     arrayResultados.forEach(myFunction0201) //set the values in the  graph points ,below
 
@@ -627,9 +444,13 @@ document.getElementById('btn02').addEventListener('click', go_next2);;
                  console.log("json banwire recent"+value[1]); 
                  
             });	
-           if (pageViewsPerMinuteDataPoints.length > 60) 
-				pageViewsPerMinuteDataPoints.shift();			
-           pageViewsPerMinuteColumnChart.render();
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+                if (pageViewsPerMinuteDataPoints.length > 60 ) {
+                        pageViewsPerMinuteDataPoints.shift();			
+                }
+                pageViewsPerMinuteColumnChart.render();
+
+            }
         });
       
      pageViewsPerMinuteColumnChart.render();   
@@ -728,9 +549,9 @@ function myFunction0201(item, index) {
 	(function init() {
 		customizeCharts();
 		$(window).resize(customizeCharts);
-		populateChart0202();
+//		populateChart0202();
         populateChart0201();
-		setInterval(updateChart0202, 1000); //every 1 second
+//		setInterval(updateChart0202, 1000); //every 1 second
         setInterval(updateChart0201, valueRotacionOriginal);//every 20 seconds
 		setTimeout(updateChartsAtRandomIntervals, 4000); //every 4 seconds
 

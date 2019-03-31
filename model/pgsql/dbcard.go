@@ -5,10 +5,10 @@ import (
 //    "errors"
 	"fmt"
 	"log"
-//	miu "banwire/dash/dashboard_banwire/util"
+//	miu "banwire/dash/dashboard_front/util"
 
-//	"banwire/dash/dashboard_banwire/db"
-	 "banwire/dash/dashboard_banwire/model"
+//	"banwire/dash/dashboard_front/db"
+	 "banwire/dash/dashboard_front/model"
 	
 )
 

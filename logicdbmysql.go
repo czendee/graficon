@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"log"
 //	"strings"
-//	"banwire/dash/dashboard_banwire/db"
-	modelito "banwire/dash/dashboard_banwire/model"
+//	"banwire/dash/dashboard_front/db"
+	modelito "banwire/dash/dashboard_front/model"
 	 "database/sql"
 	 _ "github.com/go-sql-driver/mysql"   //use go get -u github.com/go-sql-driver/mysql   this allows mysql use
-//	miu "banwire/dash/dashboard_banwire/util"
+//	miu "banwire/dash/dashboard_front/util"
 )
 
 /*
@@ -174,6 +174,82 @@ var errCards error
    }
 
 
+   func logicDBMysqlCheckMoreRecent0201(requestData modelito.RequestDash02Grafica01, errorGeneral string) (string,string) {
+	////////////////////////////////////////////////obtain parms in JSON
+   //START    
+   log.Print("logicDBMysqlCheckMoreRecent0201 entre " )
+        var resultDatadashGroupNumber string
+        var errCards error
+
+        //  START fetchFromDB
+            var errdb error
+            var db *sql.DB
+            // Create connection string
+            connString := fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
+                Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
+        
+                if (connString !="si"){
+
+                }
+//"mysql", "root:password1@tcp(127.0.0.1:3306)/test"
+
+                // Create connection pool
+//					db, errdb = sql.Open("postgres", connString)
+//this use the values set up in the configuration.go
+            log.Print("Usando para conectar : " + Config_dbStringType)
+            db, errdb = sql.Open(Config_dbStringType, Config_connString)
+            
+
+            if errdb != nil {
+                log.Print("Error creating connection pool: " + errdb.Error())
+                errorGeneral=errdb.Error()
+            }
+            // Close the database connection pool after program executes
+                defer db.Close()
+            if errdb == nil {
+                log.Print("Connected!\n")
+        
+            
+                errPing := db.Ping()
+                if errPing != nil {
+                    log.Print("Error: Could not establish a connection with the database:"+ errPing.Error())
+                        errorGeneral=errPing.Error()
+                }else{
+                        log.Print("Ping ok in MySql :) !\n")
+
+                        
+                        resultDatadashGroupNumber,errCards =modelito.GetMaxGroupNumberDatadash0201(db,
+                        requestData.Dash0201reference,
+                        requestData.Dash0201reference2,
+                        requestData.Dash0201Dato01,
+                        requestData.Dash0201Dato02,
+                        requestData.Dash0201Dato03)
+
+                        log.Print("regresa func  logicDBMysqlCheckMoreRecent0201 ok!\n")
+                    if errCards != nil {
+                        log.Print("Error: :"+ errCards.Error())
+                        errorGeneral=errCards.Error()
+                    }
+                    if resultDatadashGroupNumber =="0"{
+                        //no result found , greater than the previous group
+                        log.Print("logicDBMysqlCheckMoreRecent0201 no result found , greater than the previous group " )
+                    }else{
+                        log.Print("logicDBMysqlCheckMoreRecent0201 hay algo "+resultDatadashGroupNumber )
+                    }
+
+
+                }//end else ping
+        
+        
+            }//end else dbconn
+            
+        //  END fetchFromDB
+   
+   //END
+   	  return  resultDatadashGroupNumber, errorGeneral
+   }
+
+
    func logicDBMysqlProcessDash02Grafica01(requestData modelito.RequestDash02Grafica01, errorGeneral string) ([]modelito.Datadash,string) {
 	////////////////////////////////////////////////obtain parms in JSON
    //START    
@@ -251,10 +327,87 @@ var errCards error
    	  return  resultDatadash, errorGeneral
    }
 
-   func logicDBMysqlProcessDash02Grafica02(requestData modelito.RequestDash02Grafica02, errorGeneral string) ([]modelito.Card,string) {
+
+   func logicDBMysqlCheckMoreRecent0202(requestData modelito.RequestDash02Grafica02, errorGeneral string) (string,string) {
 	////////////////////////////////////////////////obtain parms in JSON
    //START    
-var resultCards []modelito.Card
+   log.Print("logicDBMysqlCheckMoreRecent0202 entre " )
+        var resultDatadashGroupNumber string
+        var errCards error
+
+        //  START fetchFromDB
+            var errdb error
+            var db *sql.DB
+            // Create connection string
+            connString := fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
+                Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
+        
+                if (connString !="si"){
+
+                }
+//"mysql", "root:password1@tcp(127.0.0.1:3306)/test"
+
+                // Create connection pool
+//					db, errdb = sql.Open("postgres", connString)
+//this use the values set up in the configuration.go
+            log.Print("Usando para conectar : " + Config_dbStringType)
+            db, errdb = sql.Open(Config_dbStringType, Config_connString)
+            
+
+            if errdb != nil {
+                log.Print("Error creating connection pool: " + errdb.Error())
+                errorGeneral=errdb.Error()
+            }
+            // Close the database connection pool after program executes
+                defer db.Close()
+            if errdb == nil {
+                log.Print("Connected!\n")
+        
+            
+                errPing := db.Ping()
+                if errPing != nil {
+                    log.Print("Error: Could not establish a connection with the database:"+ errPing.Error())
+                        errorGeneral=errPing.Error()
+                }else{
+                        log.Print("Ping ok in MySql :) !\n")
+
+                        
+                        resultDatadashGroupNumber,errCards =modelito.GetMaxGroupNumberDatadash0202(db,
+                        requestData.Dash0202reference,
+                        requestData.Dash0202reference2,
+                        requestData.Dash0202Dato01,
+                        requestData.Dash0202Dato02,
+                        requestData.Dash0202Dato03)
+
+                        log.Print("regresa func  logicDBMysqlCheckMoreRecent0202 ok!\n")
+                    if errCards != nil {
+                        log.Print("Error: :"+ errCards.Error())
+                        errorGeneral=errCards.Error()
+                    }
+                    if resultDatadashGroupNumber =="0"{
+                        //no result found , greater than the previous group
+                        log.Print("logicDBMysqlCheckMoreRecent0202 no result found , greater than the previous group " )
+                    }else{
+                        log.Print("logicDBMysqlCheckMoreRecent0202 hay algo "+resultDatadashGroupNumber )
+                    }
+
+
+                }//end else ping
+        
+        
+            }//end else dbconn
+            
+        //  END fetchFromDB
+   
+   //END
+   	  return  resultDatadashGroupNumber, errorGeneral
+   }
+
+
+   func logicDBMysqlProcessDash02Grafica02(requestData modelito.RequestDash02Grafica02, errorGeneral string) ([]modelito.Datadash,string) {
+	////////////////////////////////////////////////obtain parms in JSON
+   //START    
+var resultDatadash []modelito.Datadash
 var errCards error
 
 				//  START fetchFromDB
@@ -291,24 +444,30 @@ var errCards error
 						  log.Print("Error: Could not establish a connection with the database:"+ errPing.Error())
 							  errorGeneral=errPing.Error()
 						}else{
-					         log.Print("Ping ok!\n")
+					         log.Print("Ping ok in MySql :) !\n")
 //					         var misCards modelito.Card
 					         
-					         resultCards,errCards =modelito.GetCardsByCustomer(db,requestData.Dash0202reference)
-					         					         log.Print("regresa func  getCardsByCustomer ok!\n")
+					         resultDatadash,errCards =modelito.GetDatadash0202(db,
+                             requestData.Dash0202reference,
+                             requestData.Dash0202reference2,
+                             requestData.Dash0202Dato01,
+                             requestData.Dash0202Dato02,
+                             requestData.Dash0202Dato03)
+
+					         log.Print("regresa func  logicDBMysqlProcessDash02Grafica02 ok!\n")
 							if errCards != nil {
 							  log.Print("Error: :"+ errCards.Error())
 							  errorGeneral=errCards.Error()
 							}
 							var cuantos int
 							cuantos = 0
-				         	for _, d := range resultCards {
-				         		log.Print("el registor trae:"+d.Token+" "+d.Bin)
+				         	for _, d := range resultDatadash {
+				         		log.Print("el registor trae:"+d.ID+" "+d.Valoramount)
 							    cuantos =1
 			         		}
 							if cuantos == 0 {
 							  log.Print("DB: records not found")
-							  errorGeneral="Not cards found for the customer reference received"
+							  errorGeneral="Not records found for the logicDBMysqlProcessDash02Grafica02r reference received"
 							}		
 
 					    }
@@ -319,8 +478,11 @@ var errCards error
 				//  END fetchFromDB
    
    //END
-   	  return  resultCards, errorGeneral
+   	  return  resultDatadash, errorGeneral
    }
+
+
+
 
    func logicDBMysqlProcessDash02Grafica03(requestData modelito.RequestDash02Grafica03, errorGeneral string) ([]modelito.Card,string) {
 	////////////////////////////////////////////////obtain parms in JSON

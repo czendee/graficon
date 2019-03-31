@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"log"
 	"encoding/json"
-	modelito "banwire/dash/dashboard_banwire/model"
+	modelito "banwire/dash/dashboard_front/model"
 	 _ "github.com/lib/pq"   //use go get github.com/lib/pq
 	 
 )
