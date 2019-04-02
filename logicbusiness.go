@@ -429,6 +429,7 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
        	    	log.Print("CZ   STEP Consume DB")
                    
                    requestData.Dash0202reference = existMoreRecent  //set the group number found, as reference
+                   
 
                    log.Print("v1ProcessDash02Grafica02 grop found"+requestData.Dash0202reference)
                    if(Config_dbStringType=="mysql"){//mysql

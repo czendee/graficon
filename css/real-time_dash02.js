@@ -19,22 +19,6 @@ function show_selected2() {
     document.getElementById('display').innerHTML = valueRotacion;
 }
 
-/*
-function show_selected3() {
-    alert("aj 03");
-    var selector = document.getElementById('id_of_select');
-    valueRotacion= selector[selector.selectedIndex].value;
-
-
-}
-
-function show_selected_rotacion3() {
-    alert("aj 03");
-    var selector = document.getElementById('id_of_selectRotacion');
-    valueRotacion= selector[selector.selectedIndex].value;
-
-}
-*/
 
 $(function () {
 //document.getElementById('btn').addEventListener('click', show_selected2);;
@@ -334,13 +318,9 @@ function myFunction0202(item, index) {
    usersCategoryPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
    usersCategoryPieChart.options.data[0].dataPoints[index].name = item["data_name"];
 
-//	pageViewsPerMinuteDataPoints.push({ x: parseInt(item["data_valuec"]),y: parseInt(item["data_valuea"]) });
-
 /*
     Object.keys(item).forEach(function(key) {
     console.log('Key : ' + key + ', Value : ' + item[key])
-    //        pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
-
     })
 */
 

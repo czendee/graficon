@@ -1,4 +1,50 @@
+"use strict";
+var valueRotacion=10000;
+var valueRotacionOriginal=10000;
+
+var valuePasarNext=150000;
+var valuePasarNextOriginal=150000;
+
+var previousGroupNumber=0;//used to keep track of what group was displayed previously
+
+var previousGroupNumber0101=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0102=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0103=0;//used to keep track of what group was displayed previously
+
+
+function show_selected2() {
+    alert("aj");
+    var selector = document.getElementById('id_of_select');
+    valueRotacion= selector[selector.selectedIndex].value;
+
+    document.getElementById('display').innerHTML = valueRotacion;
+}
+
+
 $(function () {
+
+
+    var activities = document.getElementById("id_of_selectRotacion");
+
+    activities.addEventListener("change", function() {
+        alert("aj id_of_selectRotacion");
+
+        var selector = document.getElementById('id_of_selectRotacion');
+        valueRotacion= selector[selector.selectedIndex].value;
+        alert("aj id_of_selectRotacion:"+valueRotacion);
+
+    });
+
+    var activities02 = document.getElementById("id_of_select");
+
+    activities02.addEventListener("change", function() {
+        alert("aj id_of_select");
+
+        var selector = document.getElementById('id_of_select');
+        valuePasarNext= selector[selector.selectedIndex].value;
+        alert("aj id_of_select:"+valuePasarNext);
+
+    });
 
 	var activeUsers = 99,
 			pageViewsPerSecondLowerLimit,
@@ -11,19 +57,11 @@ $(function () {
 			updateChartsIntervalUpperLimit = 6000, // milliseconds
 			timeoutIdUpdateCharts;
 	
-	var pageViewsPerSecondDataPoints = [];
-	var pageViewsPerMinuteDataPoints = [];
-	
-	// data for demo only
-	var initialDataPageViewsPerSecond = [1,2,4,4,3,2,1,5,1,2,2,0,0,1,2,4,5,3,4,2,2,2,2,0,1,2,4,4,4,5,5,1,2,4,1,1,1,0,0,1,2,3,3,5,5,2,0,1,1,0,2,2,2,0,4,1,4,4,2,2];
-	var initialDataPageViewsPerMinute = [110,107,122,107,128,108,100,110,118,93,95,112,108,95,96,114,107,105,124,104,131,94,109,110,108,99,104,90,104,109,89,121,118,93,109,113,106,100,101,119,76,137,112,104,98,89,104,96,120,111,108,95,93,100,101,110,98,105,107,135];
 	
 	// data for demo only
 	var data = [
 		{
 			activeUsers: 99,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
 
 			device: [
 				{ name: "PC", users: 39 },
@@ -54,8 +92,6 @@ $(function () {
 		},
 		{
 			activeUsers: 56,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
 
 			device: [
 				{ name: "PC", users: 40 },
@@ -86,8 +122,6 @@ $(function () {
 		},
 		{
 			activeUsers: 57,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
 
 			device: [
 				{ name: "PC", users: 41 },
@@ -118,8 +152,6 @@ $(function () {
 		},
 		{
 			activeUsers: 58,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 3,
 
 			device: [
 				{ name: "PC", users: 42 },
@@ -150,8 +182,6 @@ $(function () {
 		},
 		{
 			activeUsers: 59,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 4,
 
 			device: [
 				{ name: "PC", users: 43 },
@@ -182,8 +212,6 @@ $(function () {
 		},
 		{
 			activeUsers: 60,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 4,
 
 			device: [
 				{ name: "PC", users: 43 },
@@ -214,8 +242,6 @@ $(function () {
 		},
 		{
 			activeUsers: 61,
-			pageViewsPerSecondLowerLimit: 0,
-			pageViewsPerSecondUpperLimit: 5,
 
 			device: [
 				{ name: "PC", users: 44 },
@@ -295,9 +321,10 @@ $(function () {
 				startAngle: 90,
 				type: "doughnut",
 				dataPoints: [
-					{  y: 39, name: "PC" },
-					{  y: 5, name: "Comercio" },
-					{  y: 11, name: "Mobile" }
+					{  y: 39, name: "PCs" },
+					{  y: 5, name: "ComercioS" },
+					{  y: 11, name: "MobileS" },
+                    {  y: 6, name: "OtrosS" }
 				]
 			}
 		]
@@ -383,68 +410,21 @@ $(function () {
 		]
 	});
 			
-	// CanvasJS bar chart to show active users by state
-	var usersStateBarChart = new CanvasJS.Chart("users-state-bar-chart", {
-		animationDuration: 800,
-		animationEnabled: true,
-		backgroundColor: "transparent",
-		colorSet: "customColorSet",
-		axisX: {
-			labelFontColor: "#717171",
-			labelFontSize: 18,
-			lineThickness: 0,
-			tickThickness: 0
-		},
-		axisY: {
-			gridThickness: 0,
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: " "
-		},
-		toolTip: {
-			cornerRadius: 0,
-			fontStyle: "normal",
-			contentFormatter: function (e) {
-				return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
-			} 
-		},
-		data: [
-			{
-				indexLabelFontColor: "#717171",
-				indexLabelFontFamily: "calibri",
-				indexLabelFontSize: 18,
-				indexLabelPlacement: "outside",
-				indexLabelFormatter: function (e) {
-					return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-				},
-				type: "bar",
-				dataPoints: [
-					{ y: 16,  label: "Others" },
-					{ y: 4, label: "Pennsylvania" },
-					{ y: 5,  label: "Florida" },
-					{ y: 7, label: "Texas" },
-					{ y: 11, label: "New York" },
-					{ y: 12, label: "California" }
-				]
-			}
-		]
-	});
 
-//dash01 no usa este 	usersStateBarChart.render();
 	
 	//----------------------------------------------------------------------------------//
 	var allCharts = [
 		usersDeviceDoughnutChart,
 		usersMediumPieChart,
-		usersCategoryPieChart,
-		usersStateBarChart
+		usersCategoryPieChart
 	];
 	
 	// generate random number between given range
 	function generateRandomNumber (minimum, maximum) {
 		return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 	}
-	
+
+/*	
 	function updateUsersDeviceChart(dataIndex) {
 		usersDeviceDoughnutChart.options.title.text = activeUsers.toString();
 		
@@ -467,42 +447,333 @@ $(function () {
 		
 		usersCategoryPieChart.render();
 	}
-	
-	function updateUsersStateChart(dataIndex) {
-		for (var i = 0; i < data[dataIndex].states.length; i++)
-			usersStateBarChart.options.data[0].dataPoints[i].y = data[dataIndex].states[i].users;
+*/
+
+	/********************************************
+    
+    functions that access the Webservices 
+    obtain the data
+    
+    ***************************************+ */
+//Device
+
+
 		
-		usersStateBarChart.render();
-	}
+
+    function updateUsersDeviceChartWithDB()
+   {
+
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0101+"&reference2=11&dato01=99&dato02=88&dato03=77", function(data) {                  
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0101 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0101) //set the values in the  graph points ,below
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 usersDeviceDoughnutChart.render();
+
+            }
+        });
+      
+        usersDeviceDoughnutChart.render();
+
+}
+
+
+function myFunction0101(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   usersDeviceDoughnutChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersDeviceDoughnutChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+
+//Medium
+
+
+    function updateUsersMediumPieChartWithDB()
+   {
+
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0102+"&reference2=12&dato01=99&dato02=88&dato03=77", function(data) {                  
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0102 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0102) //set the values in the  graph points ,below
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 usersMediumPieChart.render();
+
+            }
+        });
+      
+        usersMediumPieChart.render();
+
+}
+
+
+function myFunction0102(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   usersMediumPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersMediumPieChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+
+
+// Category
+    function updateUsersCategoryChartWithDB()
+   {
+
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0103+"&reference2=13&dato01=99&dato02=88&dato03=77", function(data) {                  
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0103 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0103) //set the values in the  graph points ,below
+
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 usersCategoryPieChart.render();
+
+            }
+        });
+      
+        usersCategoryPieChart.render();
+
+}
+
+
+function myFunction0103(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   usersCategoryPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersCategoryPieChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+
+
 	
-	// update all charts with revelant demo data, except "Page Views Per Second" and "Page Views Per Minute" charts
+	// update all charts with revelant data
 	function updateCharts(dataIndex) {
 		activeUsers = data[dataIndex].activeUsers;
-		pageViewsPerSecondLowerLimit = data[dataIndex].pageViewsPerSecondLowerLimit;
-		pageViewsPerSecondUpperLimit = data[dataIndex].pageViewsPerSecondUpperLimit;
 
-		updateUsersDeviceChart(dataIndex);
-		updateUsersMediumPieChart(dataIndex);
-		updateUsersCategoryChart(dataIndex);
-//dash01 no usa esta grafica		updateUsersStateChart(dataIndex);
+		updateUsersDeviceChartWithDB();
+		updateUsersMediumPieChartWithDB();
+		// usar datos demo     updateUsersCategoryChart(dataIndex);
+        //usar datos de la db
+        updateUsersCategoryChartWithDB();
+		
 	}
-	
+
+
 	function updateChartsAtRandomIntervals() {
 		var dataIndex = generateRandomNumber(0, data.length - 1);
-		updateChartsInterval = generateRandomNumber(updateChartsIntervalLowerLimit, updateChartsIntervalUpperLimit);
 				
 		updateCharts(dataIndex);
-		
+
+    // set the next time the functions will be executed, by the value in the valueRotacion		
 		if (timeoutIdUpdateCharts)
 			clearTimeout(timeoutIdUpdateCharts);
 		
 		timeoutIdUpdateCharts = setTimeout(function () {
 			updateChartsAtRandomIntervals();
-		}, updateChartsInterval);
+		}, valueRotacion);
 	}
-	
-	
 
+
+	
+/*
+functions for graphs with XY 
+
+
+	// populate "Chart 0201 " charts with initial data
+	function populateChart0201() {
+		
+        console.log("populateChart0201 json banwire populateChart0201 "); 
+                
+//        $.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=100&type=json", function(data) {  
+//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getjsondatabanwire", function(data) {  
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=0&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {  
+            
+            $.each(data, function(key, value){
+            
+                pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+            
+                 console.log("populateChart0201 json banwire"+value[1]); 
+                 
+            });	
+            pageViewsPerMinuteColumnChart.render();      
+        });
+     pageViewsPerMinuteColumnChart.render();   
+	}
+
+
+
+	// update "updateChart0201" chart every set of seconds 
+	function updateChart0201() {
+			console.log("updateChart0201: json banwire recent GET");
+            
+//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getjsondatabanwire", function(data) {  
+         //send the  previousGroupNumber=0;
+         // datePreviousGroupNumber=0;
+         // currentPreviousGroupNumber=0;
+
+         //the first time, previousGroupNumber will be cero, 
+         // the service will decide if max available is greater than previousGroupNumber
+         //  if greater   then obtain the next
+         //  if equal or less, then keep the current group og data, display the message: the most current data available, and the current Date, previousDate
+
+//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {              
+        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference="+previousGroupNumber+"&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {                  
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0201) //set the values in the  graph points ,below
+
+                    //pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"+value[1]); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+                if (pageViewsPerMinuteDataPoints.length > 60 ) {
+                        pageViewsPerMinuteDataPoints.shift();			
+                }
+                pageViewsPerMinuteColumnChart.render();
+
+            }
+        });
+      
+     pageViewsPerMinuteColumnChart.render();   
+}
+
+function myFunction0201(item, index) {
+//  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+	pageViewsPerMinuteDataPoints.push({ x: parseInt(item["data_valuec"]),y: parseInt(item["data_valuea"]) });
+
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    //        pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+
+    })
+
+}
+
+*/
 	
 	// chart properties cutomized further based on screen width	
 	function chartPropertiesCustomization(chart) {
@@ -557,13 +828,45 @@ $(function () {
 			renderAllCharts();
 		});	
 	}
+
+
+	function checkRotationValues() {
+        if(valueRotacionOriginal==valueRotacion){
+             //continue with the same value
+        }else{
+//            setInterval(updateChart0201, valueRotacion);//every 20 seconds
+            setInterval(updateChartsAtRandomIntervals, valueRotacion);//every number of  seconds decided by the user in the screen
+            
+            valueRotacionOriginal=valueRotacion;
+        }
+         
+        if(valuePasarNextOriginal==valuePasarNext){
+             //continue with the same value
+        }else{
+            setTimeout(go_next2, valuePasarNext);//every 20 seconds
+            valuePasarNextOriginal=valuePasarNext;
+        }         
+	}
+
+    function go_next2() {
+        alert("next");
+        window.location.href = "/v1/dash02";  
+
+    }
+
 	
 	(function init() {
 		customizeCharts();
 		$(window).resize(customizeCharts);
-//dash01 no tiene		populatePageViewsCharts();
-//dash01 no tiene		setInterval(updatePageViewsCharts, 1000);
-		setTimeout(updateChartsAtRandomIntervals, 4000);
+
+		setTimeout(updateChartsAtRandomIntervals, valueRotacionOriginal); //every 4 seconds
+
+        setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
+
+        setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
+
+
+//		setTimeout(updateChartsAtRandomIntervals, 4000);
 		sidebarToggleOnClick();
 	})();
 

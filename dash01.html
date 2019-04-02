@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Banwire -ClienteXXX &#8211; Monitor 1 Pagos en tiempo real</title>
+	<title>Banwire  &#8211; Pagos en tiempo real</title>
 
 	<!-- stylesheets -->
 <link href="/font-roboto.css" rel="stylesheet">
@@ -41,12 +41,15 @@
 				</div>
 
 				<div class="ligtheno">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/samples/dashboards/web-analytics-real-time/">
 						<span class="ligtheno">Informacion en tiempo real, cada</span>
 					</a>
 
 				</div>
-				<div class="brand">
+                <div class="brand">
 					
                     <select id="id_of_select">
                     <option value="1">30seg</option>
@@ -54,11 +57,14 @@
                     <option value="3">60seg</option>
                     <option value="4">90seg</option>
                     </select>
-                    <button id="btn">Cambiar</button>
+<!--                    <button id="btn">Cambiar</button> -->
 				</div>
-				<div class="brand">
+				<div class="ligtheno">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="/v1/dash02">
-						<span class="hidden-xs-down m-r-3">Rotacion</span><span class="lead">cada</span>
+						<span class="ligtheno">Rotacion a proximo Dashboard</span><span class="ligtheno" >cada</span>
                     </a>
                     <select id="id_of_selectRotacion">
                     <option value="1">5min</option>
@@ -66,7 +72,7 @@
                     <option value="3">15min</option>
                     <option value="4">no</option>
                     </select>
-                    <button id="btn">Cambiar</button>
+<!--                    <button id="btn02">Cambiar</button>  -->
 				</div>                
                  <div id="display">hola</div>
 			</div>
@@ -131,16 +137,8 @@
 
 </body>
 <script>
-"use strict";
-function show_selected() {
-    alert("aj");
-    var selector = document.getElementById('id_of_select');
-    var value = selector[selector.selectedIndex].value;
+//"use strict";
 
-    document.getElementById('display').innerHTML = value;
-}
-
-document.getElementById('btn').addEventListener('click', show_selected);;
 //https://canvasjs.com/license/
 </script>
 
