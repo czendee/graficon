@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+
+  app:
+    image: postgres:9.6-alpine
+    restart: always
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["./dash_back-${ENV:-prod}"]
+    ports:
+      - "${PORT:-8090}:8090"
+    environment:
+      - POSTGRES_USER=banwire
+      - POSTGRES_DB=banwire
+      - POSTGRES_PASSWORD=banwire
+    networks:
+      - backend
+networks:
+  backend:
+    driver: bridge
+volumes:
+  db-vol:
