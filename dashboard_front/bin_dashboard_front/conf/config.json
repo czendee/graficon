@@ -1,0 +1,60 @@
+{
+	"othersources" : [
+		{
+			"type" : "crbanwire",
+			"nodes" : [
+				{
+					"active"   : true,
+                       "passwordcrbanwire" : "pruebasbw"
+				}
+			]
+		},      
+		{
+			"type" : "postgresqlNOOO",
+			"nodes" : [
+				{
+                   
+					"active"   : true,
+                    "host" 	   : "stampy.db.elephantsql.com",
+					"port" 	   : 5432,
+					"db" 	   : "lerepagr",
+					"user" 	   : "lerepagr",
+					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma"
+
+				}
+			]
+		}
+,      
+		{
+			"type" : "mysqlOLD",
+			"nodes" : [
+				{
+                   
+					"active"   : true,
+                    "host" 	   : "sql3.freemysqlhosting.net",
+					"port" 	   : 3306,
+					"db" 	   : "sql3277898",
+					"user" 	   : "sql3277898",
+					"password" : "WnA7eAQCte"
+
+				}
+			]
+		}   
+,      
+		{
+			"type" : "mysql",
+			"nodes" : [
+				{
+                   
+					"active"   : true,
+                    "host" 	   : "remotemysql.com",
+					"port" 	   : 3306,
+					"db" 	   : "2UxsqlQEiE",
+					"user" 	   : "2UxsqlQEiE",
+					"password" : "wBudZfluic"
+
+				}
+			]
+		}               
+	]
+}
