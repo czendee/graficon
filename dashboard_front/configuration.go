@@ -41,7 +41,7 @@ var Config_connString string
 
 func init() {
 	flag.StringVar(&RunMode, "mode", "api", "Service mode run (Options: api, batch)")
-	flag.StringVar(&HTTPListen, "http", ":8070", "Path where HTTP Server will listening")
+	flag.StringVar(&HTTPListen, "http", ":8060", "Path where HTTP Server will listening")
 	flag.StringVar(&configFile, "config", "./conf/config.json", "Path of configuration file")
 //	flag.StringVar(&configFile, "config", "config.json", "Path of configuration file")
 
