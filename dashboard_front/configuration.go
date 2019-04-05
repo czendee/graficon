@@ -10,7 +10,7 @@ import (
 	"banwire/dash/dashboard_banwire/path"
 )
 
-// Initializes the Config variables
+/// Initializes the Config variables
 var Config config
 
 var HTTPListen string

@@ -11,7 +11,7 @@ func BatchTest() {
 		db.Connection.Close(nil)
 	}()
 
-	/*
+	/**
 		bla bla bla ... more code
 	*/
 }
