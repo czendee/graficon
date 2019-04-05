@@ -1,8 +1,8 @@
 package pgsql
 
 import (
-	"banwire/dash/dashboard_banwire/db"
-	"banwire/dash/dashboard_banwire/model"
+	"banwire/dash/dashboard_front/db"
+	"banwire/dash/dashboard_front/model"
 
 	pg "github.com/jackc/pgx"
 )
