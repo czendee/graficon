@@ -1,7 +1,7 @@
 package main
 
 import (
-	"banwire/dash/dashboard_banwire/db"
+	"banwire/dash/dashboard_front/db"
 )
 
 // BatchTest is a function only for test

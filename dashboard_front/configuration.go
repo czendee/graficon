@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"fmt"
-	"banwire/dash/dashboard_banwire/db"
-	"banwire/dash/dashboard_banwire/path"
+	"banwire/dash/dashboard_front/db"
+	"banwire/dash/dashboard_front/path"
 )
 
 // Initializes the Config variables
