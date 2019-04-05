@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"banwire/dash/dashboard_banwire/db"
+	"banwire/dash/dashboard_front/db"
 )
 
 // Time represents the time object
