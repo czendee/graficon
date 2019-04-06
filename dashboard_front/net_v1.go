@@ -14,7 +14,7 @@ import (
     "encoding/json"
 
     //start: para dashboard
-//	"html/template"
+	"html/template"
 	"io/ioutil"
 //	"log"
 //	"net/http"
@@ -598,15 +598,44 @@ func serveJs05(w http.ResponseWriter, r *http.Request) {
 }
 
 func serveJs05dash01(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "css/real-time_dash01.js")
+
+    log.Print("cz  serveJs05dash01:"+ "css/real-time_dash01.js")
+//     http.ServeFile(w, r, "css/real-time_dash01.js")  //define in configuration.go
+
+
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash01.js"))
+tmpl.Execute(w, data)
+
+
 }
 
 func serveJs05dash02(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "css/real-time_dash02.js")
+    log.Print("cz  serveJs05dash01:"+ "css/real-time_dash02.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash02.js")  //define in configuration.go
+
+
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash02.js"))
+tmpl.Execute(w, data)
+
 }
 
 func serveJs05dash03(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "css/real-time_dash03.js")
+    log.Print("cz  serveJs05dash03:"+ "css/real-time_dash03.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash03.js")  //define in configuration.go
+
+    
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash03.js"))
+tmpl.Execute(w, data)
+
 }
 
 func ejemploHandler(w http.ResponseWriter, r *http.Request) {
@@ -626,11 +655,20 @@ log.Print("CZ   STEP ejemploHandler 01")
 */    
 }
 
+type TodoPageData struct {
+	PageTitle string
+}
 func dash01Handler(w http.ResponseWriter, r *http.Request) {
 
-    log.Print("cz  dash01Handler")
+    log.Print("cz  dash01Handler with param"+Config_env_url)
 
-    http.ServeFile(w,r,"dash01.html")
+//    http.ServeFile(w,r,"dash01.html")
+
+data := TodoPageData{
+			PageTitle: Config_env_server,
+}
+tmpl := template.Must(template.ParseFiles("dash01.html"))
+tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash01Handler 01")
     

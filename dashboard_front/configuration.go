@@ -26,7 +26,8 @@ var Config_DB_port int
 var Config_WS_crbanwire_pass string
 var Config_dbStringType string
 var Config_connString string
-
+var Config_env_server string
+var Config_env_url string
 
 /*    const (
         DB_USER     = "lerepagr"        
@@ -110,6 +111,24 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 				}
 				log.Print("UnmarshalJSON 2.06!")
 			}
+
+		case "envserver":
+			log.Print("UnmarshalJSON 2.04.2! envserver")
+			for _, n := range d.Nodes {
+							log.Print("UnmarshalJSON 2.05!")
+				if active, _ := n["active"].(bool); active {
+                    valenv,_:=n["envlevel"].(string)
+                    valurl,_:=n["envurl"].(string)
+                    
+                    log.Print("---- The value  was loaded"+valenv)
+
+                     Config_env_server = valenv
+                     Config_env_url = valurl
+                    log.Print("---- The env level value  was assigned es "+Config_env_server)
+				}
+				log.Print("UnmarshalJSON 2.06! envserver")
+			}
+
 		case "postgresql":
 			log.Print("UnmarshalJSON 04!")
 			for _, n := range d.Nodes {

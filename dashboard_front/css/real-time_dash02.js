@@ -258,7 +258,7 @@ activities.addEventListener("change", function() {
 	
 	
 	function updateUsersCategoryChart(dataIndex) {
-		for (var i = 0; i < data[dataIndex].categories.length; i++)
+		for (var i = 0; data[dataIndex].categories.length>= i  ; i++)
 			usersCategoryPieChart.options.data[0].dataPoints[i].y = data[dataIndex].categories[i].users;
 		
 		usersCategoryPieChart.render();
@@ -267,8 +267,8 @@ activities.addEventListener("change", function() {
 
 function updateUsersCategoryChartWithDB(dataIndex)
 {
-
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=22&dato01=99&dato02=88&dato03=77", function(data) {                  
+                    //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=22&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
@@ -359,10 +359,10 @@ function myFunction0202(item, index) {
 	function populateChart0201() {
 		
         console.log("populateChart0201 json banwire populateChart0201 "); 
-                
-//        $.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=100&type=json", function(data) {  
-//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getjsondatabanwire", function(data) {  
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=0&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {  
+
+//use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica01?reference=0&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {  
             
             $.each(data, function(key, value){
             
@@ -391,8 +391,8 @@ function myFunction0202(item, index) {
          //  if greater   then obtain the next
          //  if equal or less, then keep the current group og data, display the message: the most current data available, and the current Date, previousDate
 
-//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference=10&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {              
-        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getDash02Grafica01?reference="+previousGroupNumber+"&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {                  
+//use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica01?reference="+previousGroupNumber+"&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
@@ -458,21 +458,21 @@ function myFunction0201(item, index) {
 			chart.options.legend.verticalAlign = "center";
 			chart.options.legend.maxWidth = null;
 			
-		}else if ($(window).outerWidth() < 1920 && $(window).outerWidth() >= 1200) {
+		}else if (1920 >= $(window).outerWidth()   && $(window).outerWidth() >= 1200) {
 			
 			chart.options.legend.fontSize = 14;
 			chart.options.legend.horizontalAlign = "left";
 			chart.options.legend.verticalAlign = "center";
 			chart.options.legend.maxWidth = 140;
 			
-		} else if ($(window).outerWidth() < 1200 && $(window).outerWidth() >= 992) {
+		} else if (1200 >= $(window).outerWidth()  && $(window).outerWidth() >= 992) {
 			
 			chart.options.legend.fontSize = 12;
 			chart.options.legend.horizontalAlign = "center";
 			chart.options.legend.verticalAlign = "top";
 			chart.options.legend.maxWidth = null;
 			
-		} else if ($(window).outerWidth() < 992) {
+		} else if (992 >= $(window).outerWidth()  ) {
 			
 			chart.options.legend.fontSize = 14;
 			chart.options.legend.horizontalAlign = "center";
@@ -491,7 +491,7 @@ function myFunction0201(item, index) {
 	}
 	
 	function renderAllCharts() {
-		for (var i = 0; i < allCharts.length; i++)
+		for (var i = 0; allCharts.length>= i  ; i++)
 			allCharts[i].render();
 	}
 	
