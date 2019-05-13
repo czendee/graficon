@@ -28,6 +28,7 @@ var Config_dbStringType string
 var Config_connString string
 var Config_env_server string
 var Config_env_url string
+var Config_env_port string
 
 /*    const (
         DB_USER     = "lerepagr"        
@@ -42,7 +43,7 @@ var Config_env_url string
 
 func init() {
 	flag.StringVar(&RunMode, "mode", "api", "Service mode run (Options: api, batch)")
-	flag.StringVar(&HTTPListen, "http", ":8060", "Path where HTTP Server will listening")
+//to be set later	flag.StringVar(&HTTPListen, "http", ":8077", "Path where HTTP Server will listening")
 	flag.StringVar(&configFile, "config", "./conf/config.json", "Path of configuration file")
 //	flag.StringVar(&configFile, "config", "config.json", "Path of configuration file")
 
@@ -69,6 +70,9 @@ func LoadConfiguration() {
 		//log.Panicf("Error in opening the configuration file: %s", e)
 			log.Print("Error in opening the configuration file %s", e)
 	}
+
+    //reset the port
+    	flag.StringVar(&HTTPListen, "http", Config_env_port, "Path where HTTP Server will listening")
 }
 
 // config is the configuration structure object
@@ -119,12 +123,14 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 				if active, _ := n["active"].(bool); active {
                     valenv,_:=n["envlevel"].(string)
                     valurl,_:=n["envurl"].(string)
-                    
+                    valport,_:=n["envport"].(string)
                     log.Print("---- The value  was loaded"+valenv)
 
                      Config_env_server = valenv
                      Config_env_url = valurl
+                     Config_env_port = valport
                     log.Print("---- The env level value  was assigned es "+Config_env_server)
+                    log.Print("---- The env level port  was assigned es "+Config_env_port)
 				}
 				log.Print("UnmarshalJSON 2.06! envserver")
 			}
