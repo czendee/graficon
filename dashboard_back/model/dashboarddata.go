@@ -57,3 +57,42 @@ func (u *Datadash) getDatadash(db *sql.DB) error {
     return resultado, nil
 }
 
+ func BackDatadash0202sp(db *sql.DB) (string, error) {
+	log.Print("BackDatadash0202sp 01!\n")
+    var resultado string
+    resultado ="executed not OK"
+
+    statement := fmt.Sprintf("    SELECT incrementExample04(5,2,'22');")
+ 	log.Print("BackDatadash0202sp 02!\n")
+    rows, err := db.Query(statement)
+    log.Print("BackDatadash0202sp 02.1!\n")
+    if err != nil {
+        return resultado, err
+    }
+    log.Print("BackDatadash0202sp 02.5!\n")
+    defer rows.Close()
+
+    for rows.Next() {
+        resultado ="executed OK"
+    }
+
+/*    datadashs := []Datadash{}
+
+    for rows.Next() {
+        resultado ="executed OK"
+
+    	 log.Print("BackDatadash0202sp 03!\n")
+        var u Datadash
+        if err := rows.Scan(&u.ID, &u.Numsecuecialgrupoddatos, &u.Numsecuecial, &u.Nombrecolumna,&u.Createdat,&u.Valoramount, &u.Valorcolumna); err != nil {
+
+//        if err := rows.Scan(&u.Token, &u.Bin); err != nil {
+        	log.Print("BackDatadash0202sp err!\n"+err.Error())
+            return resultado, err
+        }
+    	 log.Print("BackDatadash0202sp 03.5!\n")
+        datadashs = append(datadashs, u)
+    }
+    */
+    log.Print("BackDatadash0202sp 04!\n")
+    return resultado, nil
+}

@@ -70,7 +70,10 @@ var errCards error
 						}else{
 					         log.Print("Ping ok!\n")
 					         
-					         resultDatadash,errCards =modelito.BackDatadash0201(db)
+//initial try,below the function with stored procedure
+///					         resultDatadash,errCards =modelito.BackDatadash0201(db)
+
+                             resultDatadash,errCards =modelito.BackDatadash0202sp(db)
 
 							if errCards != nil {
 							  log.Print("Error: :"+ errCards.Error())
