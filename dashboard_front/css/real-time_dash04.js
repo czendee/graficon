@@ -523,7 +523,7 @@ function myFunction0302(item, index) {
 
     function go_next2() {
         alert("next");
-        window.location.href = "/v1/dash07";  
+        window.location.href = "/v1/dash08";  
 
     }
 

@@ -851,15 +851,16 @@ function myFunction0201(item, index) {
 
     function go_next2() {
         alert("next");
-        window.location.href = "/v1/dash05";  
+        window.location.href = "/v1/dash03";  
+
     }
 
-
+	
 	(function init() {
 		customizeCharts();
-		$(window).resize(customizeCharts);uujj
+		$(window).resize(customizeCharts);
 
-		sdddetTimeout(updateChartsAtRandomIntervals, valueRotacionOriginal); //every 4 seconds
+		setTimeout(updateChartsAtRandomIntervals, valueRotacionOriginal); //every 4 seconds
 
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
 

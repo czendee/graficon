@@ -8,31 +8,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Banwire  &#8211;Indicadores en tiempo real</title>
+	<title>Banwire - &#8211; en tiempo real</title>
 
 	<!-- stylesheets -->
-<!--	<link href="/demo/dashboards/assets/fonts/font-roboto.css" rel="stylesheet">
-	<link href="/demo/dashboards/assets/bootstrap/bootstrap4-alpha3.min.css" rel="stylesheet">
-	<link href="/demo/dashboards/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/demo/dashboards/assets/web-analytics/style.css" rel="stylesheet">
--->
+
 <link href="/font-roboto.css" rel="stylesheet">
 	<link href="/bootstrap4-alpha3.min.css" rel="stylesheet">
 	<link href="/font-awesome.min.css" rel="stylesheet">
 	<link href="/style.css" rel="stylesheet">
 	<!-- scripts -->
-<!--	<script src="/demo/dashboards/assets/jquery/jquery-3.1.0.min.js"></script>
-	<script src="/demo/dashboards/assets/tether/tether.min.js"></script>
-	<script src="/demo/dashboards/assets/bootstrap/bootstrap4-alpha3.min.js"></script>
-	<script src="/assets/script/canvasjs.min.js"></script>
-	<script src="/demo/dashboards/assets/web-analytics/real-time.js"></script>
--->
+
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="/jquery-3.1.0.min.js"></script>
 	<script src="/tether.min.js"></script>
 	<script src="/bootstrap4-alpha3.min.js"></script>
 	<script src="/canvasjs.min.js"></script>
-	<script src="/real-time_dash03.js"></script>
+	<script src="/real-time_dash06.js"></script>
 </head>
 
 <body>
@@ -59,21 +50,21 @@
 					</a>
 
 				</div>
-                <div class="brand">
+				<div class="brand">
 					
                     <select id="id_of_select">
-                    <option value="1">30seg</option>
-                    <option value="2">45seg</option>
-                    <option value="3">60seg</option>
-                    <option value="4">90seg</option>
+                    <option value="30000">30seg</option>
+                    <option value="45000">45seg</option>
+                    <option value="60000">60seg</option>
+                    <option value="90000">90seg</option>
                     </select>
-<!--                    <button id="btn">Cambiar</button> -->
+<!--                    <button id="btn">Cambiar</button>  -->
 				</div>
 				<div class="ligtheno">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/v1/dash07">
+                    <a href="/v1/dash02">
 						<span class="ligtheno">Rotacion a proximo Dashboard</span><span class="ligtheno" >cada</span>
                     </a>
                     <select id="id_of_selectRotacion">
@@ -85,7 +76,6 @@
 <!--                    <button id="btn02">Cambiar</button>  -->
 				</div>                
                  <div id="display">hola</div>
-
 			</div>
 		</div>
 	</nav>
@@ -117,25 +107,24 @@
 		<div class="container-fluid">
 
 
-			<!-- 3rd row -->
+			<!-- 2nd row -->
 			<div class="row">
-				<!--<div class="col-md-12">   -->
-                   <div class="col-lg-4"> 
+				<div class="col-lg-6">
 					<div class="card card-block">
-						<h4 class="card-title">Pais/Region</h4>
-						<div id="users-state-bar-chart"></div>
+						<h4 class="card-title m-b-2">Pagos/Transacciones Por Minuto</h4>
+						<div id="page-views-per-minute-column-chart"></div>
 					</div>
 				</div>
-                <div class="col-lg-4">
+				<div class="col-lg-6">
 					<div class="card card-block">
-						<h4 class="card-title">Medio</h4>
-						<div id="users-medium-pie-chart"></div>
+						<h4 class="card-title">Categorias</h4>
+						<div id="users-category-pie-chart"></div>
 					</div>
 				</div>
-
 			</div>
 
-			<!-- /3rd row -->
+			<!-- /2nd row -->
+
 
 		</div>
 		<!-- /.container-fluid -->
@@ -145,11 +134,11 @@
 
 </body>
 
+
 <script>
 //"use strict";
 
 //https://canvasjs.com/license/
 </script>
-
 
 </html>

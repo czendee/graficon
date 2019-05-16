@@ -64,7 +64,12 @@ func init() {
 
     r.Handle("/v1/dash01", netHandle(dash01Handler, nil)).Methods("GET")     
     r.Handle("/v1/dash02", netHandle(dash02Handler, nil)).Methods("GET")     
-    r.Handle("/v1/dash03", netHandle(dash03Handler, nil)).Methods("GET")     
+    r.Handle("/v1/dash03", netHandle(dash03Handler, nil)).Methods("GET") 
+    r.Handle("/v1/dash04", netHandle(dash04Handler, nil)).Methods("GET")
+    r.Handle("/v1/dash05", netHandle(dash05Handler, nil)).Methods("GET") 
+    r.Handle("/v1/dash06", netHandle(dash06Handler, nil)).Methods("GET") 
+    r.Handle("/v1/dash07", netHandle(dash07Handler, nil)).Methods("GET") 
+    r.Handle("/v1/dash08", netHandle(dash08Handler, nil)).Methods("GET")     
     r.Handle("/v1/ejemplo", netHandle(ejemploHandler, nil)).Methods("GET")     
 
     r.Handle("/font-roboto.css", netHandle(serveCss01, nil)).Methods("GET")     
@@ -78,7 +83,12 @@ func init() {
     r.Handle("/real-time.js", netHandle(serveJs05, nil)).Methods("GET")     
     r.Handle("/real-time_dash01.js", netHandle(serveJs05dash01, nil)).Methods("GET")  
     r.Handle("/real-time_dash02.js", netHandle(serveJs05dash02, nil)).Methods("GET")  
-    r.Handle("/real-time_dash03.js", netHandle(serveJs05dash03, nil)).Methods("GET")  
+    r.Handle("/real-time_dash03.js", netHandle(serveJs05dash03, nil)).Methods("GET")
+    r.Handle("/real-time_dash04.js", netHandle(serveJs05dash04, nil)).Methods("GET")
+    r.Handle("/real-time_dash05.js", netHandle(serveJs05dash05, nil)).Methods("GET")
+    r.Handle("/real-time_dash06.js", netHandle(serveJs05dash06, nil)).Methods("GET")
+    r.Handle("/real-time_dash07.js", netHandle(serveJs05dash07, nil)).Methods("GET")
+    r.Handle("/real-time_dash08.js", netHandle(serveJs05dash08, nil)).Methods("GET")  
 
 
 
@@ -638,6 +648,71 @@ tmpl.Execute(w, data)
 
 }
 
+func serveJs05dash04(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash04:"+ "css/real-time_dash04.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash04.js")  //define in configuration.go
+
+    
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash04.js"))
+tmpl.Execute(w, data)
+
+}
+
+func serveJs05dash05(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash05:"+ "css/real-time_dash05.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash05.js")  //define in configuration.go
+
+    
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash05.js"))
+tmpl.Execute(w, data)
+
+}
+
+func serveJs05dash06(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash06:"+ "css/real-time_dash06.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash06.js")  //define in configuration.go
+
+    
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash06.js"))
+tmpl.Execute(w, data)
+
+}
+
+func serveJs05dash07(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash07:"+ "css/real-time_dash07.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash07.js")  //define in configuration.go
+
+    
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash07.js"))
+tmpl.Execute(w, data)
+
+}
+
+func serveJs05dash08(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash08:"+ "css/real-time_dash08.js")
+//    http.ServeFile(w, r, "css/"+Config_env_server+"real-time_dash08.js")  //define in configuration.go
+
+    
+data := TodoPageData{
+			PageTitle: Config_env_url,
+}
+tmpl := template.Must(template.ParseFiles("css/real-time_dash08.js"))
+tmpl.Execute(w, data)
+
+}
+
 func ejemploHandler(w http.ResponseWriter, r *http.Request) {
 
 log.Print("cz  ejemploHandler")
@@ -691,6 +766,56 @@ func dash03Handler(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w,r,"dash03.html")
 
     log.Print("CZ   STEP dash03Handler 01")
+    
+}
+
+func dash04Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash04Handler")
+
+    http.ServeFile(w,r,"dash04.html")
+
+    log.Print("CZ   STEP dash04Handler 01")
+    
+}
+
+func dash05Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash05Handler")
+
+    http.ServeFile(w,r,"dash05.html") 
+
+    log.Print("CZ   STEP dash05Handler 01")
+    
+}
+
+func dash06Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash06Handler")
+
+    http.ServeFile(w,r,"dash06.html")
+
+    log.Print("CZ   STEP dash06Handler 01")
+    
+}
+
+func dash07Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash07Handler")
+
+    http.ServeFile(w,r,"dash07.html")
+
+    log.Print("CZ   STEP dash07Handler 01")
+    
+}
+
+func dash08Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash08Handler")
+
+    http.ServeFile(w,r,"dash08.html")
+
+    log.Print("CZ   STEP dash08Handler 01")
     
 }
 
