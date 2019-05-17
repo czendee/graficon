@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  app:
+    image: golang:1.11-alpine
+    volumes:
+      - .:/go/src/banwire/dash/dashboard_back
+    working_dir: /go/src/banwire/dash/dashboard_back
+    command: go build -o bin_dashboard_back/dash_back-${ENV:-prod} 

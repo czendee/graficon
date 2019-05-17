@@ -10,7 +10,18 @@
 			]
 		},      
 		{
-			"type" : "postgresqlNOOO",
+			"type" : "envserver",
+			"nodes" : [
+				{
+					"active"   : true,
+                       "envlevel" : "test",
+                       "envurl" : "http://198.101.187.112:3000",
+                       "envport" : ":3000"
+				}
+			]
+		},   
+		{
+			"type" : "postgresql",
 			"nodes" : [
 				{
                    
@@ -42,7 +53,7 @@
 		}   
 ,      
 		{
-			"type" : "mysql",
+			"type" : "mysqlNoUserPass",
 			"nodes" : [
 				{
                    

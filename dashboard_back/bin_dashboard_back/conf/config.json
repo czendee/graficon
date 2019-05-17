@@ -23,7 +23,7 @@
 		}
 ,
 		{
-			"type" : "postgresqlNOOO",
+			"type" : "postgresql",
 			"nodes" : [
 				{
                    
@@ -55,7 +55,7 @@
 		}   
 ,      
 		{
-			"type" : "mysql",
+			"type" : "mysqlNouserPass",
 			"nodes" : [
 				{
                    
