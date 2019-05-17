@@ -753,7 +753,13 @@ func dash02Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash02Handler")
 
-    http.ServeFile(w,r,"dash02.html")
+    //http.ServeFile(w,r,"dash02.html")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash02.html"))
+    tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash02Handler 01")
     
@@ -763,7 +769,13 @@ func dash03Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash03Handler")
 
-    http.ServeFile(w,r,"dash03.html")
+    //http.ServeFile(w,r,"dash03.html")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash03.html"))
+    tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash03Handler 01")
     
@@ -773,7 +785,13 @@ func dash04Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash04Handler")
 
-    http.ServeFile(w,r,"dash04.html")
+    //http.ServeFile(w,r,"dash04.html")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash04.html"))
+    tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash04Handler 01")
     
@@ -783,7 +801,13 @@ func dash05Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash05Handler")
 
-    http.ServeFile(w,r,"dash05.html") 
+    //http.ServeFile(w,r,"dash05.html") 
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash05.html"))
+    tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash05Handler 01")
     
@@ -793,7 +817,13 @@ func dash06Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash06Handler")
 
-    http.ServeFile(w,r,"dash06.html")
+    //http.ServeFile(w,r,"dash06.html")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash06.html"))
+    tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash06Handler 01")
     
@@ -803,7 +833,14 @@ func dash07Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash07Handler")
 
-    http.ServeFile(w,r,"dash07.html")
+//    http.ServeFile(w,r,"dash07.html")
+
+
+data := TodoPageData{
+			PageTitle: Config_env_server,
+}
+tmpl := template.Must(template.ParseFiles("dash07.html"))
+tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash07Handler 01")
     
@@ -813,7 +850,13 @@ func dash08Handler(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  dash08Handler")
 
-    http.ServeFile(w,r,"dash08.html")
+    //http.ServeFile(w,r,"dash08.html")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash08.html"))
+    tmpl.Execute(w, data)
 
     log.Print("CZ   STEP dash08Handler 01")
     

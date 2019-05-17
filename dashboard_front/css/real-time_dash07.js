@@ -464,7 +464,7 @@ $(function () {
    {
                  //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
 
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0101+"&reference2=11&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0101+"&reference2=71&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
@@ -526,7 +526,7 @@ function myFunction0101(item, index) {
     function updateUsersMediumPieChartWithDB()
    {
 //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0102+"&reference2=12&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0102+"&reference2=72&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
@@ -587,7 +587,7 @@ function myFunction0102(item, index) {
     function updateUsersCategoryChartWithDB()
    {
 //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0103+"&reference2=13&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0103+"&reference2=73&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found

@@ -268,7 +268,7 @@ activities.addEventListener("change", function() {
 function updateUsersCategoryChartWithDB(dataIndex)
 {
                     //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=22&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=62&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
@@ -362,7 +362,7 @@ function myFunction0202(item, index) {
 
 //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
 
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference=0&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference=0&reference2=61&dato01=99&dato02=88&dato03=77", function(data) {  
             
             $.each(data, function(key, value){
             
@@ -392,7 +392,7 @@ function myFunction0202(item, index) {
          //  if equal or less, then keep the current group og data, display the message: the most current data available, and the current Date, previousDate
 
 //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber+"&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber+"&reference2=61&dato01=99&dato02=88&dato03=77", function(data) {                  
             var linea=0;
 
              var exito="0";//error/not found
