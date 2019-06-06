@@ -18,6 +18,7 @@ var configFile string
 
 var RunMode string
 
+//configuration for the dest/dash DB 
 var Config_DB_pass string
 var Config_DB_user string
 var Config_DB_name string
@@ -30,6 +31,15 @@ var Config_connString string
 var Config_task_1periocity int
 var Config_task_2periocity int
 var Config_task_timeframe int
+
+//configuration for the source DB 
+var Config_DB_origin_pass string
+var Config_DB_origin_user string
+var Config_DB_origin_name string
+var Config_DB_origin_server string
+var Config_DB_origin_port int
+var Config_dbStringType_origin string
+var Config_connString_origin string
 
 /*    const (
         DB_USER     = "lerepagr"        
@@ -134,6 +144,44 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 							log.Print("UnmarshalJSON 06!")
 			}
 
+		case "sourcedatadb":
+			log.Print("UnmarshalJSON 04!")
+			for _, n := range d.Nodes {
+							log.Print("UnmarshalJSON 05!")
+				if active, _ := n["active"].(bool); active {
+					host, _ := n["host"].(string)
+					port, _ := n["port"].(float64)
+					_db, _ := n["db"].(string)
+					user, _ := n["user"].(string)
+					pass, _ := n["password"].(string)
+                    typedb, _ := n["type"].(string)
+                    
+                    
+
+                    Config_DB_origin_pass =pass
+                    Config_DB_origin_user =user
+                    Config_DB_origin_name =_db
+                    Config_DB_origin_server =host
+                    Config_DB_origin_port =int(port)            
+                    
+                    Config_dbStringType_origin=typedb   
+                    Config_connString_origin = fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
+						Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
+				
+
+                    log.Print("---- The DB values  was assigned "+Config_DB_origin_server)                    
+                    log.Print("---- The DB values  was assigned "+Config_DB_origin_user)
+                    log.Print("---- The DB values  was assigned "+Config_DB_origin_pass)
+                    log.Print("---- The DB values  was assigned "+Config_DB_origin_name)
+					if e := db.Connection.Set(db.NewPgDb(host, int(port), _db, user, pass)); e == nil {
+						log.Print("---- The postgresql database was loaded"+host)
+						log.Print("---- The postgresql database was loaded"+_db)
+					} else {
+						return e
+					}
+				}
+							log.Print("UnmarshalJSON 06!")
+			}
 		case "postgresql":
 			log.Print("UnmarshalJSON 04!")
 			for _, n := range d.Nodes {
@@ -171,6 +219,7 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 				}
 							log.Print("UnmarshalJSON 06!")
 			}
+
 		case "mysql":
 			log.Print("UnmarshalJSON 04! mysql")
 			for _, n := range d.Nodes {

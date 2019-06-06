@@ -23,7 +23,25 @@
 		}
 ,
 		{
-			"type" : "postgresqlNOOO",
+			"type" : "sourcedatadb",
+			"nodes" : [
+				{
+                   
+					"active"   : true,
+                    "host" 	   : "stampy.db.elephantsql.com",
+					"port" 	   : 5432,
+					"db" 	   : "lerepagr",
+					"user" 	   : "lerepagr",
+					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma",
+                    "type"     : "postgres"
+
+				}
+			]
+		}
+,      
+
+		{
+			"type" : "postgresql",
 			"nodes" : [
 				{
                    
@@ -55,7 +73,7 @@
 		}   
 ,      
 		{
-			"type" : "mysql",
+			"type" : "mysqlNOUserPass",
 			"nodes" : [
 				{
                    
