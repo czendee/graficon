@@ -57,7 +57,7 @@ var errCards error
 						}else{
 					         log.Print("Ping ok!\n")
 					         
-					         resultDatadash,errCards =modelito.BackMysqlDatadash0201(db)
+					         resultDatadash,errCards =modelito.BackMysqlDatadash0201(db,Config_comandosqlorigen_origin) //defined in the config.json and set in the configuration.go
 
 							if errCards != nil {
 							  log.Print("Error: :"+ errCards.Error())
@@ -118,7 +118,7 @@ var errCards error
 						}else{
 					         log.Print("Ping ok!\n")
 					         
-					         resultDatadash,errCards =modelito.BackMysqlInsertDatadash0201(db)
+					         resultDatadash,errCards =modelito.BackMysqlInsertDatadash0201(db,graphnbr,valoresToInsert)
 
 							if errCards != nil {
 							  log.Print("Error: :"+ errCards.Error())

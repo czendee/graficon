@@ -22,13 +22,13 @@ func (u *Datadash) getDatadash(db *sql.DB) error {
 }
 
 
- func BackDatadash0201(db *sql.DB) ([]Datadash, error) {
+ func BackDatadash0201(db *sql.DB, comandosqlorigen_origin string) ([]Datadash, error) {
 	log.Print("BackDatadash0201 01!\n")
     var resultado string
     resultado ="executed not OK"
     datadashs := []Datadash{}
 
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01  order by Numsecuecial;")
+    statement := fmt.Sprintf(comandosqlorigen_origin)  //defined in the config.json and set in the configuration.go
  	log.Print("BackDatadash0201 02!\n")
     rows, err := db.Query(statement)
     log.Print("BackDatadash0201 02.1!\n")
@@ -62,43 +62,48 @@ func BackInsertDatadash0201(db *sql.DB,graphnbr string, valoresToInsert []Datada
 	log.Print("BackInsertDatadash0201 01!\n")
     var resultado string
     resultado ="executed not OK"
-    datadashs := []Datadash{}
- //for each
-//{
-/*	    statement := fmt.Sprintf("INSERT INTO banwirepayment( token, created_at, amount) VALUES('%s',current_timestamp,'%s')",  u.Token, u.Amount)
+    
+    secuencia :=0
+    for _, d := range valoresToInsert {
+        secuencia =secuencia +1
+        statement := fmt.Sprintf("insert into banwiredash02graph02 (numsecuecial_grupoddatos,"+
+         "numsecuecial, "+
+         "nombrecolumna, "+
+         "created_at,  "+
+         "valorcolumna, "+
+         " valoramount, "+
+           "graphnbr)   "+
+        "VALUES(    "+
+            " (select max(numsecuecial_grupoddatos)+1  from banwiredash02graph01 p where p.graphnbr ='%s'),     "+
+            " %s,     "+
+             " '%s',     "+
+             " current_timestamp,    "+
+             " '%s',    "+
+              " %s)",  
+              graphnbr,
+              secuencia,
+              d.Nombrecolumna,
+              d.Valorcolumna,
+              d.Valoramount   )
+
 	    _, err := db.Exec(statement)
-     	log.Print("exec ejecutado")
+     	log.Print("exec ejecutado row:"+d.Nombrecolumna)
 	    if err != nil {
      	   log.Print("exec ejecutado:error "+err.Error())
-	        return err
+	        return resultado,err
 	    }
-*/
-//}
+        
 
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01  order by Numsecuecial;")
- 	log.Print("BackInsertDatadash0201 02!\n")
-    rows, err := db.Query(statement)
-    log.Print("BackInsertDatadash0201 02.1!\n")
-    if err != nil {
-        return resultado, err
-    }
-    log.Print("BackInsertDatadash0201 02.5!\n")
-    defer rows.Close()
-    
+    }//end for each
 
-    
-    for rows.Next() {
+    if(secuencia>0){
         resultado ="executed OK"
-
-    	 log.Print("BackInsertDatadash0201 03!\n")
-        var u Datadash
-        if err := rows.Scan(&u.ID, &u.Numsecuecialgrupoddatos, &u.Numsecuecial, &u.Nombrecolumna,&u.Createdat,&u.Valoramount, &u.Valorcolumna); err != nil {
-        	log.Print("InsertDatadash0201 err!\n"+err.Error())
-            return resultado, err
-        }
-    	 log.Print("InsertDatadash0201 03.5!\n")
-        datadashs = append(datadashs, u)
+    }else{
+        resultado ="executed not OK"
     }
+    
+
+ 	log.Print("BackInsertDatadash0201 02!\n")
     log.Print("InsertDatadash0201 04!\n"+resultado)
     return resultado, nil
 }

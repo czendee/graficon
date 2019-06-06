@@ -59,7 +59,7 @@ var errCards error
 					         log.Print("Ping ok!\n")
 					         
 
-					         resultDatadash,errCards =modelito.BackDatadash0201(db)
+					         resultDatadash,errCards =modelito.BackDatadash0201(db,Config_comandosqlorigen_origin)  //defined in the config.json and set in the configuration.go
 
 //may 16
 //,below the function with stored procedure

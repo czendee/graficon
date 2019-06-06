@@ -40,6 +40,7 @@ var Config_DB_origin_server string
 var Config_DB_origin_port int
 var Config_dbStringType_origin string
 var Config_connString_origin string
+var Config_comandosqlorigen_origin string
 
 /*    const (
         DB_USER     = "lerepagr"        
@@ -156,6 +157,8 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 					pass, _ := n["password"].(string)
                     typedb, _ := n["type"].(string)
                     
+                    commandSql, _ := n["comandosqlorigen"].(string)
+
                     
 
                     Config_DB_origin_pass =pass
@@ -168,6 +171,7 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     Config_connString_origin = fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
 						Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
 				
+                    Config_comandosqlorigen_origin = commandSql
 
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_server)                    
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_user)

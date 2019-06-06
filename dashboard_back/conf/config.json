@@ -34,6 +34,7 @@
 					"user" 	   : "lerepagr",
 					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma",
                     "type"     : "postgres"
+                    comandosqlorigen     : "SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01  order by Numsecuecial;"
 
 				}
 			]
