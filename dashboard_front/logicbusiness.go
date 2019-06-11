@@ -408,7 +408,7 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
 	if errorGeneral==""{//continue next step
 
         log.Print("CZ   STEP Consume DB")
-        if(Config_dbStringType=="mysql"){//mysql
+        if(Config_dbStringType=="mysql"){//mysql            
             existMoreRecent,errorGeneral =logicDBMysqlCheckMoreRecent0202(requestData, errorGeneral)  //in logicdbmysql.go
         }else{//postgres
                 existMoreRecent,errorGeneral =logicDBCheckMoreRecent0202(requestData, errorGeneral)  //in logicdb.go            
@@ -433,9 +433,37 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
 
                    log.Print("v1ProcessDash02Grafica02 grop found"+requestData.Dash0202reference)
                    if(Config_dbStringType=="mysql"){//mysql
-                        valoresParaResponder,errorGeneral =logicDBMysqlProcessDash02Grafica02(requestData, errorGeneral)  //in logicdbmysql.go
+                        if(requestData.Dash0202Dato01 == "99"){
+                            valoresParaResponder,errorGeneral =logicDBMysqlProcessDash02Grafica02(requestData, errorGeneral)  //in logicdbmysql.go
+                        }else{
+                             if(requestData.Dash0202Dato01 == "24"){
+                                    valoresParaResponder,errorGeneral =logicDBMysqlProcessDash02Grafica02(requestData, errorGeneral)  //in logicdbmysql.go
+                              }else{
+                                   if(requestData.Dash0202Dato01 == "48"){
+                                        valoresParaResponder,errorGeneral =logicDBMysqlProcessDash02Grafica02(requestData, errorGeneral)  //in logicdbmysql.go
+                                   }else{
+                                       //error
+                                   }//end 48
+                              }//end 24
+                        }//end 99
+                        
                    }else{//postgres
-                         valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02(requestData, errorGeneral)  //in logicdb.go            
+
+                        if(requestData.Dash0202Dato01 == "99"){
+                            valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02(requestData, errorGeneral)  //in logicdb.go            
+                        }else{
+                             if(requestData.Dash0202Dato01 == "24"){
+                                    valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02hours24(requestData, errorGeneral)  //in logicdb.go            
+                              }else{
+                                   if(requestData.Dash0202Dato01 == "48"){
+                                        valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02hours48(requestData, errorGeneral)  //in logicdb.go            
+                                   }else{
+                                       //error
+                                   }//end 48
+                              }//end 24
+                        }//end 99
+
+
                    }
          
 

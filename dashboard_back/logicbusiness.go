@@ -25,7 +25,7 @@ func v1ProcessDashBack01Grafica01(graphnbr string) (string,string){
        	    	log.Print("CZ   STEP Consume DB")
 
                    if(Config_dbStringType_origin=="mysql"){//mysql
-                        dataObtainedFromSource,errorGeneral =logicDBMysqlProcessDashBackGetDataFor01Grafica01(errorGeneral)  //in logicdbmysql.go
+                        dataObtainedFromSource,errorGeneral =logicDBMysqlProcessDashBackGetDataFor01Grafica01(errorGeneral,graphnbr )  //in logicdbmysql.go
                    }else{//postgres
                          dataObtainedFromSource,errorGeneral =logicDBProcessDashBackGetDataFor01Grafica01( errorGeneral,graphnbr)  //in logicdb.go postgres           
                    }        

@@ -29,7 +29,37 @@ func dashBack01Grafica01() {
 
     var valoresParaResponder  string
     fmt.Println("doing job :dashBack01Grafica01")
-    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01()   // in logicbusiness.go
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("31")   // in logicbusiness.go
+
+    if errorGeneral==""{//continue next step
+        fmt.Println("respuesta job :"+valoresParaResponder)
+    }else{
+        fmt.Println("error respuesta job :"+errorGeneral)
+    }
+    
+}
+
+func dashBack01Grafica02() {
+    var errorGeneral string
+
+    var valoresParaResponder  string
+    fmt.Println("doing job :dashBack01Grafica01")
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("71")   // in logicbusiness.go
+
+    if errorGeneral==""{//continue next step
+        fmt.Println("respuesta job :"+valoresParaResponder)
+    }else{
+        fmt.Println("error respuesta job :"+errorGeneral)
+    }
+    
+}
+
+func dashBack01Grafica03() {
+    var errorGeneral string
+
+    var valoresParaResponder  string
+    fmt.Println("doing job :dashBack01Grafica01")
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("32")   // in logicbusiness.go
 
     if errorGeneral==""{//continue next step
         fmt.Println("respuesta job :"+valoresParaResponder)
@@ -40,6 +70,20 @@ func dashBack01Grafica01() {
 }
 
 
+func dashBack01Grafica04() {
+    var errorGeneral string
+
+    var valoresParaResponder  string
+    fmt.Println("doing job :dashBack01Grafica01")
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("41")   // in logicbusiness.go
+
+    if errorGeneral==""{//continue next step
+        fmt.Println("respuesta job :"+valoresParaResponder)
+    }else{
+        fmt.Println("error respuesta job :"+errorGeneral)
+    }
+    
+}
 
 
 
@@ -58,14 +102,18 @@ fmt.Println("main ticker  03")
           for t:=range ticker.C{
               fmt.Println("main ticker  05:",t)
                dashBack01Grafica01()
+              fmt.Println("main ticker  06:",t)               
+               dashBack01Grafica02()
+//               dashBack01Grafica03()
+//               dashBack01Grafica04()
           }
     }()
 
     
     time.Sleep(time.Duration(Config_task_timeframe) * time.Second)
-    fmt.Println("main ticker  06")
+    fmt.Println("main ticker  07")
  //to quit the goroutine
     ticker.Stop()    
     
-    fmt.Println("main ticker  07")
+    fmt.Println("main ticker  08")
 }

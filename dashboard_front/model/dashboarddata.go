@@ -148,3 +148,62 @@ func GetDatadash0202(db *sql.DB, reference string,reference02 string,dato01 stri
     log.Print("GetDatadash0202 04!\n")
     return datadashs, nil
 }
+
+
+func GetDatadash0202hours24(db *sql.DB, reference string,reference02 string,dato01 string,dato02 string,dato03 string) ([]Datadash, error) {
+	log.Print("GetDatadash0202hours24 01!\n")
+
+    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  graphnbr = '%s' and created_At > current_date-1 order by Numsecuecial;", reference02)
+ 	log.Print("GetDatadash0202hours24 02!\n")
+    rows, err := db.Query(statement)
+    log.Print("GetDatadash0202hours24 02.1!\n")
+    if err != nil {
+        return nil, err
+    }
+    log.Print("GetDatadash0202hours24 02.5!\n")
+    defer rows.Close()
+    datadashs := []Datadash{}
+    for rows.Next() {
+    	 log.Print("GetDatadash0202hours24 03!\n")
+        var u Datadash
+        if err := rows.Scan(&u.ID, &u.Numsecuecialgrupoddatos, &u.Numsecuecial, &u.Nombrecolumna,&u.Createdat,&u.Valoramount, &u.Valorcolumna); err != nil {
+
+//        if err := rows.Scan(&u.Token, &u.Bin); err != nil {
+        	log.Print("GetDatadash0202 err!\n"+err.Error())
+            return nil, err
+        }
+    	 log.Print("GetDatadash0202hours24 03.5!\n")
+        datadashs = append(datadashs, u)
+    }
+    log.Print("GetDatadash0202hours24 04!\n")
+    return datadashs, nil
+}
+
+func GetDatadash0202hours48(db *sql.DB, reference string,reference02 string,dato01 string,dato02 string,dato03 string) ([]Datadash, error) {
+	log.Print("GetDatadash0202hours48 01!\n")
+
+    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  graphnbr = '%s' and created_At > current_date-2 order by Numsecuecial;", reference02)
+ 	log.Print("GetDatadash0202hours48 02!\n")
+    rows, err := db.Query(statement)
+    log.Print("GetDatadash0202hours48 02.1!\n")
+    if err != nil {
+        return nil, err
+    }
+    log.Print("GetDatadash0202hours48 02.5!\n")
+    defer rows.Close()
+    datadashs := []Datadash{}
+    for rows.Next() {
+    	 log.Print("GetDatadash0202hours48 03!\n")
+        var u Datadash
+        if err := rows.Scan(&u.ID, &u.Numsecuecialgrupoddatos, &u.Numsecuecial, &u.Nombrecolumna,&u.Createdat,&u.Valoramount, &u.Valorcolumna); err != nil {
+
+//        if err := rows.Scan(&u.Token, &u.Bin); err != nil {
+        	log.Print("GetDatadash0202hours48 err!\n"+err.Error())
+            return nil, err
+        }
+    	 log.Print("GetDatadash0202hours48 03.5!\n")
+        datadashs = append(datadashs, u)
+    }
+    log.Print("GetDatadash0202hours48 04!\n")
+    return datadashs, nil
+}

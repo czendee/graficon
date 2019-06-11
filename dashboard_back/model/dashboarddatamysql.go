@@ -4,6 +4,7 @@ import (
 //    "errors"
 	"fmt"
 	"log"
+
 //	miu "banwire/dash/dashboard_back/util"
 	
 )
@@ -47,9 +48,8 @@ func BackMysqlDatadash0201(db *sql.DB,comandosqlorigen_origin string) ([]Datadas
 
     	 log.Print("BackDatadash0201 03!\n")
         var u Datadash
-        if err := rows.Scan(&u.ID, &u.Numsecuecialgrupoddatos, &u.Numsecuecial, &u.Nombrecolumna,&u.Createdat,&u.Valoramount, &u.Valorcolumna); err != nil {
-
-//        if err := rows.Scan(&u.Token, &u.Bin); err != nil {
+//        if err := rows.Scan(&u.ID, &u.Numsecuecialgrupoddatos, &u.Numsecuecial, &u.Nombrecolumna,&u.Createdat,&u.Valoramount, &u.Valorcolumna); err != nil {
+        if err := rows.Scan(&u.Nombrecolumna,&u.Valoramount); err != nil {
         	log.Print("GetDatadash0201 err!\n"+err.Error())
             return datadashs, err
         }
@@ -71,6 +71,10 @@ func BackMysqlInsertDatadash0201(db *sql.DB,graphnbr string, valoresToInsert []D
     secuencia :=0
     for _, d := range valoresToInsert {
         secuencia =secuencia +1
+
+        d.Valorcolumna =  d.Valoramount
+
+
         statement := fmt.Sprintf("insert into banwiredash02graph02 (numsecuecial_grupoddatos, "+
          "numsecuecial,  "+
          "nombrecolumna, "+
@@ -79,7 +83,7 @@ func BackMysqlInsertDatadash0201(db *sql.DB,graphnbr string, valoresToInsert []D
           "valoramount,   "+
            "graphnbr)     "+
         "VALUES(          "+
-        "    (select max(numsecuecial_grupoddatos)+1  from banwiredash02graph01 p where p.graphnbr ='%s'),    "+
+        "    (select max(numsecuecial_grupoddatos)+1  from banwiredash02graph02 p where p.graphnbr ='%s'),    "+
         "     %s,          "+
         "    '%s',       "+
          "    current_timestamp,   "+

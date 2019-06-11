@@ -37,7 +37,8 @@ var errCards error
 
                      }
 //this use the values set up in the configuration.go
-                  log.Print("Usando para conectar : " + Config_dbStringType)
+                  log.Print("Usando para conectar : " + Config_dbStringType_origin)
+                  log.Print("Usando para conectar origin : " + Config_connString_origin)
 					db, errdb = sql.Open(Config_dbStringType_origin, Config_connString_origin)
                     
 
@@ -57,9 +58,23 @@ var errCards error
 							  errorGeneral=errPing.Error()
 						}else{
 					         log.Print("Ping ok!\n")
-					         
+                                    var cualConfig_comandosqlorigen_origin string
 
-					         resultDatadash,errCards =modelito.BackDatadash0201(db,Config_comandosqlorigen_origin)  //defined in the config.json and set in the configuration.go
+					         		switch graphnbr {
+                            		case "31":
+                                        cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash03
+                                    case "32":
+                                        cualConfig_comandosqlorigen_origin =Config_comandosqlorigen_origindash03                                    
+                                    case "33":
+                                        cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash03
+                                    case "71":
+                                         cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+                                    case "72":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+                                    case "73":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+                                     }
+					         resultDatadash,errCards =modelito.BackDatadash0201(db,cualConfig_comandosqlorigen_origin)  //defined in the config.json and set in the configuration.go
 
 //may 16
 //,below the function with stored procedure
@@ -120,9 +135,12 @@ var errCards error
 							  errorGeneral=errPing.Error()
 						}else{
 					         log.Print("Ping ok!\n")
-					         
 
-					         resultDatadash,errCards =modelito.BackInsertDatadash0201(db,graphnbr,valoresToInsert)
+                             //get the Next group number
+                            proxGroupNbr :=modelito.BackNextGroupNumber(db,graphnbr) 
+	
+
+					         resultDatadash,errCards =modelito.BackInsertDatadash0201(db,graphnbr,valoresToInsert,proxGroupNbr)
 
 
 							if errCards != nil {

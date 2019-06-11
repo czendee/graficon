@@ -8,15 +8,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Banwire  &#8211; Pagos en tiempo real</title>
+	<title>Banwire  &#8211;Indicadores en tiempo real</title>
 
 	<!-- stylesheets -->
+<!--	<link href="/demo/dashboards/assets/fonts/font-roboto.css" rel="stylesheet">
+	<link href="/demo/dashboards/assets/bootstrap/bootstrap4-alpha3.min.css" rel="stylesheet">
+	<link href="/demo/dashboards/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/demo/dashboards/assets/web-analytics/style.css" rel="stylesheet">
+-->
 <link href="/font-roboto.css" rel="stylesheet">
 	<link href="/bootstrap4-alpha3.min.css" rel="stylesheet">
 	<link href="/font-awesome.min.css" rel="stylesheet">
 	<link href="/style.css" rel="stylesheet">
 	<!-- scripts -->
-
+<!--	<script src="/demo/dashboards/assets/jquery/jquery-3.1.0.min.js"></script>
+	<script src="/demo/dashboards/assets/tether/tether.min.js"></script>
+	<script src="/demo/dashboards/assets/bootstrap/bootstrap4-alpha3.min.js"></script>
+	<script src="/assets/script/canvasjs.min.js"></script>
+	<script src="/demo/dashboards/assets/web-analytics/real-time.js"></script>
+-->
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="/jquery-3.1.0.min.js"></script>
 	<script src="/tether.min.js"></script>
@@ -24,6 +34,7 @@
 	<script src="/canvasjs.min.js"></script>
 	<script src="/real-time_dash07.js"></script>
 </head>
+
 <body>
 	<!-- header -->
 	<nav class="navbar navbar-fixed-top" id="header">
@@ -39,11 +50,12 @@
 
 				</div>
 
-				<div class="ligtheno">                    
-                    
+				<div class="ligtheno">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/samples/dashboards/web-analytics-real-time/">
-						<span class="ligtheno">Informacion en tiempo real, cada:</span>
+						<span class="ligtheno">Tiempo real, cada</span>
 					</a>
 
 				</div>
@@ -62,7 +74,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="/v1/dash03">
-						<span class="ligtheno">Rotacion a proximo Dashboard</span><span class="ligtheno" >cada</span>
+						<span class="ligtheno">Proximo Dashboard</span><span class="ligtheno" >cada</span>
                     </a>
                     <select id="id_of_selectRotacion">
                     <option value="1">5min</option>
@@ -73,6 +85,7 @@
 <!--                    <button id="btn02">Cambiar</button>  -->
 				</div>                
                  <div id="display">hola</div>
+
 			</div>
 		</div>
 	</nav>
@@ -103,29 +116,46 @@
 	<div class="page-content-toggle" id="page-content-wrapper">
 		<div class="container-fluid">
 
-			<!-- 1st row -->
-			<div class="row m-b-2">
-				<div class="col-lg-4">
+
+			<!-- 3rd row -->
+			<div class="row">
+				<!--<div class="col-md-12">   -->
+                   <div class="col-lg-4"> 
 					<div class="card card-block">
-						<h4 class="card-title">Usuarios Activos</h4>
-						<div id="users-device-doughnut-chart"></div>
+						<h4 class="card-title">Denegados/Ultima Hora</h4>
+						<div id="users-state-bar-chart"></div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+                   <div class="col-lg-4"> 
+					<div class="card card-block">
+						<h4 class="card-title">Denegados/24hrs</h4>
+						<div id="u24-state-bar-chart"></div>
+					</div>
+                  </div>
+                <div class="col-lg-4">
+					<div class="card card-block">
+						<h4 class="card-title">Denegados/48hrs</h4>
+						<div id="u48-state-bar-chart"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /3rd row -->
+
+			<!-- 3rd row -->
+			<div class="row">
+				<!--<div class="col-md-12">   -->
+
+                <div class="col-lg-4">
 					<div class="card card-block">
 						<h4 class="card-title">Medio</h4>
 						<div id="users-medium-pie-chart"></div>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<div class="card card-block">
-						<h4 class="card-title">Categorias</h4>
-						<div id="users-category-pie-chart"></div>
-					</div>
-				</div>
-			</div>
-			<!-- /1st row -->
 
+			</div>
+
+			<!-- /3rd row -->
 
 		</div>
 		<!-- /.container-fluid -->
@@ -134,6 +164,7 @@
 	<!-- /page-content-wrapper -->
 
 </body>
+
 <script>
 //"use strict";
 

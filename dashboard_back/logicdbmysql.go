@@ -19,7 +19,7 @@ import (
 ////////////////////////////////////////////////////////7
 //Dash 01 Graficas
 
-func logicDBMysqlProcessDashBackGetDataFor01Grafica01( errorGeneral string) ([]modelito.Datadash,string) {
+func logicDBMysqlProcessDashBackGetDataFor01Grafica01( errorGeneral string,graphnbr string) ([]modelito.Datadash,string) {
 	////////////////////////////////////////////////obtain parms in JSON
    //START    
 var resultDatadash []modelito.Datadash
@@ -56,8 +56,23 @@ var errCards error
 							  errorGeneral=errPing.Error()
 						}else{
 					         log.Print("Ping ok!\n")
-					         
-					         resultDatadash,errCards =modelito.BackMysqlDatadash0201(db,Config_comandosqlorigen_origin) //defined in the config.json and set in the configuration.go
+                                    var cualConfig_comandosqlorigen_origin string
+
+					         		switch graphnbr {
+                            		case "31":
+                                        cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash03
+                                    case "33":
+                                        cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash03                                    
+                                    case "32":
+                                        cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash03
+                                    case "71":
+                                         cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+                                    case "72":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+                                    case "73":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+                                     }					         
+					         resultDatadash,errCards =modelito.BackMysqlDatadash0201(db,cualConfig_comandosqlorigen_origin) //defined in the config.json and set in the configuration.go
 
 							if errCards != nil {
 							  log.Print("Error: :"+ errCards.Error())

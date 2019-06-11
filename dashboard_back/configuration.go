@@ -40,7 +40,15 @@ var Config_DB_origin_server string
 var Config_DB_origin_port int
 var Config_dbStringType_origin string
 var Config_connString_origin string
-var Config_comandosqlorigen_origin string
+var Config_comandosqlorigen_origindash01 string
+var Config_comandosqlorigen_origindash02 string
+
+var Config_comandosqlorigen_origindash03 string
+var Config_comandosqlorigen_origindash04 string
+var Config_comandosqlorigen_origindash05 string
+var Config_comandosqlorigen_origindash06 string
+var Config_comandosqlorigen_origindash07 string
+var Config_comandosqlorigen_origindash08 string
 
 /*    const (
         DB_USER     = "lerepagr"        
@@ -157,7 +165,14 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 					pass, _ := n["password"].(string)
                     typedb, _ := n["type"].(string)
                     
-                    commandSql, _ := n["comandosqlorigen"].(string)
+                    commandSqldash01, _ := n["comandosqlorigendash01"].(string)
+                    commandSqldash02, _ := n["comandosqlorigendash02"].(string)
+                    commandSqldash03, _ := n["comandosqlorigendash03"].(string)
+                    commandSqldash04, _ := n["comandosqlorigendash04"].(string)
+                    commandSqldash05, _ := n["comandosqlorigendash05"].(string)
+                    commandSqldash06, _ := n["comandosqlorigendash06"].(string)
+                    commandSqldash07, _ := n["comandosqlorigendash07"].(string)
+                    commandSqldash08, _ := n["comandosqlorigendash08"].(string)
 
                     
 
@@ -169,9 +184,16 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     
                     Config_dbStringType_origin=typedb   
                     Config_connString_origin = fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
-						Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
+						Config_DB_origin_server,Config_DB_origin_name, Config_DB_origin_user, Config_DB_origin_pass, Config_DB_origin_port)
 				
-                    Config_comandosqlorigen_origin = commandSql
+                    Config_comandosqlorigen_origindash01 = commandSqldash01
+                    Config_comandosqlorigen_origindash02 = commandSqldash02
+                    Config_comandosqlorigen_origindash03 = commandSqldash03
+                    Config_comandosqlorigen_origindash04 = commandSqldash04
+                    Config_comandosqlorigen_origindash05 = commandSqldash05
+                    Config_comandosqlorigen_origindash06 = commandSqldash06
+                    Config_comandosqlorigen_origindash07 = commandSqldash07
+                    Config_comandosqlorigen_origindash08 = commandSqldash08
 
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_server)                    
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_user)
