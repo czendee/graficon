@@ -14,14 +14,40 @@
 			"nodes" : [
 				{
                    "active"   : true,
-					"task1periocity" 	   : 3,
-                    "task2periocity" 	   : 1,
-                    "timeframe" 	   : 20
+					"task1periocity" 	   : 60,
+                    "task2periocity" 	   : 50,
+                    "timeframe" 	   : 600
 
 				}
 			]
 		}
 ,
+		{
+			"type" : "sourcedatadb",
+			"nodes" : [
+				{
+                   
+					"active"   : true,
+                    "host" 	   : "stampy.db.elephantsql.com",
+					"port" 	   : 5432,
+					"db" 	   : "lerepagr",
+					"user" 	   : "lerepagr",
+					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma",
+                    "type"     : "postgres",
+                    "comandosqlorigendash01"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash02"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash03"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='11' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash04"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash05"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash06"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash07"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='81' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash08"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;"
+
+				}
+			]
+		}
+,      
+
 		{
 			"type" : "postgresql",
 			"nodes" : [
@@ -55,7 +81,7 @@
 		}   
 ,      
 		{
-			"type" : "mysqlNouserPass",
+			"type" : "mysqlNOUserPass",
 			"nodes" : [
 				{
                    
