@@ -45,7 +45,7 @@
 				</div>
 				<div class="brand">
 					<a href="/samples/dashboards/web-analytics-real-time/">
-						<span class="hidden-xs-down m-r-3">Banwire</span>
+						<span class="hidden-xs-down m-r-3">Banwire {{.PageTitle}}</span>
 					</a>
 
 				</div>
@@ -55,7 +55,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/samples/dashboards/web-analytics-real-time/">
-						<span class="ligtheno">Informacion en tiempo real, cada</span>
+						<span class="ligtheno">En tiempo real, cada</span>
 					</a>
 
 				</div>
@@ -74,7 +74,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="/v1/dash07">
-						<span class="ligtheno">Rotacion a proximo Dashboard</span><span class="ligtheno" >cada</span>
+						<span class="ligtheno">Proximo Dashboard</span><span class="ligtheno" >cada</span>
                     </a>
                     <select id="id_of_selectRotacion">
                     <option value="1">5min</option>
@@ -122,10 +122,30 @@
 				<!--<div class="col-md-12">   -->
                    <div class="col-lg-4"> 
 					<div class="card card-block">
-						<h4 class="card-title">Pais/Region</h4>
+						<h4 class="card-title">Pagados/Ultima Hora</h4>
 						<div id="users-state-bar-chart"></div>
 					</div>
 				</div>
+                   <div class="col-lg-4"> 
+					<div class="card card-block">
+						<h4 class="card-title">Pagados/24hrs</h4>
+						<div id="u24-state-bar-chart"></div>
+					</div>
+                  </div>
+                <div class="col-lg-4">
+					<div class="card card-block">
+						<h4 class="card-title">Pagados/48hrs</h4>
+						<div id="u48-state-bar-chart"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /3rd row -->
+
+			<!-- 3rd row -->
+			<div class="row">
+				<!--<div class="col-md-12">   -->
+
                 <div class="col-lg-4">
 					<div class="card card-block">
 						<h4 class="card-title">Medio</h4>
