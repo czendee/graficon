@@ -28,12 +28,12 @@
 				{
                    
 					"active"   : true,
-                    "host" 	   : "stampy.db.elephantsql.com",
-					"port" 	   : 5432,
-					"db" 	   : "lerepagr",
-					"user" 	   : "lerepagr",
-					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma",
-                    "type"     : "postgres",
+                    "host" 	   : "172.24.96.207",
+					"port" 	   : 3306,
+					"db" 	   : "bw_db",
+					"user" 	   : "bw_reader",
+					"password" : "*!E<u#;Cr),yg:p4SgXY",
+                    "type"     : "mysql",
                     "comandosqlorigendash01"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
                     "comandosqlorigendash02"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
                     "comandosqlorigendash03"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='11' group by nombrecolumna) a order by a.total desc;",

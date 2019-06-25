@@ -9,7 +9,7 @@ services:
     working_dir: /app
     command: ["./dash_front-${ENV:-prod}"]
     ports:
-      - "${PORT:-3000}:3000"
+      - "${PORT:-3001}:3001"
     environment:
       - POSTGRES_USER=banwire
       - POSTGRES_DB=banwire

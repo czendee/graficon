@@ -15,8 +15,8 @@
 				{
 					"active"   : true,
                        "envlevel" : "test",
-                       "envurl" : "http://198.101.187.112:3000",
-                       "envport" : ":3000"
+                       "envurl" : "http://198.101.187.112:3001",
+                       "envport" : ":3001"
 				}
 			]
 		},   
