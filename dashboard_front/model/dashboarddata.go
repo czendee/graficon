@@ -153,7 +153,7 @@ func GetDatadash0202(db *sql.DB, reference string,reference02 string,dato01 stri
 func GetDatadash0202hours24(db *sql.DB, reference string,reference02 string,dato01 string,dato02 string,dato03 string) ([]Datadash, error) {
 	log.Print("GetDatadash0202hours24 01!\n")
 
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  graphnbr = '%s' and created_At > current_date-1 order by Numsecuecial;", reference02)
+    statement := fmt.Sprintf("SELECT 1 as id_record, 2 as Numsecuecial_grupoddatos,3 as Numsecuecial,nombrecolumna,current_date as Created_at,total as Valorcolumna,total as Valoramount  from (SELECT nombrecolumna,sum(Valoramount) as total  FROM banwiredash02graph02  WHERE  graphnbr = '%s' and created_At > current_date-1 group by nombrecolumna order by total desc) as buen;", reference02)
  	log.Print("GetDatadash0202hours24 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetDatadash0202hours24 02.1!\n")
@@ -182,7 +182,7 @@ func GetDatadash0202hours24(db *sql.DB, reference string,reference02 string,dato
 func GetDatadash0202hours48(db *sql.DB, reference string,reference02 string,dato01 string,dato02 string,dato03 string) ([]Datadash, error) {
 	log.Print("GetDatadash0202hours48 01!\n")
 
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  graphnbr = '%s' and created_At > current_date-2 order by Numsecuecial;", reference02)
+    statement := fmt.Sprintf("SELECT 1 as id_record, 2 as Numsecuecial_grupoddatos,3 as Numsecuecial,nombrecolumna,current_date as Created_at,total as Valorcolumna,total as Valoramount  from (SELECT nombrecolumna,sum(Valoramount) as total  FROM banwiredash02graph02  WHERE  graphnbr = '%s' and created_At > current_date-2 group by nombrecolumna order by total desc) as buen;", reference02)
  	log.Print("GetDatadash0202hours48 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetDatadash0202hours48 02.1!\n")
