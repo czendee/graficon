@@ -14,7 +14,7 @@
 			"nodes" : [
 				{
 					"active"   : true,
-                       "envlevel" : "test",
+                       "envlevel" : "prod",
                        "envurl" : "http://198.101.187.112:3001",
                        "envport" : ":3001"
 				}
