@@ -409,7 +409,7 @@ var errCards error
    //START    
 var resultDatadash []modelito.Datadash
 var errCards error
-
+resultLastHrDatadash:= []modelito.Datadash{}
 				//  START fetchFromDB
 				    var errdb error
 				    var db *sql.DB
@@ -468,7 +468,7 @@ var errCards error
 */ 
 							var cuantos int
 							cuantos = 0
-                            resultLastHrDatadash:= []modelito.Datadash{}
+                            
 
                             otherLastHrDatadash:= modelito.Datadash{}
                             acumuladoLastHr :=0
@@ -517,7 +517,7 @@ var errCards error
 				//  END fetchFromDB
    
    //END
-   	  return  resultDatadash, errorGeneral
+   	  return  resultLastHrDatadash, errorGeneral
 
    }
 
@@ -526,7 +526,7 @@ var errCards error
    //START    
 var resultDatadash []modelito.Datadash
 var errCards error
-
+result24hrsDatadash:= []modelito.Datadash{}
 				//  START fetchFromDB
 				    var errdb error
 				    var db *sql.DB
@@ -578,7 +578,7 @@ var errCards error
 							}
 							var cuantos int
 							cuantos = 0
-                            result24hrsDatadash:= []modelito.Datadash{}
+                            
 
                             other24hrsDatadash:= modelito.Datadash{}
                             acumulado24hrs :=0
@@ -626,7 +626,7 @@ var errCards error
 				//  END fetchFromDB
    
    //END
-   	  return  resultDatadash, errorGeneral
+   	  return  result24hrsDatadash , errorGeneral
 	
    }
 

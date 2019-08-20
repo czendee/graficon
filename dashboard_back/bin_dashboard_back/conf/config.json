@@ -16,7 +16,7 @@
                    "active"   : true,
 					"task1periocity" 	   :3660,
                     "task2periocity" 	   : 3550,
-                    "timeframe" 	   : 86400
+                    "timeframe" 	   : 432000
 
 				}
 			]
