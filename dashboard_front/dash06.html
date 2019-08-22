@@ -8,16 +8,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Banwire - &#8211; en tiempo real</title>
+	<title>Banwire  &#8211;Indicadores en tiempo real</title>
 
 	<!-- stylesheets -->
-
+<!--	<link href="/demo/dashboards/assets/fonts/font-roboto.css" rel="stylesheet">
+	<link href="/demo/dashboards/assets/bootstrap/bootstrap4-alpha3.min.css" rel="stylesheet">
+	<link href="/demo/dashboards/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/demo/dashboards/assets/web-analytics/style.css" rel="stylesheet">
+-->
 <link href="/font-roboto.css" rel="stylesheet">
 	<link href="/bootstrap4-alpha3.min.css" rel="stylesheet">
 	<link href="/font-awesome.min.css" rel="stylesheet">
 	<link href="/style.css" rel="stylesheet">
 	<!-- scripts -->
-
+<!--	<script src="/demo/dashboards/assets/jquery/jquery-3.1.0.min.js"></script>
+	<script src="/demo/dashboards/assets/tether/tether.min.js"></script>
+	<script src="/demo/dashboards/assets/bootstrap/bootstrap4-alpha3.min.js"></script>
+	<script src="/assets/script/canvasjs.min.js"></script>
+	<script src="/demo/dashboards/assets/web-analytics/real-time.js"></script>
+-->
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="/jquery-3.1.0.min.js"></script>
 	<script src="/tether.min.js"></script>
@@ -31,7 +40,7 @@
 	<nav class="navbar navbar-fixed-top" id="header">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<div id="sidebar-toggle-button">
+				<div id="sidebar-toggle-button" style="visibility:hidden">
 					<i class="fa fa-bars" aria-hidden="true"></i>
 				</div>
 				<div class="brand">
@@ -41,33 +50,33 @@
 
 				</div>
 
-				<div class="ligtheno">
+				<div class="ligtheno" style="visibility:hidden">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/samples/dashboards/web-analytics-real-time/">
-						<span class="ligtheno">Informacion en tiempo real, cada</span>
+						<span class="ligtheno">Actualizar cada</span>
 					</a>
 
 				</div>
-				<div class="brand">
+                <div class="brand" style="visibility:hidden">
 					
                     <select id="id_of_select">
-                    <option value="30000">30seg</option>
-                    <option value="45000">45seg</option>
-                    <option value="60000">60seg</option>
-                    <option value="90000">90seg</option>
+                    <option value="1">30seg</option>
+                    <option value="2">45seg</option>
+                    <option value="3">60seg</option>
+                    <option value="4">90seg</option>
                     </select>
-<!--                    <button id="btn">Cambiar</button>  -->
+<!--                    <button id="btn">Cambiar</button> -->
 				</div>
 				<div class="ligtheno">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="/v1/dash02">
-						<span class="ligtheno">Rotacion a proximo Dashboard</span><span class="ligtheno" >cada</span>
+						<span class="ligtheno">Ir a Pagados</span><span class="ligtheno" >.</span>
                     </a>
-                    <select id="id_of_selectRotacion">
+                    <select id="id_of_selectRotacion" style="visibility:hidden">
                     <option value="1">5min</option>
                     <option value="2">10min</option>
                     <option value="3">15min</option>
@@ -75,7 +84,8 @@
                     </select>
 <!--                    <button id="btn02">Cambiar</button>  -->
 				</div>                
-                 <div id="display">hola</div>
+                 <div id="display">.</div>
+
 			</div>
 		</div>
 	</nav>
@@ -107,24 +117,45 @@
 		<div class="container-fluid">
 
 
-			<!-- 2nd row -->
+			<!-- 3rd row -->
 			<div class="row">
-				<div class="col-lg-6">
+				<!--<div class="col-md-12">   -->
+                   <div class="col-lg-4"> 
 					<div class="card card-block">
-						<h4 class="card-title m-b-2">Pagos/Transacciones Por Minuto</h4>
-						<div id="page-views-per-minute-column-chart"></div>
+						<h4 class="card-title">Denegados/Ultima Hora</h4>
+						<div id="users-state-bar-chart"></div>
 					</div>
 				</div>
-				<div class="col-lg-6">
+                   <div class="col-lg-4"> 
 					<div class="card card-block">
-						<h4 class="card-title">Categorias</h4>
-						<div id="users-category-pie-chart"></div>
+						<h4 class="card-title">Denegados/24hrs</h4>
+						<div id="u24-state-bar-chart"></div>
+					</div>
+                  </div>
+                <div class="col-lg-4">
+					<div class="card card-block">
+						<h4 class="card-title">Denegados/48hrs</h4>
+						<div id="u48-state-bar-chart"></div>
 					</div>
 				</div>
 			</div>
 
-			<!-- /2nd row -->
+			<!-- /3rd row -->
 
+			<!-- 3rd row -->
+			<div class="row">
+				<!--<div class="col-md-12">   -->
+
+             <div class="col-lg-4" style="visibility:hidden">
+					<div class="card card-block">
+						<h4 class="card-title">Medio</h4>
+						<div id="users-medium-pie-chart"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- /3rd row -->
 
 		</div>
 		<!-- /.container-fluid -->
@@ -134,11 +165,11 @@
 
 </body>
 
-
 <script>
 //"use strict";
 
 //https://canvasjs.com/license/
 </script>
+
 
 </html>

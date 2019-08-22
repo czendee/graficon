@@ -540,7 +540,7 @@ function myFunction0301(item, index) {
     function updateUsersStateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0302+"&reference2=31&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0302+"&reference2=31&dato01=99&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found

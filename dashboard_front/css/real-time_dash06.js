@@ -1,14 +1,17 @@
-
 "use strict";
 var valueRotacion=20000;
-var valueRotacionOriginal=20000;
+var valueRotacionOriginal=60000;
 
-var valuePasarNext=150000;
-var valuePasarNextOriginal=150000;
+var valuePasarNext=450000;
+var valuePasarNextOriginal=450000;
 
 var previousGroupNumber=0;//used to keep track of what group was displayed previously
 
-var previousGroupNumber0202=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0601=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0602=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0603=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0604=0;//used to keep track of what group was displayed previously
+
 
 
 function show_selected2() {
@@ -21,131 +24,215 @@ function show_selected2() {
 
 
 $(function () {
-//document.getElementById('btn').addEventListener('click', show_selected2);;
-//document.getElementById('btn02').addEventListener('click', go_next2);;
-//document.getElementById('id_of_select').addEventListener('click', show_selected3);;
-//document.getElementById('id_of_selectRotacion').addEventListener('click', show_selected_rotacion3);;
 
-var activities = document.getElementById("id_of_selectRotacion");
 
-activities.addEventListener("change", function() {
-    alert("aj id_of_selectRotacion");
 
-    var selector = document.getElementById('id_of_selectRotacion');
-    valueRotacion= selector[selector.selectedIndex].value;
-    alert("aj id_of_selectRotacion:"+valueRotacion);
+    var activities = document.getElementById("id_of_selectRotacion");
 
-});
+    activities.addEventListener("change", function() {
+        alert("aj id_of_selectRotacion");
 
-var activities = document.getElementById("id_of_select");
+        var selector = document.getElementById('id_of_selectRotacion');
+        valueRotacion= selector[selector.selectedIndex].value;
+        alert("aj id_of_selectRotacion:"+valueRotacion);
 
-activities.addEventListener("change", function() {
-    alert("aj id_of_select");
+    });
 
-    var selector = document.getElementById('id_of_select');
-    valuePasarNext= selector[selector.selectedIndex].value;
-    alert("aj id_of_select:"+valuePasarNext);
+    var activities02 = document.getElementById("id_of_select");
 
-});
+    activities02.addEventListener("change", function() {
+        alert("aj id_of_select");
 
+        var selector = document.getElementById('id_of_select');
+        valuePasarNext= selector[selector.selectedIndex].value;
+        alert("aj id_of_select:"+valuePasarNext);
+
+    });
 
 	var activeUsers = 99,
-			pageViewsPerSecondLowerLimit,
-			pageViewsPerSecondUpperLimit,
-			yValuePageViewsPerSecond,
-			sumYValuePageViewsPerSecond = 0,
 			numberOfSeconds = 1,
 			updateChartsInterval,
 			updateChartsIntervalLowerLimit = 4000, // milliseconds
 			updateChartsIntervalUpperLimit = 6000, // milliseconds
 			timeoutIdUpdateCharts;
 	
-	var pageViewsPerSecondDataPoints = [];
-	var pageViewsPerMinuteDataPoints = [];
 	
-	// data for demo only
-	var initialDataPageViewsPerSecond = [1,2,4,4,3,2,1,5,1,2,2,0,0,1,2,4,5,3,4,2,2,2,2,0,1,2,4,4,4,5,5,1,2,4,1,1,1,0,0,1,2,3,3,5,5,2,0,1,1,0,2,2,2,0,4,1,4,4,2,2];
-	var initialDataPageViewsPerMinute = [110,107,122,107,128,108,100,110,118,93,95,112,108,95,96,114,107,105,124,104,131,94,109,110,108,99,104,90,104,109,89,121,118,93,109,113,106,100,101,119,76,137,112,104,98,89,104,96,120,111,108,95,93,100,101,110,98,105,107,135];
 	
 	// data for demo only
 	var data = [
 		{
 			activeUsers: 99,
 
-			categories: [
-				{ name: "Men Clothing", users: 8 },
-				{ name: "Women Clothing", users: 9 },
-				{ name: "Gadgets", users: 10 },
-				{ name: "Books", users: 5 },
-				{ name: "Others", users: 23 }
-			]
-            
+			trafficMedium: [
+				{ name: "Organic", users: 38 },
+				{ name: "Direct", users: 8 },
+				{ name: "Paid", users: 5 },
+				{ name: "Referral", users: 4 }
+			],
+			states: [
+				{ name: "Others", users: 16 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+				{ name: "California", users: 12 },
+			],
+			states24: [
+				{ name: "Others", users: 16 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+				{ name: "California", users: 12 },
+			],
+			states48: [
+				{ name: "Others", users: 16 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+				{ name: "California", users: 12 },
+			]                        
 		},
 		{
 			activeUsers: 56,
-			categories: [
-				{ name: "Men Clothing", users: 9 },
-				{ name: "Women Clothing", users: 9 },
-				{ name: "Gadgets", users: 10 },
-				{ name: "Books", users: 5 },
-				{ name: "Others", users: 23 }
+
+			trafficMedium: [
+				{ name: "Organic", users: 39 },
+				{ name: "Direct", users: 8 },
+				{ name: "Paid", users: 5 },
+				{ name: "Referral", users: 4 }
+			],
+			states: [
+				{ name: "Others", users: 17 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+				{ name: "California", users: 12 },
 			]
-            
 		},
 		{
 			activeUsers: 57,
-			categories: [
-				{ name: "Men Clothing", users: 8 },
-				{ name: "Women Clothing", users: 9 },
-				{ name: "Gadgets", users: 11 },
-				{ name: "Books", users: 5 },
-				{ name: "Others", users: 24 }
+
+			trafficMedium: [
+				{ name: "Organic", users: 39 },
+				{ name: "Direct", users: 9 },
+				{ name: "Paid", users: 5 },
+				{ name: "Referral", users: 4 }
+			],
+			states: [
+				{ name: "Others", users: 17 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 12 },
+				{ name: "California", users: 12 },
 			]
-            
 		},
 		{
 			activeUsers: 58,
-			categories: [
-				{ name: "Men Clothing", users: 9 },
-				{ name: "Women Clothing", users: 10 },
-				{ name: "Gadgets", users: 11 },
-				{ name: "Books", users: 4 },
-				{ name: "Others", users: 24 }
+
+			trafficMedium: [
+				{ name: "Organic", users: 40 },
+				{ name: "Direct", users: 8 },
+				{ name: "Paid", users: 6 },
+				{ name: "Referral", users: 4 }
+			],
+			states: [
+				{ name: "Others", users: 17 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 12 },
+				{ name: "California", users: 12 },
 			]
-            
 		},
 		{
 			activeUsers: 59,
-
-			categories: [
-				{ name: "Men Clothing", users: 9 },
-				{ name: "Women Clothing", users: 10 },
-				{ name: "Gadgets", users: 11 },
-				{ name: "Books", users: 5 },
-				{ name: "Others", users: 24 }
+			trafficMedium: [
+				{ name: "Organic", users: 41 },
+				{ name: "Direct", users: 8 },
+				{ name: "Paid", users: 6 },
+				{ name: "Referral", users: 4 }
+			],
+			states: [
+				{ name: "Others", users: 17 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 12 },
+				{ name: "California", users: 13 },
 			]
 		},
 		{
 			activeUsers: 60,
 
-			categories: [
-				{ name: "Men Clothing", users: 9 },
-				{ name: "Women Clothing", users: 10 },
-				{ name: "Gadgets", users: 12 },
-				{ name: "Books", users: 5 },
-				{ name: "Others", users: 24 }
+			trafficMedium: [
+				{ name: "Organic", users: 40 },
+				{ name: "Direct", users: 9 },
+				{ name: "Paid", users: 6 },
+				{ name: "Referral", users: 5 }
+			],
+			states: [
+				{ name: "Others", users: 18 },
+				{ name: "Pennsylvania", users: 3 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 8 },
+				{ name: "New York", users: 12 },
+				{ name: "California", users: 13 },
 			]
 		},
 		{
 			activeUsers: 61,
 
-			categories: [
-				{ name: "Men Clothing", users: 9 },
-				{ name: "Women Clothing", users: 10 },
-				{ name: "Gadgets", users: 12 },
-				{ name: "Books", users: 5 },
-				{ name: "Others", users: 25 }
+			trafficMedium: [
+				{ name: "Organic", users: 42 },
+				{ name: "Direct", users: 9 },
+				{ name: "Paid", users: 5 },
+				{ name: "Referral", users: 5 }
+			],
+			states: [
+				{ name: "Others", users: 18 },
+				{ name: "Pennsylvania", users: 3 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 8 },
+				{ name: "New York", users: 13 },
+				{ name: "California", users: 13 },
+			],
+           	states24: [
+				{ name: "Others", users: 18 },
+				{ name: "Pennsylvania", users: 3 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 8 },
+				{ name: "New York", users: 13 },
+				{ name: "California", users: 13 },
 			]
+,
+			states48: [
+				{ name: "Others", users: 18 },
+				{ name: "Pennsylvania", users: 3 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 8 },
+				{ name: "New York", users: 13 },
+				{ name: "California", users: 13 },
+			]
+
 		}
 	];
 	
@@ -157,9 +244,10 @@ activities.addEventListener("change", function() {
 		"#d9695f",
 		"#e05850",
 	]);
-
-	// CanvasJS pie chart to active users by category
-	var usersCategoryPieChart = new CanvasJS.Chart("users-category-pie-chart", {
+	
+	
+	// CanvasJS pie chart to traffic medium of active users
+	var usersMediumPieChart = new CanvasJS.Chart("users-medium-pie-chart", {
 		animationDuration: 800,
 		animationEnabled: true,
 		backgroundColor: "transparent",
@@ -169,7 +257,6 @@ activities.addEventListener("change", function() {
 			fontSize: 14,
 			horizontalAlign: "left",
 			verticalAlign: "center",
-			maxWidth: null,
 			itemTextFormatter: function (e) {
 				return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
 			}
@@ -178,7 +265,8 @@ activities.addEventListener("change", function() {
 			cornerRadius: 0,
 			fontStyle: "normal",
 			contentFormatter: function (e) {
-				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+//				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";  
+                return e.entries[0].dataPoint.name + ": " + e.entries[0].dataPoint.y + " (" + e.entries[0].dataPoint.y  + ")";  
 			} 
 		},
 		data: [
@@ -189,66 +277,191 @@ activities.addEventListener("change", function() {
 				startAngle: 90,
 				type: "pie",
 				dataPoints: [
-					{ y: 8, name:"Men Clothing" },
-					{ y: 9, name:"Women Clothing" },
-					{ y: 10, name:"Gadgets" },
-					{ y: 5, name:"Books" },
-					{ y: 23, name:"Others" }
+					{  y: 38, name:"Organic" },
+					{  y: 8, name:"Direct" },
+					{  y: 5, name:"Paid" },
+					{  y: 4, name:"Referral" }
 				]
 			}
 		]
 	});
+
 			
-	// CanvasJS column chart to show live page views per minute
-	var pageViewsPerMinuteColumnChart = new CanvasJS.Chart("page-views-per-minute-column-chart", {
+
+	// CanvasJS bar chart to show active users by state
+	var usersStateBarChart = new CanvasJS.Chart("users-state-bar-chart", {
 		animationDuration: 800,
 		animationEnabled: true,
 		backgroundColor: "transparent",
+		colorSet: "customColorSet",
 		axisX: {
-			interval: 1,
-			intervalType: "minute",
-			labelAutoFit: false,
 			labelFontColor: "#717171",
-			lineColor: "#a2a2a2",
-			tickColor: "transparent",
-			tickLength: 2
-//            ,
-//			labelFormatter: function(e) {
-//				var diff, currentTime = (new Date()).getTime();
-//				diff = Math.floor((e.value.getTime() - currentTime) / (1000 * 60));
-//				return diff % 15 < 0 ? "" : diff + " min";
-//			}
+			labelFontSize: 10,
+			lineThickness: 0,
+			tickThickness: 0
 		},
 		axisY: {
-			includeZero: false,
 			gridThickness: 0,
-			labelFontColor: "#717171",
-			lineColor: "#a2a2a2",
-			tickColor: "#a2a2a2"
+			lineThickness: 0,
+			tickThickness: 0,
+			valueFormatString: " "
 		},
+        
 		toolTip: {
 			cornerRadius: 0,
-			fontStyle: "normal"
+			fontStyle: "normal",
+			contentFormatter: function (e) {
+				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
+			} 
 		},
 		data: [
 			{
-				color: "#424973",
-				xValueFormatString: "hh:mm TT",
-				type: "column",
-				dataPoints : pageViewsPerMinuteDataPoints
+				indexLabelFontColor: "#717171",
+				indexLabelFontFamily: "calibri",
+				indexLabelFontSize: 18,
+				indexLabelPlacement: "outside",
+				indexLabelFormatter: function (e) {
+					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+                    return "$"+ e.dataPoint.y  ;  
+				},
+				type: "bar",
+				dataPoints: [
+					{ y: 16,  label: "Others" },
+					{ y: 4, label: "Pennsylvania" },
+					{ y: 5,  label: "Florida" },
+					{ y: 7, label: "Texas" },
+					{ y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+					{ y: 12, label: "California" }
+				]
 			}
 		]
 	});
 
+	usersStateBarChart.render();
+	
+    //24 hrs
+
+    	// CanvasJS bar chart to show active users by state
+	var u24StateBarChart = new CanvasJS.Chart("u24-state-bar-chart", {
+		animationDuration: 800,
+		animationEnabled: true,
+		backgroundColor: "transparent",
+		colorSet: "customColorSet",
+		axisX: {
+			labelFontColor: "#717171",
+			labelFontSize: 10,
+			lineThickness: 0,
+			tickThickness: 0
+		},
+		axisY: {
+			gridThickness: 0,
+			lineThickness: 0,
+			tickThickness: 0,
+			valueFormatString: " "
+		},
+        
+		toolTip: {
+			cornerRadius: 0,
+			fontStyle: "normal",
+			contentFormatter: function (e) {
+				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
+			} 
+		},
+		data: [
+			{
+				indexLabelFontColor: "#717171",
+				indexLabelFontFamily: "calibri",
+				indexLabelFontSize: 18,
+				indexLabelPlacement: "outside",
+				indexLabelFormatter: function (e) {
+					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+                    return "$"+ e.dataPoint.y  ;  
+				},
+				type: "bar",
+				dataPoints: [
+					{ y: 16,  label: "Others" },
+					{ y: 4, label: "Penn24" },
+					{ y: 5,  label: "Flori24" },
+					{ y: 7, label: "Texas24" },
+					{ y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+					{ y: 12, label: "Cal24" }
+				]
+			}
+		]
+	});
+
+	u24StateBarChart.render();
+	
+
+
+    //48hrs
+    	// CanvasJS bar chart to show active users by state
+	var u48StateBarChart = new CanvasJS.Chart("u48-state-bar-chart", {
+		animationDuration: 800,
+		animationEnabled: true,
+		backgroundColor: "transparent",
+		colorSet: "customColorSet",
+		axisX: {
+			labelFontColor: "#717171",
+			labelFontSize: 10,
+			lineThickness: 0,
+			tickThickness: 0
+		},
+		axisY: {
+			gridThickness: 0,
+			lineThickness: 0,
+			tickThickness: 0,
+			valueFormatString: " "
+		},
+        
+		toolTip: {
+			cornerRadius: 0,
+			fontStyle: "normal",
+			contentFormatter: function (e) {
+				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
+			} 
+		},
+		data: [
+			{
+				indexLabelFontColor: "#717171",
+				indexLabelFontFamily: "calibri",
+				indexLabelFontSize: 18,
+				indexLabelPlacement: "outside",
+				indexLabelFormatter: function (e) {
+					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+                    return "$" + e.dataPoint.y  ;  
+				},
+				type: "bar",
+				dataPoints: [
+					{ y: 16,  label: "Others" },
+					{ y: 4, label: "Penn48" },
+					{ y: 5,  label: "Flor48" },
+					{ y: 7, label: "Texas48" },
+					{ y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+					{ y: 12, label: "Cal48" }
+				]
+			}
+		]
+	});
+
+	u48StateBarChart.render();
+	
 
 	//----------------------------------------------------------------------------------//
 	var allCharts = [
-//		usersDeviceDoughnutChart,
-//		usersMediumPieChart,
-		usersCategoryPieChart,
-//		pageViewsPerSecondColumnChart,
-		pageViewsPerMinuteColumnChart
-		
+		usersMediumPieChart,
+		usersStateBarChart,
+        u24StateBarChart,
+        u48StateBarChart
 	];
 	
 	// generate random number between given range
@@ -257,18 +470,14 @@ activities.addEventListener("change", function() {
 	}
 	
 	
-	function updateUsersCategoryChart(dataIndex) {
-		for (var i = 0; data[dataIndex].categories.length>= i  ; i++)
-			usersCategoryPieChart.options.data[0].dataPoints[i].y = data[dataIndex].categories[i].users;
-		
-		usersCategoryPieChart.render();
-	}
-	
+//Medium
 
-function updateUsersCategoryChartWithDB(dataIndex)
-{
-                    //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=62&dato01=99&dato02=88&dato03=77", function(data) {                  
+
+    function updateUsersMediumPieChartWithDB()
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0601+"&reference2=62&dato01=99&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -286,37 +495,36 @@ function updateUsersCategoryChartWithDB(dataIndex)
                 if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
 
                    var grupoNumberResultado= value;
-                   previousGroupNumber0202 =grupoNumberResultado;
+                   previousGroupNumber0601 =grupoNumberResultado;
 
                 }                
                 if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
-                    arrayResultados.forEach(myFunction0202) //set the values in the  graph points ,below
-
-                    //pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+                    arrayResultados.forEach(myFunction0601) //set the values in the  graph points ,below
              
                 }
                 linea=linea+1;
-                 console.log("json banwire recent"+value[1]); 
+                 console.log("json banwire recent"); 
                  
             });	
             if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
 
-                 usersCategoryPieChart.render();
+                 usersMediumPieChart.render();
 
             }
         });
       
-        usersCategoryPieChart.render();
+        usersMediumPieChart.render();
 
 }
 
 
-function myFunction0202(item, index) {
+function myFunction0701(item, index) {
    //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
 
-   usersCategoryPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
-   usersCategoryPieChart.options.data[0].dataPoints[index].name = item["data_name"];
+   usersMediumPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersMediumPieChart.options.data[0].dataPoints[index].label = item["data_valuea"];
+   usersMediumPieChart.options.data[0].dataPoints[index].name = item["data_name"];
 
 /*
     Object.keys(item).forEach(function(key) {
@@ -326,78 +534,18 @@ function myFunction0202(item, index) {
 
 }
 
-	// update all charts with revelant demo data, except "Page Views Per Second" and "Page Views Per Minute" charts
-	function updateCharts(dataIndex) {
-		activeUsers = data[dataIndex].activeUsers;
-//		pageViewsPerSecondLowerLimit = data[dataIndex].pageViewsPerSecondLowerLimit;
-//		pageViewsPerSecondUpperLimit = data[dataIndex].pageViewsPerSecondUpperLimit;
 
-//dash02 no tiene		updateUsersDeviceChart(dataIndex);
-//dash02 no tiene		updateUsersMediumPieChart(dataIndex);
-		// usar datos demo     updateUsersCategoryChart(dataIndex);
-        //usar datos de la db
-        updateUsersCategoryChartWithDB(dataIndex);
-		
-	}
-	
-	function updateChartsAtRandomIntervals() {
-		var dataIndex = generateRandomNumber(0, data.length - 1);
-		updateChartsInterval = generateRandomNumber(updateChartsIntervalLowerLimit, updateChartsIntervalUpperLimit);
-				
-		updateCharts(dataIndex);
-		
-		if (timeoutIdUpdateCharts)
-			clearTimeout(timeoutIdUpdateCharts);
-		
-		timeoutIdUpdateCharts = setTimeout(function () {
-			updateChartsAtRandomIntervals();
-		}, updateChartsInterval);
-	}
-
-
-	// populate "Chart 0201 " charts with initial data
-	function populateChart0201() {
-		
-        console.log("populateChart0201 json banwire populateChart0201 "); 
-
-//use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference=0&reference2=61&dato01=99&dato02=88&dato03=77", function(data) {  
-            
-            $.each(data, function(key, value){
-            
-                pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
-            
-                 console.log("populateChart0201 json banwire"+value[1]); 
-                 
-            });	
-            pageViewsPerMinuteColumnChart.render();      
-        });
-     pageViewsPerMinuteColumnChart.render();   
-	}
-
-
-	// update "updateChart0201" chart every set of seconds 
-	function updateChart0201() {
-			console.log("updateChart0201: json banwire recent GET");
-            
-//        $.getJSON("https://8070-dot-3809294-dot-devshell.appspot.com/v1/getjsondatabanwire", function(data) {  
-         //send the  previousGroupNumber=0;
-         // datePreviousGroupNumber=0;
-         // currentPreviousGroupNumber=0;
-
-         //the first time, previousGroupNumber will be cero, 
-         // the service will decide if max available is greater than previousGroupNumber
-         //  if greater   then obtain the next
-         //  if equal or less, then keep the current group og data, display the message: the most current data available, and the current Date, previousDate
-
-//use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber+"&reference2=61&dato01=99&dato02=88&dato03=77", function(data) {                  
+////pagados de la ultima hora
+///start
+    function updateUsersStateChartWithDB()
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0602+"&reference2=61&dato01=99&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
-//             var exito=1;// found and groupNubr is greater than previousGroupNoumber,so get the most current data from db into javascript
-//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber, so use the current data in javascript
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
 
             $.each(data, function(key, value){
                 if(linea ==0){//primera linea, viene estatus Success or Error
@@ -410,45 +558,211 @@ function myFunction0202(item, index) {
                 if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
 
                    var grupoNumberResultado= value;
-                   previousGroupNumber =grupoNumberResultado;
+                   previousGroupNumber0602 =grupoNumberResultado;
 
                 }                
                 if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
-                    arrayResultados.forEach(myFunction0201) //set the values in the  graph points ,below
-
-                    //pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
+                    arrayResultados.forEach(myFunction0602) //set the values in the  graph points ,below
              
                 }
                 linea=linea+1;
-                 console.log("json banwire recent"+value[1]); 
+                 console.log("json banwire recent"); 
                  
             });	
             if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
-                if (pageViewsPerMinuteDataPoints.length > 60 ) {
-                        pageViewsPerMinuteDataPoints.shift();			
-                }
-                pageViewsPerMinuteColumnChart.render();
+
+                 usersStateBarChart.render();
 
             }
         });
       
-     pageViewsPerMinuteColumnChart.render();   
+        usersStateBarChart.render();
+
 }
 
-function myFunction0201(item, index) {
-//  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
 
-	pageViewsPerMinuteDataPoints.push({ x: parseInt(item["data_valuec"]),y: parseInt(item["data_valuea"]) });
+function myFunction0602(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
 
+   usersStateBarChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersStateBarChart.options.data[0].dataPoints[index].label = item["data_name"];
+   usersStateBarChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
     Object.keys(item).forEach(function(key) {
     console.log('Key : ' + key + ', Value : ' + item[key])
-    //        pageViewsPerMinuteDataPoints.push({ x: parseInt(value[0]),y: parseInt(value[1]) });
-
     })
+*/
+
+}
+///end
+////pagados ultima hora
+
+
+
+////pagados de la ultimas 24hrs
+///start
+    function updateU24StateChartWithDB()
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0603+"&reference2=61&dato01=24&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0603 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0603) //set the values in the  graph points ,below
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 u24StateBarChart.render();
+
+            }
+        });
+      
+        u24StateBarChart.render();
 
 }
 
+
+function myFunction0603(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   u24StateBarChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   u24StateBarChart.options.data[0].dataPoints[index].label = item["data_name"];
+   u24StateBarChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+///end
+////pagados ultimas 24hrs
+
+
+////pagados ultimas 48hrs
+///start
+    function updateU48StateChartWithDB()
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0604+"&reference2=61&dato01=48&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0604 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0604) //set the values in the  graph points ,below
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 u48StateBarChart.render();
+
+            }
+        });
+      
+        u48StateBarChart.render();
+
+}
+
+
+function myFunction0604(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   u48StateBarChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   u48StateBarChart.options.data[0].dataPoints[index].label = item["data_name"];
+   u48StateBarChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+///end
+////pagados ultimas 48hrs
+
+
+
+	// update all charts with revelant data
+	function updateCharts(dataIndex) {
+		activeUsers = data[dataIndex].activeUsers;
+
+		updateUsersMediumPieChartWithDB();
+    	updateUsersStateChartWithDB();
+
+       updateU24StateChartWithDB();
+       updateU48StateChartWithDB();
+		
+	}
+
+	
+
+
+	function updateChartsAtRandomIntervals() {
+		var dataIndex = generateRandomNumber(0, data.length - 1);
+				
+		updateCharts(dataIndex);
+
+    // set the next time the functions will be executed, by the value in the valueRotacion		
+		if (timeoutIdUpdateCharts)
+			clearTimeout(timeoutIdUpdateCharts);
+		
+		timeoutIdUpdateCharts = setTimeout(function () {
+			updateChartsAtRandomIntervals();
+		}, valueRotacion);
+	}
+
+	
+	
 	// chart properties cutomized further based on screen width	
 	function chartPropertiesCustomization(chart) {
 		if ($(window).outerWidth() >= 1920) {			
@@ -465,14 +779,14 @@ function myFunction0201(item, index) {
 			chart.options.legend.verticalAlign = "center";
 			chart.options.legend.maxWidth = 140;
 			
-		} else if (1200 >= $(window).outerWidth()  && $(window).outerWidth() >= 992) {
+		} else if ( 1200 >= $(window).outerWidth()  && $(window).outerWidth() >= 992) {
 			
 			chart.options.legend.fontSize = 12;
 			chart.options.legend.horizontalAlign = "center";
 			chart.options.legend.verticalAlign = "top";
 			chart.options.legend.maxWidth = null;
 			
-		} else if (992 >= $(window).outerWidth()  ) {
+		} else if ( 992 >=  $(window).outerWidth()) {
 			
 			chart.options.legend.fontSize = 14;
 			chart.options.legend.horizontalAlign = "center";
@@ -485,13 +799,11 @@ function myFunction0201(item, index) {
 	}
 	
 	function customizeCharts() {
-//dash02 no tiene		chartPropertiesCustomization(usersDeviceDoughnutChart);
-//dash02 no tiene		chartPropertiesCustomization(usersMediumPieChart);
-		chartPropertiesCustomization(usersCategoryPieChart);
+		chartPropertiesCustomization(usersMediumPieChart);
 	}
 	
 	function renderAllCharts() {
-		for (var i = 0; allCharts.length>= i  ; i++)
+		for (var i = 0; allCharts.length >=i  ; i++)
 			allCharts[i].render();
 	}
 	
@@ -502,25 +814,30 @@ function myFunction0201(item, index) {
 			renderAllCharts();
 		});	
 	}
+	
+
+
 
 	function checkRotationValues() {
         if(valueRotacionOriginal==valueRotacion){
              //continue with the same value
         }else{
-            setInterval(updateChart0201, valueRotacion);//every 20 seconds
+//            setInterval(updateChart0201, valueRotacion);//every 20 seconds
+            setInterval(updateChartsAtRandomIntervals, valueRotacion);//every number of  seconds decided by the user in the screen
+            
             valueRotacionOriginal=valueRotacion;
         }
          
         if(valuePasarNextOriginal==valuePasarNext){
              //continue with the same value
         }else{
-            setInterval(go_next2, valuePasarNext);//every 20 seconds
+            setTimeout(go_next2, valuePasarNext);//every 20 seconds
             valuePasarNextOriginal=valuePasarNext;
         }         
 	}
 
     function go_next2() {
-        alert("next");
+    //    alert("next");
         window.location.href = "/v1/dash02";  
 
     }
@@ -529,21 +846,16 @@ function myFunction0201(item, index) {
 	(function init() {
 		customizeCharts();
 		$(window).resize(customizeCharts);
-//		populateChart0202();
-        populateChart0201();
-//		setInterval(updateChart0202, 1000); //every 1 second
-        setInterval(updateChart0201, valueRotacionOriginal);//every 20 seconds
-		setTimeout(updateChartsAtRandomIntervals, 4000); //every 4 seconds
+
+		setTimeout(updateChartsAtRandomIntervals, valueRotacionOriginal); //every 4 seconds
+         //initial
+           updateChartsAtRandomIntervals();
 
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
-        
-        
 
         setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
-        
-
+//		setTimeout(updateChartsAtRandomIntervals, 4000);
 		sidebarToggleOnClick();
 	})();
 	
-    
 });
