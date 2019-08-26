@@ -71,7 +71,8 @@ var errCards error
                                           cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
                                     case "73":
                                           cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
-                                     }					         
+                                     }		
+							log.Print("Commnad to execute!\n"+cualConfig_comandosqlorigen_origin)
 					         resultDatadash,errCards =modelito.BackMysqlDatadash0201(db,cualConfig_comandosqlorigen_origin) //defined in the config.json and set in the configuration.go
 
 							if errCards != nil {
