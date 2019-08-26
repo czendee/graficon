@@ -1,14 +1,16 @@
 "use strict";
-var valueRotacion=10000;
-var valueRotacionOriginal=10000;
+var valueRotacion=20000;
+var valueRotacionOriginal=60000;
 
-var valuePasarNext=150000;
-var valuePasarNextOriginal=150000;
+var valuePasarNext=450000;
+var valuePasarNextOriginal=450000;
 
 var previousGroupNumber=0;//used to keep track of what group was displayed previously
 
-var previousGroupNumber0301=0;//used to keep track of what group was displayed previously
-var previousGroupNumber0302=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0801=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0802=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0803=0;//used to keep track of what group was displayed previously
+var previousGroupNumber0804=0;//used to keep track of what group was displayed previously
 
 
 
@@ -73,8 +75,36 @@ $(function () {
 				{ name: "Florida", users: 5 },
 				{ name: "Texas", users: 7 },
 				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
 				{ name: "California", users: 12 },
-			]
+			],
+			states24: [
+				{ name: "Others", users: 16 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+				{ name: "California", users: 12 },
+			],
+			states48: [
+				{ name: "Others", users: 16 },
+				{ name: "Pennsylvania", users: 4 },
+				{ name: "Florida", users: 5 },
+				{ name: "Texas", users: 7 },
+				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+				{ name: "California", users: 12 },
+			]                        
 		},
 		{
 			activeUsers: 56,
@@ -91,6 +121,9 @@ $(function () {
 				{ name: "Florida", users: 5 },
 				{ name: "Texas", users: 7 },
 				{ name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
+                { name: "New York", users: 11 },
 				{ name: "California", users: 12 },
 			]
 		},
@@ -181,7 +214,25 @@ $(function () {
 				{ name: "Texas", users: 8 },
 				{ name: "New York", users: 13 },
 				{ name: "California", users: 13 },
+			],
+           	states24: [
+				{ name: "Others", users: 18 },
+				{ name: "Pennsylvania", users: 3 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 8 },
+				{ name: "New York", users: 13 },
+				{ name: "California", users: 13 },
 			]
+,
+			states48: [
+				{ name: "Others", users: 18 },
+				{ name: "Pennsylvania", users: 3 },
+				{ name: "Florida", users: 6 },
+				{ name: "Texas", users: 8 },
+				{ name: "New York", users: 13 },
+				{ name: "California", users: 13 },
+			]
+
 		}
 	];
 	
@@ -214,7 +265,8 @@ $(function () {
 			cornerRadius: 0,
 			fontStyle: "normal",
 			contentFormatter: function (e) {
-				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";  
+//				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";  
+                return e.entries[0].dataPoint.name + ": " + e.entries[0].dataPoint.y + " (" + e.entries[0].dataPoint.y  + ")";  
 			} 
 		},
 		data: [
@@ -244,7 +296,7 @@ $(function () {
 		colorSet: "customColorSet",
 		axisX: {
 			labelFontColor: "#717171",
-			labelFontSize: 18,
+			labelFontSize: 10,
 			lineThickness: 0,
 			tickThickness: 0
 		},
@@ -254,11 +306,13 @@ $(function () {
 			tickThickness: 0,
 			valueFormatString: " "
 		},
+        
 		toolTip: {
 			cornerRadius: 0,
 			fontStyle: "normal",
 			contentFormatter: function (e) {
-				return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
 			} 
 		},
 		data: [
@@ -268,15 +322,18 @@ $(function () {
 				indexLabelFontSize: 18,
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
-					return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+                    return "$"+ e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
 					{ y: 16,  label: "Others" },
 					{ y: 4, label: "Pennsylvania" },
 					{ y: 5,  label: "Florida" },
-//					{ y: 7, label: "Texas" },
-//					{ y: 11, label: "New York" },
+					{ y: 7, label: "Texas" },
+					{ y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
 					{ y: 12, label: "California" }
 				]
 			}
@@ -285,10 +342,126 @@ $(function () {
 
 	usersStateBarChart.render();
 	
+    //24 hrs
+
+    	// CanvasJS bar chart to show active users by state
+	var u24StateBarChart = new CanvasJS.Chart("u24-state-bar-chart", {
+		animationDuration: 800,
+		animationEnabled: true,
+		backgroundColor: "transparent",
+		colorSet: "customColorSet",
+		axisX: {
+			labelFontColor: "#717171",
+			labelFontSize: 10,
+			lineThickness: 0,
+			tickThickness: 0
+		},
+		axisY: {
+			gridThickness: 0,
+			lineThickness: 0,
+			tickThickness: 0,
+			valueFormatString: " "
+		},
+        
+		toolTip: {
+			cornerRadius: 0,
+			fontStyle: "normal",
+			contentFormatter: function (e) {
+				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
+			} 
+		},
+		data: [
+			{
+				indexLabelFontColor: "#717171",
+				indexLabelFontFamily: "calibri",
+				indexLabelFontSize: 18,
+				indexLabelPlacement: "outside",
+				indexLabelFormatter: function (e) {
+					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+                    return "$"+ e.dataPoint.y  ;  
+				},
+				type: "bar",
+				dataPoints: [
+					{ y: 16,  label: "Others" },
+					{ y: 4, label: "Penn24" },
+					{ y: 5,  label: "Flori24" },
+					{ y: 7, label: "Texas24" },
+					{ y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+					{ y: 12, label: "Cal24" }
+				]
+			}
+		]
+	});
+
+	u24StateBarChart.render();
+	
+
+
+    //48hrs
+    	// CanvasJS bar chart to show active users by state
+	var u48StateBarChart = new CanvasJS.Chart("u48-state-bar-chart", {
+		animationDuration: 800,
+		animationEnabled: true,
+		backgroundColor: "transparent",
+		colorSet: "customColorSet",
+		axisX: {
+			labelFontColor: "#717171",
+			labelFontSize: 10,
+			lineThickness: 0,
+			tickThickness: 0
+		},
+		axisY: {
+			gridThickness: 0,
+			lineThickness: 0,
+			tickThickness: 0,
+			valueFormatString: " "
+		},
+        
+		toolTip: {
+			cornerRadius: 0,
+			fontStyle: "normal",
+			contentFormatter: function (e) {
+				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
+			} 
+		},
+		data: [
+			{
+				indexLabelFontColor: "#717171",
+				indexLabelFontFamily: "calibri",
+				indexLabelFontSize: 18,
+				indexLabelPlacement: "outside",
+				indexLabelFormatter: function (e) {
+					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
+                    return "$" + e.dataPoint.y  ;  
+				},
+				type: "bar",
+				dataPoints: [
+					{ y: 16,  label: "Others" },
+					{ y: 4, label: "Penn48" },
+					{ y: 5,  label: "Flor48" },
+					{ y: 7, label: "Texas48" },
+					{ y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+                    { y: 11, label: "New York" },
+					{ y: 12, label: "Cal48" }
+				]
+			}
+		]
+	});
+
+	u48StateBarChart.render();
+	
+
 	//----------------------------------------------------------------------------------//
 	var allCharts = [
 		usersMediumPieChart,
-		usersStateBarChart
+		usersStateBarChart,
+        u24StateBarChart,
+        u48StateBarChart
 	];
 	
 	// generate random number between given range
@@ -304,7 +477,7 @@ $(function () {
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
 
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0301+"&reference2=81&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0801+"&reference2=82&dato01=99&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -322,12 +495,12 @@ $(function () {
                 if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
 
                    var grupoNumberResultado= value;
-                   previousGroupNumber0301 =grupoNumberResultado;
+                   previousGroupNumber0801 =grupoNumberResultado;
 
                 }                
                 if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
-                    arrayResultados.forEach(myFunction0301) //set the values in the  graph points ,below
+                    arrayResultados.forEach(myFunction0801) //set the values in the  graph points ,below
              
                 }
                 linea=linea+1;
@@ -346,10 +519,11 @@ $(function () {
 }
 
 
-function myFunction0301(item, index) {
+function myFunction0801(item, index) {
    //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
 
    usersMediumPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersMediumPieChart.options.data[0].dataPoints[index].label = item["data_valuea"];
    usersMediumPieChart.options.data[0].dataPoints[index].name = item["data_name"];
 
 /*
@@ -360,10 +534,13 @@ function myFunction0301(item, index) {
 
 }
 
+
+////pagados de la ultima hora
+///start
     function updateUsersStateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0302+"&reference2=82&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0802+"&reference2=81&dato01=99&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -381,12 +558,12 @@ function myFunction0301(item, index) {
                 if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
 
                    var grupoNumberResultado= value;
-                   previousGroupNumber0302 =grupoNumberResultado;
+                   previousGroupNumber0802 =grupoNumberResultado;
 
                 }                
                 if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
-                    arrayResultados.forEach(myFunction0302) //set the values in the  graph points ,below
+                    arrayResultados.forEach(myFunction0802) //set the values in the  graph points ,below
              
                 }
                 linea=linea+1;
@@ -395,21 +572,22 @@ function myFunction0301(item, index) {
             });	
             if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
 
-                 usersMediumPieChart.render();
+                 usersStateBarChart.render();
 
             }
         });
       
-        usersMediumPieChart.render();
+        usersStateBarChart.render();
 
 }
 
 
-function myFunction0302(item, index) {
+function myFunction0802(item, index) {
    //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
 
-   usersMediumPieChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
-   usersMediumPieChart.options.data[0].dataPoints[index].label = item["data_name"];
+   usersStateBarChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   usersStateBarChart.options.data[0].dataPoints[index].label = item["data_name"];
+   usersStateBarChart.options.data[0].dataPoints[index].name = item["data_name"];
 
 /*
     Object.keys(item).forEach(function(key) {
@@ -418,6 +596,140 @@ function myFunction0302(item, index) {
 */
 
 }
+///end
+////pagados ultima hora
+
+
+
+////pagados de la ultimas 24hrs
+///start
+    function updateU24StateChartWithDB()
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0803+"&reference2=81&dato01=24&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0803 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0803) //set the values in the  graph points ,below
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 u24StateBarChart.render();
+
+            }
+        });
+      
+        u24StateBarChart.render();
+
+}
+
+
+function myFunction0803(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   u24StateBarChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   u24StateBarChart.options.data[0].dataPoints[index].label = item["data_name"];
+   u24StateBarChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+///end
+////pagados ultimas 24hrs
+
+
+////pagados ultimas 48hrs
+///start
+    function updateU48StateChartWithDB()
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0804+"&reference2=81&dato01=48&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0804 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+                    arrayResultados.forEach(myFunction0804) //set the values in the  graph points ,below
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 u48StateBarChart.render();
+
+            }
+        });
+      
+        u48StateBarChart.render();
+
+}
+
+
+function myFunction0804(item, index) {
+   //  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+
+   u48StateBarChart.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   u48StateBarChart.options.data[0].dataPoints[index].label = item["data_name"];
+   u48StateBarChart.options.data[0].dataPoints[index].name = item["data_name"];
+
+/*
+    Object.keys(item).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + item[key])
+    })
+*/
+
+}
+///end
+////pagados ultimas 48hrs
+
 
 
 	// update all charts with revelant data
@@ -426,6 +738,9 @@ function myFunction0302(item, index) {
 
 		updateUsersMediumPieChartWithDB();
     	updateUsersStateChartWithDB();
+
+       updateU24StateChartWithDB();
+       updateU48StateChartWithDB();
 		
 	}
 
@@ -522,7 +837,7 @@ function myFunction0302(item, index) {
 	}
 
     function go_next2() {
-        alert("next");
+    //    alert("next");
         window.location.href = "/v1/dash04";  
 
     }
@@ -533,6 +848,8 @@ function myFunction0302(item, index) {
 		$(window).resize(customizeCharts);
 
 		setTimeout(updateChartsAtRandomIntervals, valueRotacionOriginal); //every 4 seconds
+         //initial
+           updateChartsAtRandomIntervals();
 
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
 

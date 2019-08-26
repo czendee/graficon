@@ -1,6 +1,6 @@
 "use strict";
 var valueRotacion=20000;
-var valueRotacionOriginal=20000;
+var valueRotacionOriginal=60000;
 
 var valuePasarNext=450000;
 var valuePasarNextOriginal=450000;
@@ -266,7 +266,7 @@ $(function () {
 			fontStyle: "normal",
 			contentFormatter: function (e) {
 //				return e.entries[0].dataPoint.name + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";  
-                return e.entries[0].dataPoint.name + ": " + e.entries[0].dataPoint.y + "K (" + e.entries[0].dataPoint.y  + ")";  
+                return e.entries[0].dataPoint.name + ": " + e.entries[0].dataPoint.y + " (" + e.entries[0].dataPoint.y  + ")";  
 			} 
 		},
 		data: [
@@ -312,7 +312,7 @@ $(function () {
 			fontStyle: "normal",
 			contentFormatter: function (e) {
 				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
-                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + "K (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
 			} 
 		},
 		data: [
@@ -323,7 +323,7 @@ $(function () {
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
 					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-                    return e.dataPoint.y  + "K";  
+                    return "$" + e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
@@ -368,7 +368,7 @@ $(function () {
 			fontStyle: "normal",
 			contentFormatter: function (e) {
 				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
-                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + "K (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
 			} 
 		},
 		data: [
@@ -379,7 +379,7 @@ $(function () {
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
 					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-                    return e.dataPoint.y  + "K";  
+                    return "$"+ e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
@@ -425,7 +425,7 @@ $(function () {
 			fontStyle: "normal",
 			contentFormatter: function (e) {
 				//return e.entries[0].dataPoint.label + ": " + Math.round(e.entries[0].dataPoint.y / activeUsers * 100) + "% (" + e.entries[0].dataPoint.y  + ")";
-                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + "K (" + e.entries[0].dataPoint.y  + ")";
+                return  e.entries[0].dataPoint.label.substring(0, 8) + ": " + e.entries[0].dataPoint.y  + " (" + e.entries[0].dataPoint.y  + ")";
 			} 
 		},
 		data: [
@@ -436,7 +436,7 @@ $(function () {
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
 					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-                    return e.dataPoint.y  + "K";  
+                    return "$" + e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
@@ -540,7 +540,7 @@ function myFunction0301(item, index) {
     function updateUsersStateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0302+"&reference2=31&dato01=99&dato02=88&dato03=77", function(data) {                  
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0302+"&reference2=31&dato01=99&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -837,7 +837,7 @@ function myFunction0304(item, index) {
 	}
 
     function go_next2() {
-        alert("next");
+//        alert("next");
         window.location.href = "/v1/dash07";  
 
     }
@@ -848,7 +848,8 @@ function myFunction0304(item, index) {
 		$(window).resize(customizeCharts);
 
 		setTimeout(updateChartsAtRandomIntervals, valueRotacionOriginal); //every 4 seconds
-
+             //initial
+                updateChartsAtRandomIntervals();
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
 
         setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds

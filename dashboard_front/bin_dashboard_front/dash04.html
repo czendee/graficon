@@ -40,7 +40,7 @@
 	<nav class="navbar navbar-fixed-top" id="header">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<div id="sidebar-toggle-button">
+				<div id="sidebar-toggle-button" style="visibility:hidden">
 					<i class="fa fa-bars" aria-hidden="true"></i>
 				</div>
 				<div class="brand">
@@ -50,16 +50,16 @@
 
 				</div>
 
-				<div class="ligtheno">
+				<div class="ligtheno"  style="visibility:hidden">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/samples/dashboards/web-analytics-real-time/">
-						<span class="ligtheno">Informacion en tiempo real, cada</span>
+						<span class="ligtheno">Actualizar cada</span>
 					</a>
 
 				</div>
-                <div class="brand">
+                <div class="brand" style="visibility:hidden">
 					
                     <select id="id_of_select">
                     <option value="1">30seg</option>
@@ -67,6 +67,7 @@
                     <option value="3">60seg</option>
                     <option value="4">90seg</option>
                     </select>
+
 <!--                    <button id="btn">Cambiar</button> -->
 				</div>
 				<div class="ligtheno">
@@ -74,17 +75,18 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="/v1/dash08">
-						<span class="ligtheno">Rotacion a proximo Dashboard</span><span class="ligtheno" >cada</span>
+						<span class="ligtheno">Ir a Denegados</span><span class="ligtheno" >.</span>
                     </a>
-                    <select id="id_of_selectRotacion">
+                    <select id="id_of_selectRotacion" style="visibility:hidden">
                     <option value="1">5min</option>
                     <option value="2">10min</option>
                     <option value="3">15min</option>
                     <option value="4">no</option>
                     </select>
+
 <!--                    <button id="btn02">Cambiar</button>  -->
 				</div>                
-                 <div id="display">hola</div>
+                 <div id="display">.</div>
 
 			</div>
 		</div>
@@ -93,7 +95,7 @@
 
 	<!-- sidebar -->
 	<div class="sidebar-toggle" id="sidebar">
-		<ul class="nav nav-sidebar">
+		<ul class="nav nav-sidebar" >
 			<li>
 				<a href="/samples/dashboards/web-analytics-real-time/" class="active">
 					<i class="fa fa-clock-o fa-lg fa-fw" aria-hidden="true"></i>
@@ -122,11 +124,31 @@
 				<!--<div class="col-md-12">   -->
                    <div class="col-lg-4"> 
 					<div class="card card-block">
-						<h4 class="card-title">Pais/Region</h4>
+						<h4 class="card-title">Pagados/Ultima Hora</h4>
 						<div id="users-state-bar-chart"></div>
 					</div>
 				</div>
+                   <div class="col-lg-4"> 
+					<div class="card card-block">
+						<h4 class="card-title">Pagados/24hrs</h4>
+						<div id="u24-state-bar-chart"></div>
+					</div>
+                  </div>
                 <div class="col-lg-4">
+					<div class="card card-block">
+						<h4 class="card-title">Pagados/48hrs</h4>
+						<div id="u48-state-bar-chart"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /3rd row -->
+
+			<!-- 3rd row -->
+			<div class="row">
+				<!--<div class="col-md-12">   -->
+
+                <div class="col-lg-4" style="visibility:hidden">
 					<div class="card card-block">
 						<h4 class="card-title">Medio</h4>
 						<div id="users-medium-pie-chart"></div>
