@@ -117,13 +117,14 @@ func GetMaxGroupNumberDatadash0202(db *sql.DB, reference string,reference02 stri
 }
 
 
-func GetDatadash0202(db *sql.DB, reference string,reference02 string,dato01 string,dato02 string,dato03 string) ([]Datadash, error) {
+func GetDatadash0202(db *sql.DB, reference string,reference02 string,dato01 string,dato02 string,dato03 string, comnadosql string) ([]Datadash, error) {
 	log.Print("GetDatadash0201 01!\n")
 
-//	statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01   WHERE  reference= '%s'  order by Created_at ASC;", reference)
-//	statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01   WHERE  Numsecuecial_grupoddatos= %s  order by Created_at ASC;", reference)
-//    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph01    order by Created_at ASC;")
-    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  Numsecuecial_grupoddatos= %s and graphnbr = '%s'  order by Numsecuecial;",reference, reference02)
+//previo    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  Numsecuecial_grupoddatos= %s and graphnbr = '%s'  order by Numsecuecial;",reference, reference02)
+	
+	    statement := fmt.Sprintf(comnadosql,reference, reference02) //this value is decided in the logicdb.go, set in the Configuration.go and defined in the config.json
+	
+	
  	log.Print("GetDatadash0202 02!\n")
     rows, err := db.Query(statement)
     log.Print("GetDatadash0202 02.1!\n")
