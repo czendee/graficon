@@ -446,6 +446,7 @@ resultLastHrDatadash:= []modelito.Datadash{}
 						}else{
 					         log.Print("Ping ok!\n")
 //					         var misCards modelito.Card
+							var cualConfig_comandosqlfront string
 				 switch  {
                             	   case requestData.Dash0202reference2== "11" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash01_99
