@@ -448,20 +448,20 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
                         }//end 99
                         
                    }else{//postgres
-
-                        if(requestData.Dash0202Dato01 == "99"){
+                          //this logic was replaced and set in logicdb.go, using the values set in configuration.go and defeined in config.json  
+                        //if(requestData.Dash0202Dato01 == "99"){
                             valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02(requestData, errorGeneral)  //in logicdb.go            
-                        }else{
-                             if(requestData.Dash0202Dato01 == "24"){
-                                    valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02hours24(requestData, errorGeneral)  //in logicdb.go            
-                              }else{
-                                   if(requestData.Dash0202Dato01 == "48"){
-                                        valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02hours48(requestData, errorGeneral)  //in logicdb.go            
-                                   }else{
+                        //}else{
+                        //     if(requestData.Dash0202Dato01 == "24"){
+                        //            valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02hours24(requestData, errorGeneral)  //in logicdb.go            
+                        //      }else{
+                        //           if(requestData.Dash0202Dato01 == "48"){
+                        //                valoresParaResponder,errorGeneral =logicDBProcessDash02Grafica02hours48(requestData, errorGeneral)  //in logicdb.go            
+                        //           }else{
                                        //error
-                                   }//end 48
-                              }//end 24
-                        }//end 99
+                        //           }//end 48
+                        //      }//end 24
+                        //}//end 99
 
 
                    }
