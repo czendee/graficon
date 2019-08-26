@@ -54,12 +54,12 @@ func dashBack01Grafica02() {
     
 }
 
-func dashBack01Grafica03() {
+func dashBack01GraficaAll() {
     var errorGeneral string
 
     var valoresParaResponder  string
     fmt.Println("doing job :dashBack01Grafica01")
-    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("32")   // in logicbusiness.go
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("11")   // in logicbusiness.go
 
     if errorGeneral==""{//continue next step
         fmt.Println("respuesta job :"+valoresParaResponder)
@@ -70,12 +70,12 @@ func dashBack01Grafica03() {
 }
 
 
-func dashBack01Grafica04() {
+func dashBack05GraficaAll() {
     var errorGeneral string
 
     var valoresParaResponder  string
     fmt.Println("doing job :dashBack01Grafica01")
-    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("41")   // in logicbusiness.go
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01("51")   // in logicbusiness.go
 
     if errorGeneral==""{//continue next step
         fmt.Println("respuesta job :"+valoresParaResponder)
@@ -101,11 +101,11 @@ fmt.Println("main ticker  03")
     go func(){
           for t:=range ticker.C{
               fmt.Println("main ticker  05:",t)
-               dashBack01Grafica01()
+               dashBack01Grafica01() //obtains from source total amount per hour pagagas
               fmt.Println("main ticker  06:",t)               
-               dashBack01Grafica02()
-//               dashBack01Grafica03()
-//               dashBack01Grafica04()
+               dashBack01Grafica02() //obtains from source total amount per hour denegadas
+               dashBack01GraficaAll() //obtains from source number of transactions per hour pagagas
+               dashBack05GraficaAll() //obtains from source number of transactions per hour denegadas
           }
     }()
 
