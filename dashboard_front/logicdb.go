@@ -446,13 +446,73 @@ resultLastHrDatadash:= []modelito.Datadash{}
 						}else{
 					         log.Print("Ping ok!\n")
 //					         var misCards modelito.Card
-					         
+				 switch  {
+                            	   case requestData.Dash0202reference2== "11" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash01_99
+                            	   case requestData.Dash0202reference2== "11" && requestData.Dash0202Dato01 =="24" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash01_24
+                            	   case requestData.Dash0202reference2== "11" && requestData.Dash0202Dato01 =="48" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash01_48
+					 
+                            	   case requestData.Dash0202reference2== "21" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash02_99
+                            	   case requestData.Dash0202reference2== "21" && requestData.Dash0202Dato01 =="7" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash02_7
+                            	   case requestData.Dash0202reference2== "21" && requestData.Dash0202Dato01 =="30" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash02_30
+					 
+                            	   case requestData.Dash0202reference2== "31" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash03_99
+                            	   case requestData.Dash0202reference2== "31" && requestData.Dash0202Dato01 =="24" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash03_24
+                            	   case requestData.Dash0202reference2== "31" && requestData.Dash0202Dato01 =="48" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash03_48
+					 
+                            	   case requestData.Dash0202reference2== "41" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash04_99
+                            	   case requestData.Dash0202reference2== "41" && requestData.Dash0202Dato01 =="7" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash04_7
+                            	   case requestData.Dash0202reference2== "41" && requestData.Dash0202Dato01 =="30" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash04_30
+
+					 
+                            	   case requestData.Dash0202reference2== "51" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash05_99
+                            	   case requestData.Dash0202reference2== "51" && requestData.Dash0202Dato01 =="24" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash05_24
+                            	   case requestData.Dash0202reference2== "51" && requestData.Dash0202Dato01 =="48" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash05_48
+					 
+                            	   case requestData.Dash0202reference2== "61" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash06_99
+                            	   case requestData.Dash0202reference2== "61" && requestData.Dash0202Dato01 =="7" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash06_7
+                            	   case requestData.Dash0202reference2== "61" && requestData.Dash0202Dato01 =="30" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash06_30
+
+					 
+                            	   case requestData.Dash0202reference2== "71" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash07_99
+                            	   case requestData.Dash0202reference2== "71" && requestData.Dash0202Dato01 =="24" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash07_24
+                            	   case requestData.Dash0202reference2== "71" && requestData.Dash0202Dato01 =="48" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash07_48
+					 
+                            	   case requestData.Dash0202reference2== "81" && requestData.Dash0202Dato01 =="99" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash08_99
+                            	   case requestData.Dash0202reference2== "81" && requestData.Dash0202Dato01 =="7" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash08_7
+                            	   case requestData.Dash0202reference2== "81" && requestData.Dash0202Dato01 =="30" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash08_30
+					 
+                                     }
 					         resultDatadash,errCards =modelito.GetDatadash0202(db,
                              requestData.Dash0202reference,
                              requestData.Dash0202reference2,
                              requestData.Dash0202Dato01,
                              requestData.Dash0202Dato02,
-                             requestData.Dash0202Dato03)
+                             requestData.Dash0202Dato03,
+				cualConfig_comandosqlfront )
 
 					         log.Print("regresa func  logicDBProcessDash02Grafica02 ok!\n")
 							if errCards != nil {
