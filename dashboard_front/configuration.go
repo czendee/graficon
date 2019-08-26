@@ -40,7 +40,7 @@ var Config_comandosql_frontdash02_30 string
 
 var Config_comandosql_frontdash03_99 string
 var Config_comandosql_frontdash03_24 string
-var Config_comandosql_frontdash01_48 string
+var Config_comandosql_frontdash03_48 string
 
 var Config_comandosql_frontdash04_99 string
 var Config_comandosql_frontdash04_7 string
