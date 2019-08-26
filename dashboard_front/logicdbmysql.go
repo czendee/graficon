@@ -447,7 +447,7 @@ var errCards error
 					         log.Print("Ping ok in MySql :) !\n")
 //					         var misCards modelito.Card
 					         
-					         resultDatadash,errCards =modelito.GetDatadash0202(db,
+					         resultDatadash,errCards =modelito.GetDatadash0202original(db,
                              requestData.Dash0202reference,
                              requestData.Dash0202reference2,
                              requestData.Dash0202Dato01,
