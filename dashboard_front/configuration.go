@@ -178,7 +178,7 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 					pass, _ := n["password"].(string)
                     
                     
-					                    commandSqldash01, _ := n["comandosqlorigendash01"].(string)
+					                   
                     commandSqldash01_99, _ := n["comandosqlorigendash01_99"].(string)
                     commandSqldash01_24, _ := n["comandosqlorigendash01_24"].(string)
                     commandSqldash01_48, _ := n["comandosqlorigendash01_48"].(string)
