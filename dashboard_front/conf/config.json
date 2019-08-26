@@ -30,7 +30,33 @@
 					"port" 	   : 5432,
 					"db" 	   : "lerepagr",
 					"user" 	   : "lerepagr",
-					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma"
+					"password" : "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma",
+                    "comandosqlorigendash01_99"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash01_24"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash01_48"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash02_99"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash02_7"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Denegada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash02_30"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash03_99"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash03_24"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash03_48"    : "select * from (select  b.usuario as nombrecolumna, sum(a.monto) as Valoramount from transaccion a, transaccion_estado g, usuario b where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada' and a.usuario_id = b.id_usuario group by b.usuario) a order by a.Valoramount desc;",
+                    "comandosqlorigendash04_99"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash04_7"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Denegada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash04_30"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash05_99"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash05_24"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash05_48"    : "select * from (select  b.usuario as nombrecolumna, sum(a.monto) as Valoramount from transaccion a, transaccion_estado g, usuario b where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada' and a.usuario_id = b.id_usuario group by b.usuario) a order by a.Valoramount desc;",
+                    "comandosqlorigendash06_99"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash06_7"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Denegada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash06_30"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash07_99"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash07_24"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash07_48"    : "select * from (select  b.usuario as nombrecolumna, sum(a.monto) as Valoramount from transaccion a, transaccion_estado g, usuario b where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Pagada' and a.usuario_id = b.id_usuario group by b.usuario) a order by a.Valoramount desc;",
+                    "comandosqlorigendash08_99"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+                    "comandosqlorigendash08_7"    : "select  b.usuario as nombrecolumna, count(*) as Valoramount from transaccion a, transaccion_estado g, usuario b  where a.fecha >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and g.id = a.estado_id and g.nombre = 'Denegada'  and a.usuario_id = b.id_usuario  group by b.usuario;",
+                    "comandosqlorigendash08_30"    : "select * from (SELECT nombrecolumna, sum(Valoramount::int) as total  FROM banwiredash02graph01  where graphnbr='1' group by nombrecolumna) a order by a.total desc;",
+
+					
 
 				}
 			]
