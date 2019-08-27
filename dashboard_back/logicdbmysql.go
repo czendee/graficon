@@ -29,15 +29,15 @@ var errCards error
 				    var errdb error
 				    var db *sql.DB
 				    // Create connection string
-					connString := fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
-						Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
+				//	connString := fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
+				//		Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
 				
 				     if (connString !="si"){
 
                      }
 //this use the values set up in the configuration.go
-                  log.Print("Usando para conectar : " + Config_dbStringType)
-					db, errdb = sql.Open(Config_dbStringType, Config_connString)
+                  log.Print("Usando para conectar : " + Config_dbStringType_origin)
+					db, errdb = sql.Open(Config_connString_origin , Config_connString)
                     
 
 					if errdb != nil {
