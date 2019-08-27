@@ -31,14 +31,18 @@ var errCards error
 				    // Create connection string
 				//	connString := fmt.Sprintf("host=%s dbname=%s user=%s password=%s port=%d sslmode=disable",
 				//		Config_DB_server,Config_DB_name, Config_DB_user, Config_DB_pass, Config_DB_port)
+					connString03 := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s",
+						Config_DB_origin_user,Config_DB_origin_pass, Config_DB_origin_server, Config_DB_origin_port, Config_DB_origin_name)
 				
-				     if (connString !="si"){
+				     if (connString03 !="si"){
 
                      }
 //this use the values set up in the configuration.go
                   log.Print("Usando para conectar : " + Config_dbStringType_origin)
-					db, errdb = sql.Open(Config_connString_origin , Config_connString)
-                    
+                  log.Print("Usando para conectar origin : " + Config_connString_origin)
+                  log.Print("Usando para conectar origin real: " +connString03 )
+					//db, errdb = sql.Open(Config_dbStringType_origin, Config_connString_origin)
+                                   db, errdb = sql.Open(Config_dbStringType_origin, connString03)                    
 
 					if errdb != nil {
 						log.Print("Error creating connection pool: " + errdb.Error())
