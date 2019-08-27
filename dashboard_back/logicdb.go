@@ -137,8 +137,8 @@ var errCards error
 					         log.Print("Ping ok!\n")
 
                                                 //get the Next group number
-                                                proxGroupNbr,err01 :=modelito.BackNextGroupNumber(db,graphnbr) 
-						if(err01 ==nil){
+                                                proxGroupNbr :=modelito.BackNextGroupNumber(db,graphnbr) 
+
        
 					         resultDatadash,errCards =modelito.BackInsertDatadash0201(db,graphnbr,valoresToInsert,proxGroupNbr)
 
@@ -147,9 +147,7 @@ var errCards error
 							  log.Print("Error: :"+ errCards.Error())
 							  errorGeneral=errCards.Error()
 							}	
-						}else{
-							log.Print("No rows to insert for "+ graphnbr)
-						}
+
 					    }
 				
 				
