@@ -122,7 +122,7 @@ func GetDatadash0202(db *sql.DB, reference string,reference02 string,dato01 stri
 
 //previo    statement := fmt.Sprintf("SELECT id_record, Numsecuecial_grupoddatos,Numsecuecial,nombrecolumna,Created_at,Valorcolumna,Valoramount  FROM banwiredash02graph02  WHERE  Numsecuecial_grupoddatos= %s and graphnbr = '%s'  order by Numsecuecial;",reference, reference02)
 	
-	    statement := fmt.Sprintf(comnadosql,reference, reference02) //this value is decided in the logicdb.go, set in the Configuration.go and defined in the config.json
+	    statement := fmt.Sprintf(comnadosql,reference02) //this value is decided in the logicdb.go, set in the Configuration.go and defined in the config.json
 	
 	
  	log.Print("GetDatadash0202 02!\n")
