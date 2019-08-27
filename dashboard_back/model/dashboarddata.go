@@ -57,7 +57,7 @@ func (u *Datadash) getDatadash(db *sql.DB) error {
     return datadashs, nil
 }
 
- func BackNextGroupNumber(db *sql.DB,grphnbr string) ( string,error) {
+ func BackNextGroupNumber(db *sql.DB,grphnbr string) ( string) {
 	log.Print("BackNextGroupNumber 01!\n")
     var resultado string
     resultado ="executed not OK"
@@ -68,25 +68,25 @@ func (u *Datadash) getDatadash(db *sql.DB) error {
     rows, err := db.Query(statement)
     log.Print("BackNextGroupNumber 02.1!\n")
     if err != nil {
-        return resultado, nil
+        return resultado
     }
     log.Print("BackNextGroupNumber 02.5!\n")
     defer rows.Close()
     
     for rows.Next() {
-        resultado ="executed OK"
+        resultado ="10" //value to set the initial group if none exists previously
 
     	 log.Print("BackNextGroupNumber 03!\n")
         var u Datadash
         if err := rows.Scan( &u.Nombrecolumna); err != nil {
         	log.Print("BackNextGroupNumber err!\n"+err.Error())
-            return resultado, nil
+            return resultado
         }
     	log.Print("BackNextGroupNumber 03.5!\n")
         resultado=u.Nombrecolumna
     }
     log.Print("BackNextGroupNumber 04!\n"+resultado)
-    return resultado, nil
+    return resultado
 }
 
 
