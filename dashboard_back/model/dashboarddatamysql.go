@@ -32,7 +32,8 @@ func BackMysqlDatadash0201(db *sql.DB,comandosqlorigen_origin string) ([]Datadas
     resultado ="executed not OK"
     datadashs := []Datadash{}
 
-    statement := fmt.Sprintf(comandosqlorigen_origin)  //defined in the config.json and set in the configuration.go
+//    statement := fmt.Sprintf(comandosqlorigen_origin)  //defined in the config.json and set in the configuration.go
+    statement := comandosqlorigen_origin         //defined in the config.json and set in the configuration.go	
  	log.Print("BackDatadash0201 02!\n")
     rows, err := db.Query(statement)
     log.Print("BackDatadash0201 02.1!\n")
