@@ -323,7 +323,7 @@ $(function () {
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
 					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-                    return "$" + e.dataPoint.y  ;  
+                    return "#" + e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
@@ -379,7 +379,7 @@ $(function () {
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
 					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-                    return "$"+ e.dataPoint.y  ;  
+                    return "#"+ e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
@@ -436,7 +436,7 @@ $(function () {
 				indexLabelPlacement: "outside",
 				indexLabelFormatter: function (e) {
 					//return Math.round(e.dataPoint.y / activeUsers * 100) + "%";  
-                    return "$" + e.dataPoint.y  ;  
+                    return "#" + e.dataPoint.y  ;  
 				},
 				type: "bar",
 				dataPoints: [
