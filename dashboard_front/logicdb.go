@@ -546,6 +546,7 @@ resultLastHrDatadash:= []modelito.Datadash{}
                                     
                                     acumuladoLastHr = acumuladoLastHr +valors
                                 }else{
+						
                                     //take the first 9 , as they come
                                     resultLastHrDatadash =append (resultLastHrDatadash,d)
 
@@ -563,7 +564,22 @@ resultLastHrDatadash:= []modelito.Datadash{}
                                 otherLastHrDatadash.Numsecuecial="10"
 
                                 resultLastHrDatadash =append (resultLastHrDatadash,otherLastHrDatadash)
-                            } 
+			    } else { //not enough records for the 8 lines in the screen
+				     i := cuantos //cuantos is less than 7, so set the rest of the 
+				    for i <= 8 {
+					//set values for the Other element
+					otherLastHrDatadash.ID ="1"
+
+					otherLastHrDatadash.Valoramount="0"
+					otherLastHrDatadash.Valorcolumna="0"
+					otherLastHrDatadash.Nombrecolumna=" "
+					otherLastHrDatadash.Numsecuecial="10"
+
+					resultLastHrDatadash =append (resultLastHrDatadash,otherLastHrDatadash)
+					i = i + 1
+				    }
+
+			    }
 
 							if cuantos == 0 {
 							  log.Print("DB: records not found")
