@@ -516,10 +516,10 @@ resultLastHrDatadash:= []modelito.Datadash{}
 				cualConfig_comandosqlfront )
 
 					         log.Print("regresa func  logicDBProcessDash02Grafica02 ok!\n")
-							if errCards != nil {
-							  log.Print("Error: :"+ errCards.Error())
-							  errorGeneral=errCards.Error()
-							}
+						if errCards != nil {
+						  log.Print("Error: :"+ errCards.Error())
+						  errorGeneral=errCards.Error()
+						}
 /*							var cuantos int
 							cuantos = 0
 				         	for _, d := range resultDatadash {
@@ -527,65 +527,68 @@ resultLastHrDatadash:= []modelito.Datadash{}
 							    cuantos =1
 			         		}
 */ 
-							var cuantos int
-							cuantos = 0
+						var cuantos int
+						cuantos = 0
                             
 
-                            otherLastHrDatadash:= modelito.Datadash{}
-                            acumuladoLastHr :=0
+						otherLastHrDatadash:= modelito.Datadash{}
+						acumuladoLastHr :=0
 				         	for _, d := range resultDatadash {
 				         		log.Print("el registor trae:"+d.ID+" "+d.Valoramount)
 							    cuantos =cuantos+1
                                 
-                                //after the 7th, sum in one
-                                if(cuantos >7){
-                                    valors,err01 := strconv.Atoi(d.Valoramount)
-                                    if(err01!=nil){
+							//after the 7th, sum in one
+							if(cuantos >7){
+							    valors,err01 := strconv.Atoi(d.Valoramount)
+							    if(err01!=nil){
 
-                                    }
-                                    
-                                    acumuladoLastHr = acumuladoLastHr +valors
-                                }else{
-						
-                                    //take the first 9 , as they come
-                                    resultLastHrDatadash =append (resultLastHrDatadash,d)
+							    }//end if
 
-                                }
-			         		}
-                            if cuantos >7 {
-                                
-                                //set values for the Other element
-                                otherLastHrDatadash.ID ="1"
+							    acumuladoLastHr = acumuladoLastHr +valors
+							}else{
 
-                                valor2s := strconv.Itoa(acumuladoLastHr)
-                                otherLastHrDatadash.Valoramount=valor2s                                
-                                otherLastHrDatadash.Valorcolumna=valor2s
-                                otherLastHrDatadash.Nombrecolumna="Other"
-                                otherLastHrDatadash.Numsecuecial="10"
+							    //take the first 9 , as they come
+							    resultLastHrDatadash =append (resultLastHrDatadash,d)
 
-                                resultLastHrDatadash =append (resultLastHrDatadash,otherLastHrDatadash)
-			    } else { //not enough records for the 8 lines in the screen
-				     i := cuantos //cuantos is less than 7, so set the rest of the 
-				    for i <= 8 {
-					//set values for the Other element
-					otherLastHrDatadash.ID ="1"
+							}//end else de cuantos >7
+			         		}//end for
+					    if cuantos >7 {
 
-					otherLastHrDatadash.Valoramount="0"
-					otherLastHrDatadash.Valorcolumna="0"
-					otherLastHrDatadash.Nombrecolumna=" "
-					otherLastHrDatadash.Numsecuecial="10"
+						//set values for the Other element
+						otherLastHrDatadash.ID ="1"
 
-					resultLastHrDatadash =append (resultLastHrDatadash,otherLastHrDatadash)
-					i = i + 1
-				    }
+						valor2s := strconv.Itoa(acumuladoLastHr)
+						otherLastHrDatadash.Valoramount=valor2s                                
+						otherLastHrDatadash.Valorcolumna=valor2s
+						otherLastHrDatadash.Nombrecolumna="Other"
+						otherLastHrDatadash.Numsecuecial="10"
 
-			    }
+						resultLastHrDatadash =append (resultLastHrDatadash,otherLastHrDatadash)
+					    } else { //not enough records for the 8 lines in the screen
+						     i := cuantos //cuantos is less than 7, so set the rest of the 
+						    if cuantos ==0{
+							    i=1  
+						    }
+						    for i <= 8 {
+							//set values for the Other element
+							otherLastHrDatadash.ID ="1"
 
-							if cuantos == 0 {
-							  log.Print("DB: records not found")
-							  errorGeneral="Not records found for the logicDBProcessDash02Grafica02 reference received"
-							}		
+							otherLastHrDatadash.Valoramount="0"
+							otherLastHrDatadash.Valorcolumna="0"
+							otherLastHrDatadash.Nombrecolumna=" "
+							otherLastHrDatadash.Numsecuecial="10"
 
+							resultLastHrDatadash =append (resultLastHrDatadash,otherLastHrDatadash)
+							i = i + 1
+						    }
+
+					    }//end else cuantos
+/*
+						if cuantos == 0 {
+						  log.Print("DB: records not found")
+						  errorGeneral="Not records found for the logicDBProcessDash02Grafica02 reference received"
+						}		
+*/
 					    }
 				
 				
