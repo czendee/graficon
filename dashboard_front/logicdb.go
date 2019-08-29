@@ -457,10 +457,21 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 
                             	   case requestData.Dash0202reference2== "21" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash02_99
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 21
+					 requestData.Dash0202reference ="31"
+					 
                             	   case requestData.Dash0202reference2== "21" && requestData.Dash0202Dato01 =="7" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash02_7
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 21
+					 requestData.Dash0202reference ="31"
+					 
                             	   case requestData.Dash0202reference2== "21" && requestData.Dash0202Dato01 =="30" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash02_30
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 21
+					 requestData.Dash0202reference ="31"
 					 
                             	   case requestData.Dash0202reference2== "31" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash03_99
@@ -471,10 +482,21 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 
                             	   case requestData.Dash0202reference2== "41" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash04_99
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 41
+					 requestData.Dash0202reference ="31"
+					 
                             	   case requestData.Dash0202reference2== "41" && requestData.Dash0202Dato01 =="7" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash04_7
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 41
+					 requestData.Dash0202reference ="31"
+					 
                             	   case requestData.Dash0202reference2== "41" && requestData.Dash0202Dato01 =="30" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash04_30
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 41
+					 requestData.Dash0202reference ="31"
 
 					 
                             	   case requestData.Dash0202reference2== "51" && requestData.Dash0202Dato01 =="99" :
@@ -486,11 +508,21 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 
                             	   case requestData.Dash0202reference2== "61" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash06_99
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 61
+					 requestData.Dash0202reference ="31"
+					 
                             	   case requestData.Dash0202reference2== "61" && requestData.Dash0202Dato01 =="7" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash06_7
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 61
+					 requestData.Dash0202reference ="31"
+					 
                             	   case requestData.Dash0202reference2== "61" && requestData.Dash0202Dato01 =="30" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash06_30
-
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 61
+					 requestData.Dash0202reference ="31"
 					 
                             	   case requestData.Dash0202reference2== "71" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash07_99
@@ -501,10 +533,20 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 
                             	   case requestData.Dash0202reference2== "81" && requestData.Dash0202Dato01 =="99" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash08_99
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 81
+					 requestData.Dash0202reference ="31"
                             	   case requestData.Dash0202reference2== "81" && requestData.Dash0202Dato01 =="7" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash08_7
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 81
+					 requestData.Dash0202reference ="31"					 
                             	   case requestData.Dash0202reference2== "81" && requestData.Dash0202Dato01 =="30" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash08_30
+					 //set the graph value nbr to 31, as this is already there amounts per hour
+					 //do not use the one this value had 81
+					 requestData.Dash0202reference ="31"
+					 
 					 
                                      }
 					         resultDatadash,errCards =modelito.GetDatadash0202(db,
