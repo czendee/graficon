@@ -371,7 +371,19 @@ var errCards error
                 }else{
                         log.Print("Ping ok in MySql :) !\n")
 
-                        
+                        //set the graphnbr to 31 for 21 and for 61
+			//set the graphnbr to 71 for 41 and for 81
+                           switch  {
+                            	   case requestData.Dash0202reference2== "21"  :
+                                        requestData.Dash0202reference2 ="31"
+                            	   case requestData.Dash0202reference2== "61"  :
+                                        requestData.Dash0202reference2="31"
+                            	   case requestData.Dash0202reference2== "41"  :
+                                        requestData.Dash0202reference2="71"			   
+				   case requestData.Dash0202reference2== "81" :
+                                        requestData.Dash0202reference2="71"
+					 
+                                     }			
                         resultDatadashGroupNumber,errCards =modelito.GetMaxGroupNumberDatadash0202(db,
                         requestData.Dash0202reference,
                         requestData.Dash0202reference2,
