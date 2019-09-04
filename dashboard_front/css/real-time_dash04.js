@@ -606,7 +606,7 @@ function myFunction0402(item, index) {
     function updateU24StateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0403+"&reference2=41&dato01=24&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0403+"&reference2=41&dato01=7&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -671,7 +671,7 @@ function myFunction0403(item, index) {
     function updateU48StateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0404+"&reference2=41&dato01=48&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0404+"&reference2=41&dato01=30&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
