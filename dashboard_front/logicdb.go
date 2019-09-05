@@ -569,7 +569,7 @@ resultLastHrDatadash:= []modelito.Datadash{}
                              requestData.Dash0202Dato03,
 				cualConfig_comandosqlfront )
 
-					         log.Print("regresa func  logicDBProcessDash02Grafica02 ok!\n")
+					         log.Print("regresa func  logicDBProcessDash02Grafica02 ok!\n"+cualConfig_comandosqlfront)
 						if errCards != nil {
 						  log.Print("Error: :"+ errCards.Error())
 						  errorGeneral=errCards.Error()
