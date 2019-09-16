@@ -216,39 +216,7 @@ func v1handlePOSTDash01Grafica01 (w http.ResponseWriter, r *http.Request) {
 	defer func() {
 		db.Connection.Close(nil)
 	}()
-    var errorGeneral string
-    var errorGeneralNbr string
-    var requestData modelito.RequestDash01Grafica01
-//    var requestData modelito.RequestPayment
-    
-    errorGeneral=""
-requestData,errorGeneral =obtainPostParmsProcessDash01Grafica01(r,errorGeneral)  //logicrequest_post.go
-
-	////////////////////////////////////////////////validate parms
-	/// START
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash01Grafica01(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
+ 
 					
 }
 
