@@ -266,6 +266,9 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 
 					 
                                      }
+							log.Print("manda a func  logicDBProcessDash02Grafica02 :\n"+requestData.Dash0202reference);                          
+							log.Print("manda a func  logicDBProcessDash02Grafica02 :\n"+requestData.Dash0202reference2);
+							
 					         resultDatadash,errCards =modelito.GetDatadash0202(db,
                              requestData.Dash0202reference,
                              requestData.Dash0202reference2,
