@@ -258,36 +258,6 @@ func v1handleGETDash01Grafica01 (w http.ResponseWriter, r *http.Request) {
 		db.Connection.Close(nil)
 	}()
 
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash01Grafica01
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash01Grafica01(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash01Grafica01(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 
@@ -297,36 +267,6 @@ func v1handleGETDash01Grafica02 (w http.ResponseWriter, r *http.Request) {
 		db.Connection.Close(nil)
 	}()
 
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash01Grafica02
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash01Grafica02(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash01Grafica02(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 
@@ -337,36 +277,6 @@ func v1handleGETDash02Grafica01 (w http.ResponseWriter, r *http.Request) {
 		db.Connection.Close(nil)
 	}()
 
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash02Grafica01
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash02Grafica01(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash02Grafica01(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 
@@ -418,36 +328,6 @@ func v1handleGETDash02Grafica03 (w http.ResponseWriter, r *http.Request) {
 		db.Connection.Close(nil)
 	}()
 
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash02Grafica03
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash02Grafica03(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash02Grafica03(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 // v1handleGETDash03Grafica01  receive and handle the request from client, method GET
@@ -456,36 +336,6 @@ func v1handleGETDash03Grafica01 (w http.ResponseWriter, r *http.Request) {
 		db.Connection.Close(nil)
 	}()
 
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash03Grafica01
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash03Grafica01(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash03Grafica01(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 
@@ -496,36 +346,6 @@ func v1handleGETDash03Grafica02 (w http.ResponseWriter, r *http.Request) {
 		db.Connection.Close(nil)
 	}()
 
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash03Grafica02
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash03Grafica02(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash03Grafica02(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 
@@ -536,37 +356,6 @@ func v1handleGETDash03Grafica03 (w http.ResponseWriter, r *http.Request) {
 	defer func() {
 		db.Connection.Close(nil)
 	}()
-
-    var errorGeneral string
-    var	errorGeneralNbr string
-    
-    var requestData modelito.RequestDash03Grafica03
-    errorGeneral=""
-requestData,errorGeneral =obtainParmsProcessDash03Grafica03(r,errorGeneral)
-
-	////////////////////////////////////////////////validate parms
-	/// START
-    
-    if errorGeneral=="" {
-
-		errorGeneral,errorGeneralNbr= v1ProcessDash03Grafica03(w , requestData)    //logicbusiness.go 
-	}
-
-    if errorGeneral!=""{
-    	//send error response if any
-    	//prepare an error JSON Response, if any
-		log.Print("CZ   STEP Get the ERROR response JSON ready")
-		
-			/// START
-		fieldDataBytesJson,err := getJsonResponseError(errorGeneral, errorGeneralNbr)
-		//////////    write the response (ERROR)
-		w.Header().Set("Content-Type", "application/json")
-		w.Write(fieldDataBytesJson)	
-		if(err!=nil){
-			
-		}
-	
-    } 
 					
 }
 
