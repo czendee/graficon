@@ -331,7 +331,7 @@ resultLastHrDatadash:= []modelito.Datadash{}
 						    if cuantos ==0{
 							    i=1  
 						    }
-						    for i <= 8 {
+						    for i < 8 {
 							//set values for the Other element
 							otherLastHrDatadash.ID ="1"
 
