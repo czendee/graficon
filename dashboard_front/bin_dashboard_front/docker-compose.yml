@@ -14,8 +14,6 @@ services:
       - POSTGRES_USER=banwire
       - POSTGRES_DB=banwire
       - POSTGRES_PASSWORD=banwire
-    networks:
-      - backend
 
 volumes:
   db-vol:
