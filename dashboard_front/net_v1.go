@@ -71,6 +71,13 @@ func init() {
     r.Handle("/v1/dash07", netHandle(dash07Handler, nil)).Methods("GET") 
     r.Handle("/v1/dash08", netHandle(dash08Handler, nil)).Methods("GET")     
     r.Handle("/v1/ejemplo", netHandle(ejemploHandler, nil)).Methods("GET")     
+	
+	//tochi - New phase v2
+	
+	r.Handle("/v2/dash01", netHandle(dash21Handler, nil)).Methods("GET")     
+    r.Handle("/v2/dash02", netHandle(dash22Handler, nil)).Methods("GET")     
+    r.Handle("/v2/dash03", netHandle(dash23Handler, nil)).Methods("GET") 
+
 
     r.Handle("/font-roboto.css", netHandle(serveCss01, nil)).Methods("GET")     
     r.Handle("/bootstrap4-alpha3.min.css", netHandle(serveCss02, nil)).Methods("GET")     
@@ -619,4 +626,52 @@ func dash08Handler(w http.ResponseWriter, r *http.Request) {
     
 }
 
-/////////////////////////END para dashboard
+/////////////////////////END para dashboard phase 1
+
+
+//////////////////////PHASE 2
+
+func dash21Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash21Handler with param"+Config_env_url)
+
+     data := TodoPageData{
+			PageTitle: Config_env_server,
+     }
+     tmpl := template.Must(template.ParseFiles("dash21.html"))
+     tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash21Handler 01")
+    
+}
+
+func dash22Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash22Handler")
+
+    
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash22.html"))
+    tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash22Handler 01")
+    
+}
+
+func dash23Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash23Handler")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash23.html"))
+    tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash23Handler 01")
+    
+}
+
