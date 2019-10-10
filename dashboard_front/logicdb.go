@@ -263,7 +263,38 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 //set the graph value nbr to 31, as this is already there amounts per hour denegadas
 					 //do not use the one this value had 81
 					 requestData.Dash0202reference2 ="71"
-					 
+// version 2 dash21 dash22 dash23
+//START
+                           	   case requestData.Dash0202reference2== "221" && requestData.Dash0202Dato01 =="00" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
+					 requestData.Dash0202reference2 ="31"
+                            	   case requestData.Dash0202reference2== "221" && requestData.Dash0202Dato01 =="01" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
+					 requestData.Dash0202reference2 ="31"
+                            	   case requestData.Dash0202reference2== "221" && requestData.Dash0202Dato01 =="02" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
+					 requestData.Dash0202reference2 ="31"
+                           	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="00" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
+					 requestData.Dash0202reference2 ="81"
+                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="01" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
+					 requestData.Dash0202reference2 ="81"
+                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="02" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
+					 requestData.Dash0202reference2 ="81"					 
+                           	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="00" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
+					 requestData.Dash0202reference2 ="21,41,51,61"
+                            	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="01" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
+					 requestData.Dash0202reference2 ="21,41,51,61"
+                            	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="02" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
+					 requestData.Dash0202reference2 ="21,41,51,61"					 
+
+//END
+// version 2 dash21 dash22 dash23				 
 					 
                                      }
 							log.Print("manda a func  logicDBProcessDash02Grafica02 ref:\n"+requestData.Dash0202reference);                          
