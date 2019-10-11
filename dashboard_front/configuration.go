@@ -268,8 +268,8 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     log.Print("---- ne sql 08 30 "+Config_comandosql_frontdash08_30)	
 //new version 2   START					
                     log.Print("---- ne sql 21 00 "+Config_comandosql_frontdash21_00)					
-                    log.Print("---- ne sql 21 01 "+Config_comandosql_frontdash21_02)					
-		    log.Print("---- ne sql 21 02 "+Config_comandosql_frontdash21_03)					
+                    log.Print("---- ne sql 21 01 "+Config_comandosql_frontdash21_01)					
+		    log.Print("---- ne sql 21 02 "+Config_comandosql_frontdash21_02)					
 //new version 2   END					
 					if e := db.Connection.Set(db.NewPgDb(host, int(port), _db, user, pass)); e == nil {
 						log.Print("---- The postgresql database was loaded"+host)
