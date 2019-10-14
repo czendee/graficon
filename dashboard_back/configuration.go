@@ -50,6 +50,10 @@ var Config_comandosqlorigen_origindash06 string
 var Config_comandosqlorigen_origindash07 string
 var Config_comandosqlorigen_origindash08 string
 
+var Config_comandosqlorigen_origindash20 string    //all rechazadas
+var Config_comandosqlorigen_origindash21 string    //rechazadas- hards
+var Config_comandosqlorigen_origindash22 string    //rechazadas- invalid merch
+var Config_comandosqlorigen_origindash23 string    //rechazadas- hnot honored
 /*    const (
         DB_USER     = "lerepagr"        
         DB_PASSWORD = "Ag8q2utgSsVy2tyR7_M9cNYbzsqSvwma"
@@ -173,7 +177,10 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     commandSqldash06, _ := n["comandosqlorigendash06"].(string)
                     commandSqldash07, _ := n["comandosqlorigendash07"].(string)
                     commandSqldash08, _ := n["comandosqlorigendash08"].(string)
-
+                    commandSqldash20, _ := n["comandosqlorigendash20"].(string)
+                    commandSqldash21, _ := n["comandosqlorigendash21"].(string)
+                    commandSqldash22, _ := n["comandosqlorigendash22"].(string)
+                    commandSqldash23, _ := n["comandosqlorigendash23"].(string)
                     
 
                     Config_DB_origin_pass =pass
@@ -193,8 +200,13 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     Config_comandosqlorigen_origindash05 = commandSqldash05
                     Config_comandosqlorigen_origindash06 = commandSqldash06
                     Config_comandosqlorigen_origindash07 = commandSqldash07
-                    Config_comandosqlorigen_origindash08 = commandSqldash08
-
+		    Config_comandosqlorigen_origindash08 = commandSqldash08
+                    Config_comandosqlorigen_origindash20 = commandSqldash20   //rechazadas- ALL 1005
+                    Config_comandosqlorigen_origindash21 = commandSqldash21   //rechazadas- hards
+                    Config_comandosqlorigen_origindash22 = commandSqldash22   //rechazadas- invalid merch
+                    Config_comandosqlorigen_origindash23 = commandSqldash23   //rechazadas- not honored
+                    
+					
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_server)                    
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_user)
                     log.Print("---- The DB values  was assigned "+Config_DB_origin_pass)
