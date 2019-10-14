@@ -24,7 +24,7 @@ func stuff() {
 }
 
 
-func dashBack01Grafica01() {
+func dashBack01Grafica01() {      //extract the PAGADAS/ACEPTADAS amount  31
     var errorGeneral string
 
     var valoresParaResponder  string
@@ -39,7 +39,7 @@ func dashBack01Grafica01() {
     
 }
 
-func dashBack01Grafica02() {
+func dashBack01Grafica02() {   //extract the Denegadas  amount 71
     var errorGeneral string
 
     var valoresParaResponder  string
@@ -54,7 +54,7 @@ func dashBack01Grafica02() {
     
 }
 
-func dashBack01GraficaAll() {
+func dashBack01GraficaAll() {    //extract all the pagadas  num transactions   11
     var errorGeneral string
 
     var valoresParaResponder  string
@@ -70,7 +70,7 @@ func dashBack01GraficaAll() {
 }
 
 
-func dashBack05GraficaAll() {
+func dashBack05GraficaAll() {    //extract all the denegadas  num transactions 51
     var errorGeneral string
 
     var valoresParaResponder  string
@@ -85,6 +85,21 @@ func dashBack05GraficaAll() {
     
 }
 
+
+func dashBackExtraeRechazadas( codigoData string) {    //extract Data for a Data conde
+    var errorGeneral string
+
+    var valoresParaResponder  string
+    fmt.Println("doing job :dashBackExtraeRechazadas")
+    valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01(codigoData)   // in logicbusiness.go
+
+    if errorGeneral==""{//continue next step
+        fmt.Println("respuesta job :"+valoresParaResponder)
+    }else{
+        fmt.Println("error respuesta job :"+errorGeneral)
+    }
+    
+}
 
 
 func main() {
@@ -105,7 +120,12 @@ fmt.Println("main ticker  03")
               fmt.Println("main ticker  06:",t)               
                dashBack01Grafica02() //obtains from source total amount per hour denegadas
                dashBack01GraficaAll() //obtains from source number of transactions per hour pagagas
-               dashBack05GraficaAll() //obtains from source number of transactions per hour denegadas
+               dashBack05GraficaAll() //obtains from source number of transactions per hour denegadas	
+		  
+		   dashBackExtraeRechazadas( "21") //rechazadas- ALL 1005   - 21
+		  dashBackExtraeRechazadas( "41") //rechazadas- hards      -41
+		  dashBackExtraeRechazadas( "61") //rechazadas- invalid merch -61
+		  dashBackExtraeRechazadas( "81") //rechazadas- not honored   -81
           }
     }()
 
