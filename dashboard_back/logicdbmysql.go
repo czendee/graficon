@@ -75,6 +75,16 @@ var errCards error
                                           cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
                                     case "73":
                                           cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash07
+
+                                    case "21":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash20   //rechazadas- ALL 1005
+                                    case "41":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash21    //rechazadas- hards
+                                    case "61":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash22    //rechazadas- invalid merch
+                                    case "81":
+                                          cualConfig_comandosqlorigen_origin = Config_comandosqlorigen_origindash23   //rechazadas- not honored	
+
                                      }		
 							log.Print("Commnad to execute!\n"+cualConfig_comandosqlorigen_origin)
 					         resultDatadash,errCards =modelito.BackMysqlDatadash0201(db,cualConfig_comandosqlorigen_origin) //defined in the config.json and set in the configuration.go
