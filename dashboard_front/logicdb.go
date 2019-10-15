@@ -87,7 +87,13 @@ import (
                                         requestData.Dash0202reference2="31"			   
 				   case requestData.Dash0202reference2== "81" :
                                         requestData.Dash0202reference2="71"
-					 
+				   case requestData.Dash0202reference2== "221" :
+                                        requestData.Dash0202reference2="31"
+				   case requestData.Dash0202reference2== "222" :
+                                        requestData.Dash0202reference2="21"	
+				   case requestData.Dash0202reference2== "223" :
+                                        requestData.Dash0202reference2="41,61,81"	
+				  
                                      }			
                         resultDatadashGroupNumber,errCards =modelito.GetMaxGroupNumberDatadash0202(db,
                         requestData.Dash0202reference,
