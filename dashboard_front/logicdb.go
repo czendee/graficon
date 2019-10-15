@@ -276,22 +276,22 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 requestData.Dash0202reference2 ="31"
                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="00" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
-					 requestData.Dash0202reference2 ="81"
+					 requestData.Dash0202reference2 ="21"
                             	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="01" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
-					 requestData.Dash0202reference2 ="81"
+					 requestData.Dash0202reference2 ="21"
                             	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="02" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
-					 requestData.Dash0202reference2 ="81"					 
+					 requestData.Dash0202reference2 ="21"					 
                            	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="00" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
-					 requestData.Dash0202reference2 ="21,41,51,61"
+					 requestData.Dash0202reference2 ="41,61,81"
                             	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="01" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
-					 requestData.Dash0202reference2 ="21,41,51,61"
+					 requestData.Dash0202reference2 ="41,61,81"
                             	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="02" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
-					 requestData.Dash0202reference2 ="21,41,51,61"					 
+					 requestData.Dash0202reference2 ="41,61,81"					 
 
 //END
 // version 2 dash21 dash22 dash23				 
