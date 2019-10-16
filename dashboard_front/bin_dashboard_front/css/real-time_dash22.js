@@ -477,7 +477,7 @@ $(function () {
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
 
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0201+"&reference2=22&dato01=99&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0201+"&reference2=222&dato01=00&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -540,7 +540,7 @@ function myFunction0201(item, index) {
     function updateUsersStateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=21&dato01=99&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0202+"&reference2=222&dato01=00&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -606,7 +606,7 @@ function myFunction0202(item, index) {
     function updateU24StateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0203+"&reference2=21&dato01=7&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0203+"&reference2=222&dato01=01&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -671,7 +671,7 @@ function myFunction0203(item, index) {
     function updateU48StateChartWithDB()
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0204+"&reference2=21&dato01=30&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0204+"&reference2=222&dato01=02&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
