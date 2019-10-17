@@ -464,12 +464,14 @@ $(function () {
 			title: "Medals"
 		},
 		legend: {
-			cursor:"pointer",
-			itemclick : toggleDataSeries
+			cursor:"pointer"
+//			,
+//			itemclick : toggleDataSeries
 		},
 		toolTip: {
-			shared: true,
-			content: toolTipFormatter
+			shared: true
+//			,
+//			content: toolTipFormatter
 		},
 		data: [{
 			type: "bar",
@@ -522,13 +524,13 @@ $(function () {
 
 
 
-
 	//----------------------------------------------------------------------------------//
 	var allCharts = [
 		usersMediumPieChart,
 		usersStateBarChart,
         u24StateBarChart,
-        u48StateBarChart
+        u48StateBarChart,
+		chartHoy
 	];
 	
 	// generate random number between given range
@@ -732,8 +734,7 @@ function myFunction0103(item, index) {
 ///end
 ////pagados ultimas 24hrs
 
-
-////pagados ultimas 48hrs
+	////pagados ultimas 48hrs
 ///start
     function updateU48StateChartWithDB()
    {
@@ -799,6 +800,95 @@ function myFunction0104(item, index) {
 
 
 
+////pagados Hoy -1hr -2hr
+///start
+    function updateHOYChartWith(parameDataType)
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0104 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+			if(parameDataType=="00" ){
+				arrayResultados.forEach(updateHOYChartWithNow) //set the values in the  graph points ,below
+			}
+			if(parameDataType=="01" ){
+				arrayResultados.forEach(updateHOYChartWithMenos1) //set the values in the  graph points ,below
+			}                    
+			if(parameDataType=="02" ){
+				arrayResultados.forEach(updateHOYChartWithMenos2) //set the values in the  graph points ,below
+			}			
+             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 chartHoy.render();
+
+            }
+        });
+      
+        chartHoy.render();
+
+}
+
+//func for now
+function updateHOYChartWithNow(item, index) {
+   
+e.entries[i].dataPoint.y
+   chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+
+
+
+}
+function updateHOYChartWithMenos1(item, index) {
+   
+
+   chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+
+
+
+}
+function updateHOYChartWithMenos2(item, index) {
+   
+
+   chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+
+
+
+}
+///end
+////pagados pagados Hoy -1hr -2hr
+	
+
 	// update all charts with revelant data
 	function updateCharts(dataIndex) {
 		activeUsers = data[dataIndex].activeUsers;
@@ -808,6 +898,10 @@ function myFunction0104(item, index) {
 
        updateU24StateChartWithDB();
        updateU48StateChartWithDB();
+		
+		updateHOYChartWith("00");
+		updateHOYChartWith("01");
+		updateHOYChartWith("01");
 		
 	}
 
