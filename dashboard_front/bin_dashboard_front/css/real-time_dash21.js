@@ -903,7 +903,7 @@ function updateHOYChartWithMenos2(item, index) {
 		
 		updateHOYChartWith("00");
 		updateHOYChartWith("01");
-		updateHOYChartWith("01");
+		updateHOYChartWith("02");
 		
 	}
 
