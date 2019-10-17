@@ -802,7 +802,7 @@ function myFunction0104(item, index) {
 
 ////pagados Hoy -1hr -2hr
 ///start
-    function updateHOYChartWith(parameDataType)
+    function updateHOYChartWith(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
         $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=77", function(data) {
