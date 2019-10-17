@@ -856,8 +856,7 @@ function myFunction0104(item, index) {
 
 //func for now
 function updateHOYChartWithNow(item, index) {
-   
-e.entries[i].dataPoint.y
+  
    chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
    chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
    chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
