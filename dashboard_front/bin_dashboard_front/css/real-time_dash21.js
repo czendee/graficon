@@ -877,7 +877,7 @@ function myFunction0104(item, index) {
 
 }
 
-
+//func for now
 function updateHOYChartWithNow(item, index) {
    
 e.entries[i].dataPoint.y
