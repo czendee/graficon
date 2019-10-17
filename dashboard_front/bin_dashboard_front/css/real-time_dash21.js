@@ -868,9 +868,9 @@ e.entries[i].dataPoint.y
 function updateHOYChartWithMenos1(item, index) {
    
 
-   chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
-   chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
-   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+   chartHoy.options.data[1].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chartHoy.options.data[1].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[1].dataPoints[index].name = item["data_name"];
 
 
 
@@ -878,9 +878,9 @@ function updateHOYChartWithMenos1(item, index) {
 function updateHOYChartWithMenos2(item, index) {
    
 
-   chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
-   chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
-   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+   chartHoy.options.data[2].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chartHoy.options.data[2].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[2].dataPoints[index].name = item["data_name"];
 
 
 
