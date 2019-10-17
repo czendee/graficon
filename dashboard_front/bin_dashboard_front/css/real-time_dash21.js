@@ -519,30 +519,7 @@ $(function () {
 	});
 	chartHoy.render();
 
-	function toolTipFormatter(e) {
-		var str = "";
-		var total = 0 ;
-		var str3;
-		var str2 ;
-		for (var i = 0; i < e.entries.length; i++){
-			var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
-			total = e.entries[i].dataPoint.y + total;
-			str = str.concat(str1);
-		}
-		str2 = "<strong>:)" + e.entries[0].dataPoint.label + "</strong> <br/>";
-		str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
-		return (str2.concat(str)).concat(str3);
-	}
 
-	function toggleDataSeries(e) {
-		if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}
-		else {
-			e.dataSeries.visible = true;
-		}
-		chartHoy.render();
-	}
 
 
 
