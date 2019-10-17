@@ -461,7 +461,7 @@ $(function () {
 			text: "Aceptadas (Hoy)"
 		},
 		axisY: {
-			title: "Medals"
+			title: "Monto en $"
 		},
 		legend: {
 			cursor:"pointer"
