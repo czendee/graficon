@@ -828,13 +828,13 @@ function myFunction0104(item, index) {
                 }                
                 if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
-			if(parameDataType=="00" ){
+			if(paramDataType=="00" ){
 				arrayResultados.forEach(updateHOYChartWithNow) //set the values in the  graph points ,below
 			}
-			if(parameDataType=="01" ){
+			if(paramDataType=="01" ){
 				arrayResultados.forEach(updateHOYChartWithMenos1) //set the values in the  graph points ,below
 			}                    
-			if(parameDataType=="02" ){
+			if(paramDataType=="02" ){
 				arrayResultados.forEach(updateHOYChartWithMenos2) //set the values in the  graph points ,below
 			}			
              
