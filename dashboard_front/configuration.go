@@ -65,6 +65,14 @@ var Config_comandosql_frontdash08_30 string
 var Config_comandosql_frontdash21_00 string
 var Config_comandosql_frontdash21_01 string
 var Config_comandosql_frontdash21_02 string
+
+var Config_comandosql_frontdash21_70 string
+var Config_comandosql_frontdash21_71 string
+var Config_comandosql_frontdash21_72 string
+
+var Config_comandosql_frontdash21_30 string
+var Config_comandosql_frontdash21_31 string
+var Config_comandosql_frontdash21_32 string
 //version 2:END
 /*    const (
         DB_USER     = "lerepagr"        
@@ -213,6 +221,12 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     commandSqldash21_00, _ := n["comandosqlorigendash21_00"].(string)
                     commandSqldash21_01, _ := n["comandosqlorigendash21_01"].(string)
                     commandSqldash21_02, _ := n["comandosqlorigendash21_02"].(string)
+                    commandSqldash21_70, _ := n["comandosqlorigendash21_70"].(string)
+                    commandSqldash21_71, _ := n["comandosqlorigendash21_71"].(string)
+                    commandSqldash21_72, _ := n["comandosqlorigendash21_72"].(string)					
+                    commandSqldash21_30, _ := n["comandosqlorigendash21_30"].(string)
+                    commandSqldash21_31, _ := n["comandosqlorigendash21_31"].(string)
+                    commandSqldash21_32, _ := n["comandosqlorigendash21_32"].(string)					
 	//new version 2: end                    
 
 				
@@ -257,7 +271,13 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 //new version 2   START					
                     Config_comandosql_frontdash21_00 =commandSqldash21_00
                     Config_comandosql_frontdash21_01 =commandSqldash21_01
-                    Config_comandosql_frontdash21_02 =commandSqldash21_02					
+                    Config_comandosql_frontdash21_02 =commandSqldash21_02
+                    Config_comandosql_frontdash21_70 =commandSqldash21_70
+                    Config_comandosql_frontdash21_71 =commandSqldash21_71
+                    Config_comandosql_frontdash21_72 =commandSqldash21_72					
+                    Config_comandosql_frontdash21_30 =commandSqldash21_30
+                    Config_comandosql_frontdash21_31 =commandSqldash21_31
+                    Config_comandosql_frontdash21_32 =commandSqldash21_32
 //new version 2    END					
                     log.Print("---- The DB values  was assigned "+Config_DB_server)                    
                     log.Print("---- The DB values  was assigned "+Config_DB_user)
@@ -269,7 +289,10 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 //new version 2   START					
                     log.Print("---- ne sql 21 00 "+Config_comandosql_frontdash21_00)					
                     log.Print("---- ne sql 21 01 "+Config_comandosql_frontdash21_01)					
-		    log.Print("---- ne sql 21 02 "+Config_comandosql_frontdash21_02)					
+		    log.Print("---- ne sql 21 02 "+Config_comandosql_frontdash21_02)
+                    log.Print("---- ne sql 21 00 "+Config_comandosql_frontdash21_70)					
+                    log.Print("---- ne sql 21 01 "+Config_comandosql_frontdash21_31)					
+		    log.Print("---- ne sql 21 02 "+Config_comandosql_frontdash21_32)					
 //new version 2   END					
 					if e := db.Connection.Set(db.NewPgDb(host, int(port), _db, user, pass)); e == nil {
 						log.Print("---- The postgresql database was loaded"+host)
