@@ -1219,9 +1219,9 @@ function updateHOYChartWith30diasMenos2(item, index) {
 		updateHOYChartWith("01");
 		updateHOYChartWith("02");
 
-		updateChartWith30dias("70");
-		updateChartWith30dias("71");
-		updateChartWith30dias("72");
+		updateChartWith7dias("70");
+		updateChartWith7dias("71");
+		updateChartWith7dias("72");
 		
 		updateChartWith30dias("30");
 		updateChartWith30dias("31");
