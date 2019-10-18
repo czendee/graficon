@@ -525,6 +525,144 @@ $(function () {
 	chartHoy.render();
 
 
+			var chart7dias = new CanvasJS.Chart("chartContainer7dias", {
+		animationEnabled: true,
+		title:{
+			text: "Hace 7 dias"
+		},
+		axisY: {
+			title: "Monto en $"
+		},
+		legend: {
+			cursor:"pointer"
+//			,
+//			itemclick : toggleDataSeries
+		},
+		toolTip: {
+			shared: true
+//			,
+//			content: toolTipFormatter
+		},
+		data: [{
+			type: "bar",
+			showInLegend: true,
+			name: "Now",
+			color: "gold",
+			dataPoints: [
+				{ y: 243, label: "Italy" },
+				{ y: 236, label: "China" },
+				{ y: 243, label: "France" },
+				{ y: 273, label: "Great Britain" },
+				{ y: 269, label: "Germany" },
+				{ y: 196, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 1118, label: "USA" }
+			]
+		},
+		{
+			type: "bar",
+			showInLegend: true,
+			name: "-1Hr",
+			color: "silver",
+			dataPoints: [
+				{ y: 212, label: "Italy" },
+				{ y: 186, label: "China" },
+				{ y: 272, label: "France" },
+				{ y: 299, label: "Great Britain" },
+				{ y: 270, label: "Germany" },
+				{ y: 165, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 896, label: "USA" }
+			]
+		},
+		{
+			type: "bar",
+			showInLegend: true,
+			name: "-2Hrs",
+			color: "#A57164",
+			dataPoints: [
+				{ y: 236, label: "Italy" },
+				{ y: 172, label: "China" },
+				{ y: 309, label: "France" },
+				{ y: 302, label: "Great Britain" },
+				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 788, label: "USA" }
+			]
+		}]
+	});
+	chart7dias.render();
+
+			var chart30dias = new CanvasJS.Chart("chartContainer30dias", {
+		animationEnabled: true,
+		title:{
+			text: "Hace 30 dias"
+		},
+		axisY: {
+			title: "Monto en $"
+		},
+		legend: {
+			cursor:"pointer"
+//			,
+//			itemclick : toggleDataSeries
+		},
+		toolTip: {
+			shared: true
+//			,
+//			content: toolTipFormatter
+		},
+		data: [{
+			type: "bar",
+			showInLegend: true,
+			name: "Now",
+			color: "gold",
+			dataPoints: [
+				{ y: 243, label: "Italy" },
+				{ y: 236, label: "China" },
+				{ y: 243, label: "France" },
+				{ y: 273, label: "Great Britain" },
+				{ y: 269, label: "Germany" },
+				{ y: 196, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 1118, label: "USA" }
+			]
+		},
+		{
+			type: "bar",
+			showInLegend: true,
+			name: "-1Hr",
+			color: "silver",
+			dataPoints: [
+				{ y: 212, label: "Italy" },
+				{ y: 186, label: "China" },
+				{ y: 272, label: "France" },
+				{ y: 299, label: "Great Britain" },
+				{ y: 270, label: "Germany" },
+				{ y: 165, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 896, label: "USA" }
+			]
+		},
+		{
+			type: "bar",
+			showInLegend: true,
+			name: "-2Hrs",
+			color: "#A57164",
+			dataPoints: [
+				{ y: 236, label: "Italy" },
+				{ y: 172, label: "China" },
+				{ y: 309, label: "France" },
+				{ y: 302, label: "Great Britain" },
+				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 788, label: "USA" }
+			]
+		}]
+	});
+	chart30dias.render();
+
 
 
 	//----------------------------------------------------------------------------------//
@@ -533,7 +671,9 @@ $(function () {
 		usersStateBarChart,
         u24StateBarChart,
         u48StateBarChart,
-		chartHoy
+		chartHoy,
+		chart7dias,
+		chart30dias
 	];
 	
 	// generate random number between given range
@@ -831,16 +971,16 @@ function myFunction0104(item, index) {
                 }                
                 if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
                     var arrayResultados= value;//here the array of data structres passed
-			if(paramDataType=="00" ){
+			if(paramDataType=="00" ){ //hoy now
 				arrayResultados.forEach(updateHOYChartWithNow) //set the values in the  graph points ,below
 			}
-			if(paramDataType=="01" ){
+			if(paramDataType=="01" ){ //hoy -1hr
 				arrayResultados.forEach(updateHOYChartWithMenos1) //set the values in the  graph points ,below
 			}                    
-			if(paramDataType=="02" ){
+			if(paramDataType=="02" ){ //hoy -2hrs
 				arrayResultados.forEach(updateHOYChartWithMenos2) //set the values in the  graph points ,below
-			}			
-             
+			}	
+       
                 }
                 linea=linea+1;
                  console.log("json banwire recent"); 
@@ -888,8 +1028,182 @@ function updateHOYChartWithMenos2(item, index) {
 
 }
 ///end
-////pagados pagados Hoy -1hr -2hr
+////pagados pagados Hace 7 dias    now -1hr -2hr
+
 	
+////pagados hace 7 dias -1hr -2hr
+///start
+    function updateChartWith7dias(paramDataType)
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0104 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+			if(paramDataType=="70" ){ //hace 7dias now
+				arrayResultados.forEach(updateHOYChartWith7dias) //set the values in the  graph points ,below
+			}
+			if(paramDataType=="71" ){ //hace 7dias -1hr
+				arrayResultados.forEach(updateHOYChartWith7diasMenos1) //set the values in the  graph points ,below
+			}                    
+			if(paramDataType=="72" ){ //hace 7dias -2hrs
+				arrayResultados.forEach(updateHOYChartWith7diasMenos2) //set the values in the  graph points ,below
+			}					
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 chart7dias.render();
+
+            }
+        });
+      
+        chart7dias.render();
+
+}
+
+//func for now
+function updateHOYChartWith7dias(item, index) {
+  
+   chart7dias.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart7dias.options.data[0].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[0].dataPoints[index].name = item["data_name"];
+
+
+
+}
+function updateHOYChartWith7diasMenos1(item, index) {
+   
+
+   chart7dias.options.data[1].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart7dias.options.data[1].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[1].dataPoints[index].name = item["data_name"];
+
+
+
+}
+function updateHOYChartWith7diasMenos2(item, index) {
+   
+
+   chart7dias.options.data[2].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart7dias.options.data[2].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[2].dataPoints[index].name = item["data_name"];
+
+
+
+}
+///end
+////pagados pagados 7dias -1hr -2hr
+	
+
+////pagados hace 30 dias -1hr -2hr
+///start
+    function updateChartWith30dias(paramDataType)
+   {
+             //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=77", function(data) {
+            var linea=0;
+
+             var exito="0";//error/not found
+//             var exito=1;// found and groupNubr is greater than previousGroupNoumber0202,so get the most current data from db into javascript
+//             var exito=2;// found and groupNubr is not greater than previousGroupNoumber0202, so use the current data in javascript
+
+            $.each(data, function(key, value){
+                if(linea ==0){//primera linea, viene estatus Success or Error
+
+                }
+                if(linea ==1){//second linea, viene estatus value 1 or Error
+                     var statusResultado= value;
+                     exito=statusResultado
+                }
+                if(linea ==2 && exito=="1"){//third  linea, viene nuevo group number
+
+                   var grupoNumberResultado= value;
+                   previousGroupNumber0104 =grupoNumberResultado;
+
+                }                
+                if(linea ==3 && exito=="1"){//foruth linea, viene an array with the result data
+                    var arrayResultados= value;//here the array of data structres passed
+			if(paramDataType=="30" ){ //hace 30dias now
+				arrayResultados.forEach(updateHOYChartWith30dias) //set the values in the  graph points ,below
+			}
+			if(paramDataType=="31" ){ //hace 30dias -1hr
+				arrayResultados.forEach(updateHOYChartWith30diasMenos1) //set the values in the  graph points ,below
+			}                    
+			if(paramDataType=="32" ){ //hace 30dias -2hrs
+				arrayResultados.forEach(updateHOYChartWith30diasMenos2) //set the values in the  graph points ,below
+			}             
+                }
+                linea=linea+1;
+                 console.log("json banwire recent"); 
+                 
+            });	
+            if(exito=="1"){ //only update data if new data group was found, more recent than the previuous group number
+
+                 chart30dias.render();
+
+            }
+        });
+      
+        chart30dias.render();
+
+}
+
+//func for now
+function updateHOYChartWith30dias(item, index) {
+  
+   chart30dias.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart30dias.options.data[0].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[0].dataPoints[index].name = item["data_name"];
+
+
+
+}
+function updateHOYChartWith30diasMenos1(item, index) {
+   
+
+   chart30dias.options.data[1].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart30dias.options.data[1].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[1].dataPoints[index].name = item["data_name"];
+
+
+
+}
+function updateHOYChartWith30diasMenos2(item, index) {
+   
+
+   chart30dias.options.data[2].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart30dias.options.data[2].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[2].dataPoints[index].name = item["data_name"];
+
+
+
+}
+///end
+////pagados pagados 30dias y -1hr -2hr
+		
 
 	// update all charts with revelant data
 	function updateCharts(dataIndex) {
@@ -904,6 +1218,14 @@ function updateHOYChartWithMenos2(item, index) {
 		updateHOYChartWith("00");
 		updateHOYChartWith("01");
 		updateHOYChartWith("02");
+
+		updateChartWith30dias("70");
+		updateChartWith30dias("71");
+		updateChartWith30dias("72");
+		
+		updateChartWith30dias("30");
+		updateChartWith30dias("31");
+		updateChartWith30dias("32");
 		
 	}
 
