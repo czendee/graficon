@@ -73,6 +73,26 @@
 		}
 ,      
 		{
+			"type" : "topCustomers",
+			"nodes" : [
+				{
+                   
+					"active"   : true,
+					"topCustomer_01" 	   : "gsegurosIVR",
+					"topCustomer_02" 	   : "gseguros",
+					"topCustomer_03" 	   : "vclub",
+					"topCustomer_04" 	   : "vpass",
+					"topCustomer_05" 	   : "boacompra",
+					"topCustomer_06" 	   : "pseguros",
+					"topCustomer_07" 	   : "unidep",
+					"topCustomer_08" 	   : "octavo no definido"
+
+				}
+			]
+		}   
+,  
+
+		{
 			"type" : "mysqlOLD",
 			"nodes" : [
 				{
