@@ -73,6 +73,8 @@ var Config_comandosql_frontdash21_72 string
 var Config_comandosql_frontdash21_30 string
 var Config_comandosql_frontdash21_31 string
 var Config_comandosql_frontdash21_32 string
+
+var Config_topCustomer[8] string
 //version 2:END
 /*    const (
         DB_USER     = "lerepagr"        
@@ -227,6 +229,15 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     commandSqldash21_30, _ := n["comandosqlorigendash21_30"].(string)
                     commandSqldash21_31, _ := n["comandosqlorigendash21_31"].(string)
                     commandSqldash21_32, _ := n["comandosqlorigendash21_32"].(string)					
+					
+                    topCustomer01, _       := n["topCustomer_01"].(string)	
+		    topCustomer02, _       := n["topCustomer_02"].(string)						
+		    topCustomer03, _       := n["topCustomer_03"].(string)						
+		    topCustomer04, _       := n["topCustomer_04"].(string)						
+		    topCustomer05, _       := n["topCustomer_05"].(string)						
+		    topCustomer06, _       := n["topCustomer_06"].(string)						
+		    topCustomer07, _       := n["topCustomer_07"].(string)						
+		    topCustomer08, _       := n["topCustomer_08"].(string)											
 	//new version 2: end                    
 
 				
@@ -278,6 +289,14 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
                     Config_comandosql_frontdash21_30 =commandSqldash21_30
                     Config_comandosql_frontdash21_31 =commandSqldash21_31
                     Config_comandosql_frontdash21_32 =commandSqldash21_32
+		    Config_topCustomer[0] = topCustomer01
+		    Config_topCustomer[1] = topCustomer02
+		    Config_topCustomer[2] = topCustomer03
+		    Config_topCustomer[3] = topCustomer04
+		    Config_topCustomer[4] = topCustomer05
+		    Config_topCustomer[5] = topCustomer06
+		    Config_topCustomer[6] = topCustomer07
+		    Config_topCustomer[7] = topCustomer08
 //new version 2    END					
                     log.Print("---- The DB values  was assigned "+Config_DB_server)                    
                     log.Print("---- The DB values  was assigned "+Config_DB_user)
