@@ -157,7 +157,12 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
 
             log.Print("CZ   STEP Validate Parms")
                 /// START
-            fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)   //logicresponse.go
+		if(requestData.Dash0202Dato03 =="V2"){
+			fieldDataBytesJson,err := getJsonResponseDatadashV2(valoresParaResponder)   //logicresponse.go
+		}else{
+			fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)   //logicresponse.go
+		}
+            
             
             log.Print("CZ    handler Listening test v1ProcessDash02Grafica02  3")	
             
