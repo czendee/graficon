@@ -69,7 +69,7 @@ func getJsonResponseDatadashV2( datadashFound []modelito.Datadash)([]byte, error
 				}
 
 			}//end for
-			if(esteTopTraeDatos==0)
+			if(esteTopTraeDatos==0){
 					//agrega uno vacio 
 					w := modelito.ResponseDatadash{time.Now(),"0",Config_topCustomer[i],time.Now(),0,"0"}   //request.go
 					mainStruct.Datadash = append(mainStruct.Datadash, w)     //request.go
