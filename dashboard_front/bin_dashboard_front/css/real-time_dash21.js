@@ -956,7 +956,7 @@ function updateHOYChartWith30diasMenos2(item, index) {
 
     function go_next2() {
 //        alert("next");
-        window.location.href = "/v1/dash05";  
+        window.location.href = "/v2/dash02";  
 
     }
 
