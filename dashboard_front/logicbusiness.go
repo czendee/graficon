@@ -158,22 +158,34 @@ func v1ProcessDash02Grafica02(w http.ResponseWriter, requestData modelito.Reques
             log.Print("CZ   STEP Validate Parms")
                 /// START
 		if(requestData.Dash0202Dato03 =="V2"){
-			fieldDataBytesJson,err := getJsonResponseDatadashV2(valoresParaResponder)   //logicresponse.go
+			    fieldDataBytesJson,err := getJsonResponseDatadashV2(valoresParaResponder)   //logicresponse.go
+			
+			    log.Print("CZ    getJsonResponseDatadashV2  3")	
+
+			    result ="OK getJsonResponseDatadashV2 get Dash0202reference: "+requestData.Dash0202reference+"resultado"
+			    if err!=nil{
+				log.Print("getJsonResponseDatadashV2 Eror en generando response")
+				errorGeneral= err.Error()
+			    }		
+			    //////////    write the response
+			    w.Header().Set("Content-Type", "application/json")
+			    w.Write(fieldDataBytesJson)
 		}else{
-			fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)   //logicresponse.go
+			   fieldDataBytesJson,err := getJsonResponseDatadashV1(valoresParaResponder)   //logicresponse.go
+			    log.Print("CZ    getJsonResponseDatadashV1  3")	
+
+			    result ="getJsonResponseDatadashV1 OK get Dash0202reference: "+requestData.Dash0202reference+"resultado"
+			    if err!=nil{
+				log.Print("getJsonResponseDatadashV1 Eror en generando response")
+				errorGeneral= err.Error()
+			    }		
+			    //////////    write the response
+			    w.Header().Set("Content-Type", "application/json")
+			    w.Write(fieldDataBytesJson)			
 		}
             
             
-            log.Print("CZ    handler Listening test v1ProcessDash02Grafica02  3")	
-            
-            result ="OK get Dash0202reference: "+requestData.Dash0202reference+"resultado"
-            if err!=nil{
-                log.Print("Eror en generando response")
-                errorGeneral= err.Error()
-            }		
-            //////////    write the response
-            w.Header().Set("Content-Type", "application/json")
-            w.Write(fieldDataBytesJson)
+
         }    
 
         
