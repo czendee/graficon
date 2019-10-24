@@ -306,12 +306,30 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					 requestData.Dash0202reference2 ="21"
                             	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="02" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
-					 requestData.Dash0202reference2 ="21"					 
+					 requestData.Dash0202reference2 ="21"	
+                           	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="70" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_70
+					 requestData.Dash0202reference2 ="21"
+                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="71" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_71
+					 requestData.Dash0202reference2 ="21"
+                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="72" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_72
+					 requestData.Dash0202reference2 ="21"	
+                           	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="30" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_30
+					 requestData.Dash0202reference2 ="21"
+                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="31" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_31
+					 requestData.Dash0202reference2 ="21"
+                            	   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="32" :
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_32
+					 requestData.Dash0202reference2 ="21"	
                            	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="00" :
-                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_30
 					 requestData.Dash0202reference2 ="41,61,81"
                             	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="01" :
-                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
+                                        cualConfig_comandosqlfront = Config_comandosql_frontdash21_31
 					 requestData.Dash0202reference2 ="41,61,81"
                             	   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="02" :
                                         cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
