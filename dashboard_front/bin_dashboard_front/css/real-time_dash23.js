@@ -298,11 +298,11 @@ $(function () {
 			scaleBreaks: {
 				type: "wavy",
 				customBreaks: [{
-					startValue: 25000,
+					startValue: 12000,
 					endValue: 30000
 					},
 					{
-						startValue: 55000,
+						startValue: 42000,
 						endValue: 60000
 					}
 			]}			
