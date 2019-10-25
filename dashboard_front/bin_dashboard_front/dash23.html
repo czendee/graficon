@@ -17,7 +17,6 @@
 	<link href="/font-awesome.min.css" rel="stylesheet">
 	<link href="/style.css" rel="stylesheet">
 	<!-- scripts -->
-
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="/jquery-3.1.0.min.js"></script>
 	<script src="/tether.min.js"></script>
@@ -61,11 +60,11 @@
 
 <!--                    <button id="btn">Cambiar</button> -->
 				</div>
-				<div class="ligtheno">
+				<div class="ligtheno"   style="visibility:hidden">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/v1/dash07">
+                    <a href="/v1/dash05">
 						<span class="ligtheno">Ir a Denegados</span><span class="ligtheno" >.</span>
                     </a>
                     <select id="id_of_selectRotacion" style="visibility:hidden">
@@ -91,45 +90,49 @@
 		<div class="container-fluid">
 
 
+
+
+			
+
 			<!-- 3rd row -->
 			<div class="row">
 				<!--<div class="col-md-12">   -->
-                   <div class="col-lg-4"> 
+
+                               <div class="col-lg-4" >
 					<div class="card card-block">
-						<h4 class="card-title">Montos Pagados/Ultima Hora</h4>
-						<div id="users-state-bar-chart"></div>
+						<h4 class="card-title">Hoy</h4>
+						<div id="chartContainer"></div>
 					</div>
 				</div>
-                   <div class="col-lg-4"> 
+                               <div class="col-lg-4" >
 					<div class="card card-block">
-						<h4 class="card-title">Pagados/24hrs</h4>
-						<div id="u24-state-bar-chart"></div>
-					</div>
-                  </div>
-                <div class="col-lg-4">
-					<div class="card card-block">
-						<h4 class="card-title">Pagados/48hrs</h4>
-						<div id="u48-state-bar-chart"></div>
+						<h4 class="card-title">Hace 7 dias</h4>
+						<div id="chartContainer7dias"></div>
 					</div>
 				</div>
+                               <div class="col-lg-4" >
+					<div class="card card-block">
+						<h4 class="card-title">Hace 30 dias</h4>
+						<div id="chartContainer30dias"></div>
+					</div>
+				</div>				
 			</div>
 
 			<!-- /3rd row -->
-
-			<!-- 3rd row -->
+			<!-- 4rd row -->
 			<div class="row">
 				<!--<div class="col-md-12">   -->
 
-                <div class="col-lg-4" style="visibility:hidden">
+                               <div class="col-lg-4" style="visibility:hidden">
 					<div class="card card-block">
 						<h4 class="card-title">Medio</h4>
 						<div id="users-medium-pie-chart"></div>
 					</div>
 				</div>
-
+			
 			</div>
 
-			<!-- /3rd row -->
+			<!-- /4rd row -->			
 
 		</div>
 		<!-- /.container-fluid -->
