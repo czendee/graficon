@@ -403,7 +403,7 @@ $(function () {
 			var chart7dias = new CanvasJS.Chart("chartContainer7dias", {
 		animationEnabled: true,
 		title:{
-			text: "Hace 7 dias"
+			text: "-1hr"
 		},
 		axisY: {
 			title: "Monto en $"
@@ -514,7 +514,7 @@ $(function () {
 			var chart30dias = new CanvasJS.Chart("chartContainer30dias", {
 		animationEnabled: true,
 		title:{
-			text: "Hace 30 dias"
+			text: "-2hrs"
 		},
 		axisY: {
 			title: "Monto en $"
