@@ -359,7 +359,8 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
 			]
-		},
+		}
+/*		       ,
 		{
 			type: "bar",
 			showInLegend: true,
@@ -395,7 +396,9 @@ $(function () {
 				{ y: 5188, label: "Russia" },
 				{ y: 1788, label: "USA" }
 			]
-		}]
+		}
+*/		
+		]
 	});
 	chartHoy.render();
 
@@ -471,7 +474,8 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
 			]
-		},
+		}
+/*		 ,
 		{
 			type: "bar",
 			showInLegend: true,
@@ -507,7 +511,8 @@ $(function () {
 				{ y: 5188, label: "Russia" },
 				{ y: 1788, label: "USA" }
 			]
-		}]
+		}
+*/		]
 	});
 	chart7dias.render();
 
@@ -582,7 +587,8 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
 			]
-		},
+		}
+/*		       ,
 		{
 			type: "bar",
 			showInLegend: true,
@@ -618,7 +624,9 @@ $(function () {
 				{ y: 5188, label: "Russia" },
 				{ y: 1788, label: "USA" }
 			]
-		}]
+		}
+*/
+		 ]
 	});
 	chart30dias.render();
 
