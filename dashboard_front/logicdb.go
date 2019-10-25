@@ -170,7 +170,7 @@ resultLastHrDatadash:= []modelito.Datadash{}
 					         log.Print("Ping ok!\n")
 //					         var misCards modelito.Card
 							var cualConfig_comandosqlfront string
-							var cuantosMaxVisual  string
+							var cuantosMaxVisual  int
 							cuantosMaxVisual=7   //default V1
 							 switch  {
 							   case requestData.Dash0202reference2== "11" && requestData.Dash0202Dato01 =="99" :
