@@ -291,7 +291,7 @@ $(function () {
 		var chartHoy = new CanvasJS.Chart("chartContainer", {
 		animationEnabled: true,
 		title:{
-			text: "Aceptadas (Hoy)"
+			text: "Hoy"
 		},
 		axisY: {
 			title: "Monto en $"
