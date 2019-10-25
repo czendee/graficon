@@ -310,7 +310,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "Now",
-			color: "gold",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -328,7 +328,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-1Hr",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -346,7 +346,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-2Hrs",
-			color: "#A57164",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
@@ -386,7 +386,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "Now",
-			color: "gold",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -404,7 +404,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-1Hr",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -422,7 +422,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-2Hrs",
-			color: "#A57164",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
@@ -461,7 +461,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "Now",
-			color: "gold",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -479,7 +479,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-1Hr",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -497,7 +497,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-2Hrs",
-			color: "#A57164",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
