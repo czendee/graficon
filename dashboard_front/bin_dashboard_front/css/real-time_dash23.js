@@ -395,7 +395,7 @@ $(function () {
 			showInLegend: true,
 			name: "H -2Hrs",
 			color: "12e027",
-			markerType: "triangle",
+			
 			dataPoints: [
 				{ y: 1236, label: "Italy" },
 				{ y:2172, label: "China" },
