@@ -373,7 +373,7 @@ $(function () {
 		}
 		       ,
 		{
-			type: "bar",
+			type: "scatter",
 			showInLegend: true,
 			name: "H -1Hrs",
 			color: "#e88707",
