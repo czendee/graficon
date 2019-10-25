@@ -294,7 +294,18 @@ $(function () {
 			text: "Mas reciente"
 		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			scaleBreaks: {
+				type: "wavy",
+				customBreaks: [{
+					startValue: 25000,
+					endValue: 30000
+					},
+					{
+						startValue: 55000,
+						endValue: 60000
+					}
+			]}			
 		},
 		legend: {
 			cursor:"pointer"
