@@ -293,10 +293,7 @@ $(function () {
 		title:{
 			text: "Mas reciente"
 		},
-		axisX:{
-		
-		      maximum: 90000
-		     },
+
 			
 		axisY: {
 			title: "Monto en $",
@@ -423,10 +420,7 @@ $(function () {
 		title:{
 			text: "-1hr"
 		},
-		axisX:{
-		
-		      maximum: 90000
-		     },				
+			
 		axisY: {
 			title: "Monto en $"
 		},
