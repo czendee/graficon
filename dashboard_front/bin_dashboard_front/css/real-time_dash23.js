@@ -307,7 +307,8 @@ $(function () {
 						startValue: 42000,
 						endValue: 60000
 					}
-			]}			
+			]},
+			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
@@ -385,7 +386,8 @@ $(function () {
 		},
 			
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
@@ -499,7 +501,8 @@ $(function () {
 			text: "-2hrs"
 		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
