@@ -359,7 +359,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Not Honor",
-			color: "#deb72a",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
@@ -401,7 +401,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
-			color: "#1c13bf",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -419,7 +419,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Invalid Merchant",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -437,7 +437,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Not Honor",
-			color: "#9c3521",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
@@ -450,8 +450,7 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
 			]
-		}
-/*		 ,
+		} ,
 		{
 			type: "bar",
 			showInLegend: true,
@@ -469,7 +468,8 @@ $(function () {
 				{ y: 4188, label: "Russia" },
 				{ y: 2788, label: "USA" }
 			]
-		},
+		}
+/*		,
 		{
 			type: "bar",
 			showInLegend: true,
