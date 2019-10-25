@@ -361,9 +361,27 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "H -1Hrs",
+			color: "#e88707",
+			dataPoints: [
+				{ y: 236, label: "Italy" },
+				{ y: 172, label: "China" },
+				{ y: 309, label: "France" },
+				{ y: 302, label: "Great Britain" },
+				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 788, label: "USA" }
+			]
+		},
+		{
+			type: "stackedBar",
+			showInLegend: true,
+			name: "H -2Hrs",
 			color: "#e88707",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
@@ -455,9 +473,27 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
-			name: "H -1Hr",
+			name: "H -1Hrs",
+			color: "#e88707",
+			dataPoints: [
+				{ y: 236, label: "Italy" },
+				{ y: 172, label: "China" },
+				{ y: 309, label: "France" },
+				{ y: 302, label: "Great Britain" },
+				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 788, label: "USA" }
+			]
+		},
+		{
+			type: "stackedBar",
+			showInLegend: true,
+			name: "H -2Hrs",
 			color: "#e88707",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
@@ -548,9 +584,27 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "H -1Hrs",
+			color: "#e88707",
+			dataPoints: [
+				{ y: 236, label: "Italy" },
+				{ y: 172, label: "China" },
+				{ y: 309, label: "France" },
+				{ y: 302, label: "Great Britain" },
+				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 788, label: "USA" }
+			]
+		},
+		{
+			type: "stackedBar",
+			showInLegend: true,
+			name: "H -2Hrs",
 			color: "#e88707",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
