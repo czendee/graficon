@@ -378,16 +378,16 @@ $(function () {
 			name: "H -1Hrs",
 			color: "#e88707",
 			dataPoints: [
-				{ x:100, y: 236, label: "Italy" },
-				{ x:200, y: 1172, label: "China" },
-				{ x:300, y: 2309, label: "France" },
-				{ x:400, y: 3302, label: "Great Britain" },
-				{ x:500, y: 4285, label: "Germany" },
-				{ x:600, y: 5188, label: "Russia" },
-				{ x:700, y: 7188, label: "Russia" },
-				{ x:800, y: 8188, label: "Russia" },
-				{ x:900, y: 1188, label: "Russia" },
-				{ x:1000,  y: 788, label: "USA" }
+				{ y:100, x: 236, label: "Italy" },
+				{ y:200, x: 1172, label: "China" },
+				{ y:300, x: 2309, label: "France" },
+				{ y:400, x: 3302, label: "Great Britain" },
+				{ y:500, x: 4285, label: "Germany" },
+				{ y:600, x: 5188, label: "Russia" },
+				{ y:700, x: 7188, label: "Russia" },
+				{ y:800, x: 8188, label: "Russia" },
+				{ y:900, x: 1188, label: "Russia" },
+				{ y:1000,  x: 788, label: "USA" }
 			]
 		},
 		{
@@ -397,16 +397,16 @@ $(function () {
 			color: "12e027",
 			markerType: "triangle",
 			dataPoints: [
-				{ x:100, y: 1236, label: "Italy" },
-				{ x:200, y: 2172, label: "China" },
-				{ x:300, y: 3309, label: "France" },
-				{ x:400, y: 4302, label: "Great Britain" },
-				{ x:500, y: 5285, label: "Germany" },
-				{ x:600, y: 6188, label: "Russia" },
-				{ x:700, y: 3188, label: "Russia" },
-				{ x:800, y: 2188, label: "Russia" },
-				{ x:900, y: 5188, label: "Russia" },
-				{ x:1000,  y: 1788, label: "USA" }
+				{ y:100, x: 1236, label: "Italy" },
+				{ y:200, x: 2172, label: "China" },
+				{ y:300, x: 3309, label: "France" },
+				{ y:400, x: 4302, label: "Great Britain" },
+				{ y:500, x: 5285, label: "Germany" },
+				{ y:600, x: 6188, label: "Russia" },
+				{ y:700, x: 3188, label: "Russia" },
+				{ y:800, x: 2188, label: "Russia" },
+				{ y:900, x: 5188, label: "Russia" },
+				{ y:1000,  x: 1788, label: "USA" }
 			]
 		}]
 	});
