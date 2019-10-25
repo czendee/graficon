@@ -307,7 +307,7 @@ $(function () {
 //			content: toolTipFormatter
 		},
 		data: [{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
 			color: "#1c13bf",
@@ -325,7 +325,7 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Invalid Merchant",
 			color: "silver",
@@ -343,7 +343,7 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Not Honor",
 			color: "#9c3521",
@@ -361,7 +361,7 @@ $(function () {
 			]
 		},
 		{
-			type: "scatter",
+			type: "bar",
 			showInLegend: true,
 			name: "H -1Hrs",
 			color: "#e88707",
@@ -379,7 +379,7 @@ $(function () {
 			]
 		},
 		{
-			type: "scatter",
+			type: "bar",
 			showInLegend: true,
 			name: "H -2Hrs",
 			color: "12e027",
@@ -419,7 +419,7 @@ $(function () {
 //			content: toolTipFormatter
 		},
 		data: [{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
 			color: "#1c13bf",
@@ -437,7 +437,7 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Invalid Merchant",
 			color: "silver",
@@ -455,7 +455,7 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Not Honor",
 			color: "#9c3521",
@@ -473,7 +473,7 @@ $(function () {
 			]
 		},
 		{
-			type: "scatter",
+			type: "bar",
 			showInLegend: true,
 			name: "H -1Hrs",
 			color: "#e88707",
@@ -491,7 +491,7 @@ $(function () {
 			]
 		},
 		{
-			type: "scatter",
+			type: "bar",
 			showInLegend: true,
 			name: "H -2Hrs",
 			color: "12e027",
@@ -530,7 +530,7 @@ $(function () {
 //			content: toolTipFormatter
 		},
 		data: [{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
 			color: "#1c13bf",
@@ -548,7 +548,7 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Invalid Merchant",
 			color: "silver",
@@ -566,7 +566,7 @@ $(function () {
 			]
 		},
 		{
-			type: "bar",
+			type: "stackedBar",
 			showInLegend: true,
 			name: "Not Honor",
 			color: "#9c3521",
@@ -584,7 +584,7 @@ $(function () {
 			]
 		},
 		{
-			type: "scatter",
+			type: "bar",
 			showInLegend: true,
 			name: "H -1Hrs",
 			color: "#e88707",
@@ -602,7 +602,7 @@ $(function () {
 			]
 		},
 		{
-			type: "scatter",
+			type: "bar",
 			showInLegend: true,
 			name: "H -2Hrs",
 			color: "12e027",
