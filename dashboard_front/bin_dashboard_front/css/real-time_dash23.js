@@ -323,7 +323,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
-			color: "#1c13bf",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -341,7 +341,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Invalid Merchant",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -359,7 +359,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Not Honor",
-			color: "#9c3521",
+			color: "#deb72a",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
@@ -373,44 +373,7 @@ $(function () {
 				{ y: 788, label: "USA" }
 			]
 		}
-		       ,
-		{
-			type: "scatter",
-			showInLegend: true,
-			name: "H -1Hrs",
-			color: "#e88707",
-			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 1172, label: "China" },
-				{ y: 2309, label: "France" },
-				{ y:3302, label: "Great Britain" },
-				{ y: 4285, label: "Germany" },
-				{ y: 5188, label: "Russia" },
-				{ y: 7188, label: "Russia" },
-				{ y: 8188, label: "Russia" },
-				{ y: 1188, label: "Russia" },
-				{ y: 788, label: "USA" }
-			]
-		},
-		{
-			type: "scatter",
-			showInLegend: true,
-			name: "H -2Hrs",
-			color: "12e027",
-			
-			dataPoints: [
-				{ y: 1236, label: "Italy" },
-				{ y:2172, label: "China" },
-				{ y:3309, label: "France" },
-				{ y:4302, label: "Great Britain" },
-				{ y:5285, label: "Germany" },
-				{ y: 6188, label: "Russia" },
-				{ y: 3188, label: "Russia" },
-				{ y: 2188, label: "Russia" },
-				{ y: 5188, label: "Russia" },
-				{ y: 1788, label: "USA" }
-			]
-		}]
+		 ]
 	});
 	chartHoy.render();
 
