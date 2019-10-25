@@ -371,45 +371,44 @@ $(function () {
 				{ y: 788, label: "USA" }
 			]
 		}
-/*		       ,
+		       ,
 		{
 			type: "bar",
 			showInLegend: true,
 			name: "H -1Hrs",
 			color: "#e88707",
 			dataPoints: [
-				{ y: 500, label: "Italy" },
-				{ y: 1172, label: "China" },
-				{ y: 2309, label: "France" },
-				{ y: 3302, label: "Great Britain" },
-				{ y: 2285, label: "Germany" },
-				{ y: 1188, label: "Russia" },
-				{ y: 3188, label: "Russia" },
-				{ y: 1188, label: "Russia" },
-				{ y: 4188, label: "Russia" },
-				{ y: 2788, label: "USA" }
+				{ x:100, y: 236, label: "Italy" },
+				{ x:200, y: 1172, label: "China" },
+				{ x:300, y: 2309, label: "France" },
+				{ x:400, y: 3302, label: "Great Britain" },
+				{ x:500, y: 4285, label: "Germany" },
+				{ x:600, y: 5188, label: "Russia" },
+				{ x:700, y: 7188, label: "Russia" },
+				{ x:800, y: 8188, label: "Russia" },
+				{ x:900, y: 1188, label: "Russia" },
+				{ x:1000,  y: 788, label: "USA" }
 			]
 		},
 		{
-			type: "bar",
+			type: "scatter",
 			showInLegend: true,
 			name: "H -2Hrs",
 			color: "12e027",
+			markerType: "triangle",
 			dataPoints: [
-				{ y: 1236, label: "Italy" },
-				{ y: 2172, label: "China" },
-				{ y: 3309, label: "France" },
-				{ y: 4302, label: "Great Britain" },
-				{ y: 5285, label: "Germany" },
-				{ y: 6188, label: "Russia" },
-				{ y: 3188, label: "Russia" },
-				{ y: 2188, label: "Russia" },
-				{ y: 5188, label: "Russia" },
-				{ y: 1788, label: "USA" }
+				{ x:100, y: 1236, label: "Italy" },
+				{ x:200, y: 2172, label: "China" },
+				{ x:300, y: 3309, label: "France" },
+				{ x:400, y: 4302, label: "Great Britain" },
+				{ x:500, y: 5285, label: "Germany" },
+				{ x:600, y: 6188, label: "Russia" },
+				{ x:700, y: 3188, label: "Russia" },
+				{ x:800, y: 2188, label: "Russia" },
+				{ x:900, y: 5188, label: "Russia" },
+				{ x:1000,  y: 1788, label: "USA" }
 			]
-		}
-*/		
-		]
+		}]
 	});
 	chartHoy.render();
 
