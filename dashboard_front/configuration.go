@@ -74,7 +74,7 @@ var Config_comandosql_frontdash21_30 string
 var Config_comandosql_frontdash21_31 string
 var Config_comandosql_frontdash21_32 string
 
-var Config_topCustomer[8] string
+var Config_topCustomer[10] string
 //version 2:END
 /*    const (
         DB_USER     = "lerepagr"        
@@ -325,6 +325,8 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 						    topCustomer06, _       := n["topCustomer_06"].(string)						
 						    topCustomer07, _       := n["topCustomer_07"].(string)						
 						    topCustomer08, _       := n["topCustomer_08"].(string)											
+					            topCustomer09, _       := n["topCustomer_09"].(string)
+					            topCustomer10, _       := n["topCustomer_10"].(string)
 					//new version 2: end                    
 
 
@@ -339,6 +341,8 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 						    Config_topCustomer[5] = topCustomer06
 						    Config_topCustomer[6] = topCustomer07
 						    Config_topCustomer[7] = topCustomer08
+						    Config_topCustomer[8] = topCustomer09
+					            Config_topCustomer[9] = topCustomer10
 				//new version 2    END					
 				//new version 2   START					
 						    log.Print("---- ne top customer "+ Config_topCustomer[1])					
