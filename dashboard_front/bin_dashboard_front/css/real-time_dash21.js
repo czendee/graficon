@@ -319,6 +319,8 @@ $(function () {
 				{ y: 269, label: "Germany" },
 				{ y: 196, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
 		},
@@ -335,6 +337,8 @@ $(function () {
 				{ y: 270, label: "Germany" },
 				{ y: 165, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 896, label: "USA" }
 			]
 		},
@@ -349,6 +353,8 @@ $(function () {
 				{ y: 309, label: "France" },
 				{ y: 302, label: "Great Britain" },
 				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
@@ -389,6 +395,8 @@ $(function () {
 				{ y: 269, label: "Germany" },
 				{ y: 196, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
 		},
@@ -405,6 +413,8 @@ $(function () {
 				{ y: 270, label: "Germany" },
 				{ y: 165, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 896, label: "USA" }
 			]
 		},
@@ -419,6 +429,8 @@ $(function () {
 				{ y: 309, label: "France" },
 				{ y: 302, label: "Great Britain" },
 				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
@@ -458,6 +470,8 @@ $(function () {
 				{ y: 269, label: "Germany" },
 				{ y: 196, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
 		},
@@ -474,6 +488,8 @@ $(function () {
 				{ y: 270, label: "Germany" },
 				{ y: 165, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 896, label: "USA" }
 			]
 		},
@@ -488,6 +504,8 @@ $(function () {
 				{ y: 309, label: "France" },
 				{ y: 302, label: "Great Britain" },
 				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
