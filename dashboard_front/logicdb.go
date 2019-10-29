@@ -344,7 +344,7 @@ resultLastHrDatadash:= []modelito.Datadash{}
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="32" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_32
-								 requestData.Dash0202reference2 =""71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="00" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_30
