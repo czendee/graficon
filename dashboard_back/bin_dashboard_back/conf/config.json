@@ -14,7 +14,7 @@
 			"nodes" : [
 				{
                    "active"   : true,
-					"task1periocity" 	   :3660,
+					"task1periocity" 	   :3600,
                     "task2periocity" 	   : 3550,
                     "timeframe" 	   : 4320000
 
