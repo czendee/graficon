@@ -291,10 +291,24 @@ $(function () {
 		var chartHoy = new CanvasJS.Chart("chartContainer", {
 		animationEnabled: true,
 		title:{
-			text: "Aceptadas (Hoy)"
+			text: "Hoy"
 		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			scaleBreaks: {
+				type: "wavy",
+				customBreaks: [{
+					startValue: 50000,
+					endValue: 150000
+					}
+//					 ,
+//					{
+//						startValue: 42000,
+//						endValue: 60000
+//					}
+			]}
+//			,
+//			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
@@ -310,7 +324,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "Now",
-			color: "gold",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -319,6 +333,8 @@ $(function () {
 				{ y: 269, label: "Germany" },
 				{ y: 196, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
 		},
@@ -326,7 +342,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-1Hr",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -335,6 +351,8 @@ $(function () {
 				{ y: 270, label: "Germany" },
 				{ y: 165, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 896, label: "USA" }
 			]
 		},
@@ -342,13 +360,15 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-2Hrs",
-			color: "#A57164",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
 				{ y: 309, label: "France" },
 				{ y: 302, label: "Great Britain" },
 				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
@@ -380,7 +400,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "Now",
-			color: "gold",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -389,6 +409,8 @@ $(function () {
 				{ y: 269, label: "Germany" },
 				{ y: 196, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
 		},
@@ -396,7 +418,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-1Hr",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -405,6 +427,8 @@ $(function () {
 				{ y: 270, label: "Germany" },
 				{ y: 165, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 896, label: "USA" }
 			]
 		},
@@ -412,13 +436,15 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-2Hrs",
-			color: "#A57164",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
 				{ y: 309, label: "France" },
 				{ y: 302, label: "Great Britain" },
 				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
@@ -449,7 +475,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "Now",
-			color: "gold",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -458,6 +484,8 @@ $(function () {
 				{ y: 269, label: "Germany" },
 				{ y: 196, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
 		},
@@ -465,7 +493,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-1Hr",
-			color: "silver",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 212, label: "Italy" },
 				{ y: 186, label: "China" },
@@ -474,6 +502,8 @@ $(function () {
 				{ y: 270, label: "Germany" },
 				{ y: 165, label: "Russia" },
 				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 896, label: "USA" }
 			]
 		},
@@ -481,13 +511,15 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "-2Hrs",
-			color: "#A57164",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 236, label: "Italy" },
 				{ y: 172, label: "China" },
 				{ y: 309, label: "France" },
 				{ y: 302, label: "Great Britain" },
 				{ y: 285, label: "Germany" },
+				{ y: 188, label: "Russia" },
+				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 788, label: "USA" }
@@ -519,7 +551,7 @@ $(function () {
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
 
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0101+"&reference2=222&dato01=00&dato02=88&dato03=77", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0101+"&reference2=221&dato01=00&dato02=88&dato03=77", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -585,7 +617,7 @@ function myFunction0101(item, index) {
     function updateHOYChartWith(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=222&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -673,7 +705,7 @@ function updateHOYChartWithMenos2(item, index) {
     function updateChartWith7dias(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=222&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -760,7 +792,7 @@ function updateHOYChartWith7diasMenos2(item, index) {
     function updateChartWith30dias(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=222&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=221&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -956,7 +988,7 @@ function updateHOYChartWith30diasMenos2(item, index) {
 
     function go_next2() {
 //        alert("next");
-        window.location.href = "/v2/dash02";  
+        window.location.href = "/v2/dash01";  
 
     }
 
@@ -970,8 +1002,8 @@ function updateHOYChartWith30diasMenos2(item, index) {
                 updateChartsAtRandomIntervals();
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
 
-        setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
-//		setTimeout(updateChartsAtRandomIntervals, 4000);
+ //       setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
+
 		sidebarToggleOnClick();
 	})();
 	
