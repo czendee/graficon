@@ -294,7 +294,21 @@ $(function () {
 			text: "Hoy"
 		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			scaleBreaks: {
+				type: "wavy",
+				customBreaks: [{
+					startValue: 20000,
+					endValue: 65000
+					}
+//					 ,
+//					{
+//						startValue: 42000,
+//						endValue: 60000
+//					}
+			]}
+//			,
+//			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
