@@ -287,14 +287,13 @@ $(function () {
 	});
 
 			
-	
 		var chartHoy = new CanvasJS.Chart("chartContainer", {
 		animationEnabled: true,
 		title:{
 			text: "Hoy"
 		},
 		axisY: {
-			title: "Transacciones",
+			title: "Monto en $",
 			scaleBreaks: {
 				type: "wavy",
 				customBreaks: [{
@@ -326,16 +325,16 @@ $(function () {
 			name: "Now",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 243, label: "Italy" },
-				{ y: 236, label: "China" },
-				{ y: 243, label: "France" },
-				{ y: 273, label: "Great Britain" },
-				{ y: 269, label: "Germany" },
-				{ y: 196, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 1118, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		},
 		{
@@ -344,16 +343,16 @@ $(function () {
 			name: "-1Hr",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 212, label: "Italy" },
-				{ y: 186, label: "China" },
-				{ y: 272, label: "France" },
-				{ y: 299, label: "Great Britain" },
-				{ y: 270, label: "Germany" },
-				{ y: 165, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 896, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		},
 		{
@@ -362,16 +361,16 @@ $(function () {
 			name: "-2Hrs",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 172, label: "China" },
-				{ y: 309, label: "France" },
-				{ y: 302, label: "Great Britain" },
-				{ y: 285, label: "Germany" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 788, label: "USA" }
+				{ y: 10, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "."},
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		}]
 	});
@@ -384,7 +383,7 @@ $(function () {
 			text: "Hace 7 dias"
 		},
 		axisY: {
-			title: "transacciones"
+			title: "Monto en $"
 		},
 		legend: {
 			cursor:"pointer"
@@ -402,16 +401,16 @@ $(function () {
 			name: "Now",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 243, label: "Italy" },
-				{ y: 236, label: "China" },
-				{ y: 243, label: "France" },
-				{ y: 273, label: "Great Britain" },
-				{ y: 269, label: "Germany" },
-				{ y: 196, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 1118, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		},
 		{
@@ -420,16 +419,16 @@ $(function () {
 			name: "-1Hr",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 212, label: "Italy" },
-				{ y: 186, label: "China" },
-				{ y: 272, label: "France" },
-				{ y: 299, label: "Great Britain" },
-				{ y: 270, label: "Germany" },
-				{ y: 165, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 896, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		},
 		{
@@ -438,16 +437,16 @@ $(function () {
 			name: "-2Hrs",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 172, label: "China" },
-				{ y: 309, label: "France" },
-				{ y: 302, label: "Great Britain" },
-				{ y: 285, label: "Germany" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 788, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		}]
 	});
@@ -459,7 +458,7 @@ $(function () {
 			text: "Hace 30 dias"
 		},
 		axisY: {
-			title: "Transacciones"
+			title: "Monto en $"
 		},
 		legend: {
 			cursor:"pointer"
@@ -477,16 +476,16 @@ $(function () {
 			name: "Now",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 243, label: "Italy" },
-				{ y: 236, label: "China" },
-				{ y: 243, label: "France" },
-				{ y: 273, label: "Great Britain" },
-				{ y: 269, label: "Germany" },
-				{ y: 196, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 1118, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		},
 		{
@@ -495,16 +494,16 @@ $(function () {
 			name: "-1Hr",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 212, label: "Italy" },
-				{ y: 186, label: "China" },
-				{ y: 272, label: "France" },
-				{ y: 299, label: "Great Britain" },
-				{ y: 270, label: "Germany" },
-				{ y: 165, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 896, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		},
 		{
@@ -513,21 +512,20 @@ $(function () {
 			name: "-2Hrs",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 172, label: "China" },
-				{ y: 309, label: "France" },
-				{ y: 302, label: "Great Britain" },
-				{ y: 285, label: "Germany" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 788, label: "USA" }
+				{ y: 10, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." },
+				{ y: 1, label: "." }
 			]
 		}]
 	});
 	chart30dias.render();
-
 
 
 	//----------------------------------------------------------------------------------//
