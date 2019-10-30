@@ -90,7 +90,7 @@ func dashBackExtraeRechazadas( codigoData string) {    //extract Data for a Data
     var errorGeneral string
 
     var valoresParaResponder  string
-    fmt.Println("doing job :dashBackExtraeRechazadas")
+    fmt.Println("doing job :dashBackExtraeRechazadas"+codigoData)
     valoresParaResponder,errorGeneral=v1ProcessDashBack01Grafica01(codigoData)   // in logicbusiness.go
 
     if errorGeneral==""{//continue next step
@@ -109,7 +109,7 @@ func main() {
 	LoadConfiguration()
 
 
-fmt.Println("main  ticker 02")
+fmt.Println("main  ticker 02+rechazadasTambien")
     
     ticker:= time.NewTicker(time.Duration(Config_task_1periocity)*time.Second)
 fmt.Println("main ticker  03")    
@@ -121,8 +121,9 @@ fmt.Println("main ticker  03")
                dashBack01Grafica02() //obtains from source total amount per hour denegadas
                dashBack01GraficaAll() //obtains from source number of transactions per hour pagagas
                dashBack05GraficaAll() //obtains from source number of transactions per hour denegadas	
-		  
+		  fmt.Println("rechazadas21,41,61,81")
 		   dashBackExtraeRechazadas( "21") //rechazadas- ALL 1005   - 21
+		  
 		  dashBackExtraeRechazadas( "41") //rechazadas- hards      -41
 		  dashBackExtraeRechazadas( "61") //rechazadas- invalid merch -61
 		  dashBackExtraeRechazadas( "81") //rechazadas- not honored   -81
