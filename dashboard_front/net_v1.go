@@ -77,6 +77,10 @@ func init() {
 	r.Handle("/v2/dash01", netHandle(dash21Handler, nil)).Methods("GET")     
     r.Handle("/v2/dash02", netHandle(dash22Handler, nil)).Methods("GET")     
     r.Handle("/v2/dash03", netHandle(dash23Handler, nil)).Methods("GET") 
+	r.Handle("/v2/dash05", netHandle(dash25Handler, nil)).Methods("GET") 
+	r.Handle("/v2/dash06", netHandle(dash26Handler, nil)).Methods("GET") 
+	r.Handle("/v2/dash07", netHandle(dash27Handler, nil)).Methods("GET") 
+	r.Handle("/v2/dash08", netHandle(dash28Handler, nil)).Methods("GET") 
 
 
     r.Handle("/font-roboto.css", netHandle(serveCss01, nil)).Methods("GET")     
@@ -100,6 +104,10 @@ func init() {
     r.Handle("/real-time_dash21.js", netHandle(serveJs05dash21, nil)).Methods("GET")  
     r.Handle("/real-time_dash22.js", netHandle(serveJs05dash22, nil)).Methods("GET")  
     r.Handle("/real-time_dash23.js", netHandle(serveJs05dash23, nil)).Methods("GET")
+    r.Handle("/real-time_dash25.js", netHandle(serveJs05dash25, nil)).Methods("GET")
+     r.Handle("/real-time_dash26.js", netHandle(serveJs05dash26, nil)).Methods("GET")
+     r.Handle("/real-time_dash27.js", netHandle(serveJs05dash27, nil)).Methods("GET")
+     r.Handle("/real-time_dash28.js", netHandle(serveJs05dash28, nil)).Methods("GET")	
 
 
 
@@ -678,6 +686,62 @@ func dash23Handler(w http.ResponseWriter, r *http.Request) {
     
 }
 
+func dash25Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash25Handler")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash25.html"))
+    tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash25Handler 01")
+    
+}
+
+func dash26Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash26Handler")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash26.html"))
+    tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash26Handler 01")
+    
+}
+
+func dash27Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash27Handler")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash27.html"))
+    tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash27Handler 01")
+    
+}
+
+func dash28Handler(w http.ResponseWriter, r *http.Request) {
+
+    log.Print("cz  dash28Handler")
+
+    data := TodoPageData{
+			PageTitle: Config_env_server,
+    }
+    tmpl := template.Must(template.ParseFiles("dash28.html"))
+    tmpl.Execute(w, data)
+
+    log.Print("CZ   STEP dash28Handler 01")
+    
+}
+
 func serveJs05dash21(w http.ResponseWriter, r *http.Request) {
 
     log.Print("cz  serveJs05dash21:"+ "css/real-time_dash01.js")
@@ -706,6 +770,47 @@ func serveJs05dash23(w http.ResponseWriter, r *http.Request) {
 			PageTitle: Config_env_url,
     }
      tmpl := template.Must(template.ParseFiles("css/real-time_dash23.js"))
+     tmpl.Execute(w, data)
+
+}
+
+func serveJs05dash25(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash25:"+ "css/real-time_dash25.js")
+   
+    data := TodoPageData{
+			PageTitle: Config_env_url,
+    }
+     tmpl := template.Must(template.ParseFiles("css/real-time_dash25.js"))
+     tmpl.Execute(w, data)
+
+}
+func serveJs05dash26(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash26:"+ "css/real-time_dash26.js")
+   
+    data := TodoPageData{
+			PageTitle: Config_env_url,
+    }
+     tmpl := template.Must(template.ParseFiles("css/real-time_dash26.js"))
+     tmpl.Execute(w, data)
+
+}
+func serveJs05dash27(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash27:"+ "css/real-time_dash27.js")
+   
+    data := TodoPageData{
+			PageTitle: Config_env_url,
+    }
+     tmpl := template.Must(template.ParseFiles("css/real-time_dash27.js"))
+     tmpl.Execute(w, data)
+
+}
+func serveJs05dash28(w http.ResponseWriter, r *http.Request) {
+    log.Print("cz  serveJs05dash28:"+ "css/real-time_dash28.js")
+   
+    data := TodoPageData{
+			PageTitle: Config_env_url,
+    }
+     tmpl := template.Must(template.ParseFiles("css/real-time_dash28.js"))
      tmpl.Execute(w, data)
 
 }
