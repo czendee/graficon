@@ -90,7 +90,7 @@ import (
 				   case requestData.Dash0202reference2== "221" :
                                         requestData.Dash0202reference2="31"
 				   case requestData.Dash0202reference2== "222" :
-                                        requestData.Dash0202reference2="71"	 //transacciones
+                                        requestData.Dash0202reference2="11"	 //transacciones
 				   case requestData.Dash0202reference2== "223" :
                                         requestData.Dash0202reference2="41,61,81"	
 				  
@@ -312,23 +312,23 @@ resultLastHrDatadash:= []modelito.Datadash{}
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="00" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="01" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_01
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="02" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_02
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="70" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_70
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="71" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_71
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="72" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_72
@@ -336,15 +336,15 @@ resultLastHrDatadash:= []modelito.Datadash{}
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="30" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_30
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="31" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_31
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "222" && requestData.Dash0202Dato01 =="32" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_32
-								 requestData.Dash0202reference2 ="71" //transacciones aprobadas
+								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
 							   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="00" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_30
