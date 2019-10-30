@@ -325,7 +325,7 @@ $(function () {
 			name: "Now",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -343,7 +343,7 @@ $(function () {
 			name: "-1Hr",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -361,7 +361,7 @@ $(function () {
 			name: "-2Hrs",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -401,7 +401,7 @@ $(function () {
 			name: "Now",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -419,7 +419,7 @@ $(function () {
 			name: "-1Hr",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -437,7 +437,7 @@ $(function () {
 			name: "-2Hrs",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -476,7 +476,7 @@ $(function () {
 			name: "Now",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -494,7 +494,7 @@ $(function () {
 			name: "-1Hr",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 0, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
@@ -512,7 +512,7 @@ $(function () {
 			name: "-2Hrs",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 1, label: "." },
+				{ y: 10, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
 				{ y: 1, label: "." },
