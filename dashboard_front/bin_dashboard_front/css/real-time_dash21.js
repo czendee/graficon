@@ -298,8 +298,8 @@ $(function () {
 			scaleBreaks: {
 				type: "wavy",
 				customBreaks: [{
-					startValue: 50000,
-					endValue: 150000
+					startValue: 150000,
+					endValue: 250000
 					}
 //					 ,
 //					{
@@ -384,10 +384,25 @@ $(function () {
 			text: "Hace 7 dias"
 		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			scaleBreaks: {
+				type: "wavy",
+				customBreaks: [{
+					startValue: 150000,
+					endValue: 250000
+					}
+//					 ,
+//					{
+//						startValue: 42000,
+//						endValue: 60000
+//					}
+			]}
+//			,
+//			maximum: 120000
 		},
 		legend: {
-			cursor:"pointer"
+			cursor:"pointer",
+			fontSize: 40
 //			,
 //			itemclick : toggleDataSeries
 		},
@@ -459,7 +474,21 @@ $(function () {
 			text: "Hace 30 dias"
 		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			scaleBreaks: {
+				type: "wavy",
+				customBreaks: [{
+					startValue: 150000,
+					endValue: 250000
+					}
+//					 ,
+//					{
+//						startValue: 42000,
+//						endValue: 60000
+//					}
+			]}
+//			,
+//			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
