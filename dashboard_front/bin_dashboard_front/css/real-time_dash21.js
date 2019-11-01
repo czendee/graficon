@@ -298,20 +298,7 @@ $(function () {
 	      },	
 		axisY: {
 			title: "Monto en $",
-			scaleBreaks: {
-				type: "wavy",
-				customBreaks: [{
-					startValue: 150000,
-					endValue: 250000
-					}
-//					 ,
-//					{
-//						startValue: 42000,
-//						endValue: 60000
-//					}
-			]}
-//			,
-//			maximum: 120000
+			maximum: 120000	
 		},
 		legend: {
 			cursor:"pointer"
@@ -391,20 +378,7 @@ $(function () {
 	      },				
 		axisY: {
 			title: "Monto en $",
-			scaleBreaks: {
-				type: "wavy",
-				customBreaks: [{
-					startValue: 150000,
-					endValue: 250000
-					}
-//					 ,
-//					{
-//						startValue: 42000,
-//						endValue: 60000
-//					}
-			]}
-//			,
-//			maximum: 120000
+			maximum: 120000	
 		},
 		legend: {
 			cursor:"pointer",
@@ -484,21 +458,7 @@ $(function () {
 	      },	
 		axisY: {
 			title: "Monto en $",
-			maximum: 120000	,		
-			scaleBreaks: {
-				type: "wavy",
-				customBreaks: [{
-					startValue: 150000,
-					endValue: 250000
-					}
-//					 ,
-//					{
-//						startValue: 42000,
-//						endValue: 60000
-//					}
-			]}
-//			,
-//			maximum: 120000
+			maximum: 120000	
 		},
 		legend: {
 			cursor:"pointer"
