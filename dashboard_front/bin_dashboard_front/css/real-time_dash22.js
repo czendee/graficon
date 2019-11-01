@@ -293,22 +293,12 @@ $(function () {
 		title:{
 			text: "Hoy"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },			
 		axisY: {
 			title: "Transacciones",
-			scaleBreaks: {
-				type: "wavy",
-				customBreaks: [{
-					startValue: 50000,
-					endValue: 150000
-					}
-//					 ,
-//					{
-//						startValue: 42000,
-//						endValue: 60000
-//					}
-			]}
-//			,
-//			maximum: 120000
+			maximum: 300
 		},
 		legend: {
 			cursor:"pointer"
@@ -383,8 +373,12 @@ $(function () {
 		title:{
 			text: "Hace 7 dias"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },
 		axisY: {
-			title: "transacciones"
+			title: "transacciones",
+			maximum: 300	
 		},
 		legend: {
 			cursor:"pointer"
@@ -458,8 +452,12 @@ $(function () {
 		title:{
 			text: "Hace 30 dias"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },
 		axisY: {
-			title: "Transacciones"
+			title: "transacciones",
+			maximum: 300	
 		},
 		legend: {
 			cursor:"pointer"
