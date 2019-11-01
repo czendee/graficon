@@ -383,6 +383,9 @@ $(function () {
 		title:{
 			text: "Hace 7 dias"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },				
 		axisY: {
 			title: "Monto en $",
 			scaleBreaks: {
@@ -402,7 +405,7 @@ $(function () {
 		},
 		legend: {
 			cursor:"pointer",
-			fontSize: 40
+			fontSize: 20
 //			,
 //			itemclick : toggleDataSeries
 		},
