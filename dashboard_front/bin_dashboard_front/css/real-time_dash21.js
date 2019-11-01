@@ -293,6 +293,9 @@ $(function () {
 		title:{
 			text: "Hoy"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },	
 		axisY: {
 			title: "Monto en $",
 			scaleBreaks: {
@@ -476,8 +479,12 @@ $(function () {
 		title:{
 			text: "Hace 30 dias"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },	
 		axisY: {
 			title: "Monto en $",
+			maximum: 120000	,		
 			scaleBreaks: {
 				type: "wavy",
 				customBreaks: [{
