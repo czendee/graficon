@@ -294,7 +294,9 @@ $(function () {
 		title:{
 			text: "Mas reciente"
 		},
-
+	      axisX:{
+		labelFontSize: 20
+	      },
 			
 		axisY: {
 			title: "Monto en $",
@@ -349,7 +351,9 @@ $(function () {
 		title:{
 			text: "-1hr"
 		},
-			
+	      axisX:{
+		labelFontSize: 20
+	      },			
 		axisY: {
 			title: "Monto en $",
 			maximum: 120000
@@ -429,6 +433,9 @@ $(function () {
 		title:{
 			text: "-2hrs"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },				
 		axisY: {
 			title: "Monto en $",
 			maximum: 120000
