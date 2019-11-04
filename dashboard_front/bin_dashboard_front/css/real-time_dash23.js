@@ -655,7 +655,7 @@ function updateHOYChartWithNow(item, index) {
    chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
    chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
 
-
+    chartHoy.options.title = "Hoy" + item["data_date"];
 
 }
 function updateHOYChartWithMenos1(item, index) {
