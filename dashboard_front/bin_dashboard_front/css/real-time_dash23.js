@@ -372,7 +372,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
-			color: "#12e027",
+			color: "#4272e3",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -454,7 +454,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
-			color: "#e88707",
+			color: "#f2bb07",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
