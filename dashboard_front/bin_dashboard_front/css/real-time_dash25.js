@@ -1,6 +1,7 @@
 "use strict";
-var valueRotacion=20000;
-var valueRotacionOriginal=60000;
+var valueRotacion=120000;//cada dos minutos
+var valueRotacionOriginal=20000; // inicial en 20
+
 
 var valuePasarNext=450000;
 var valuePasarNextOriginal=450000;
