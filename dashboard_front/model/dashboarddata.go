@@ -101,7 +101,7 @@ func GetMaxGroupNumberDatadash0202(db *sql.DB, reference string,reference02 stri
     defer rows.Close()
 //    datadashs := []Datadash{}
     for rows.Next() {
-    	 log.Print("GetMaxGroupNumberDatadash0202 03!\n")
+//    	 log.Print("GetMaxGroupNumberDatadash0202 03!\n")
         var u Datadash
         if err := rows.Scan( &u.Numsecuecialgrupoddatos); err != nil {
 
@@ -110,7 +110,7 @@ func GetMaxGroupNumberDatadash0202(db *sql.DB, reference string,reference02 stri
             return "NOK", err
         }
         valueresult = u.Numsecuecialgrupoddatos
-    	 log.Print("GetMaxGroupNumberDatadash0202 03.5!\n"+valueresult)
+//    	 log.Print("GetMaxGroupNumberDatadash0202 03.5!\n"+valueresult)
     }
     log.Print("GetMaxGroupNumberDatadash0202 04!\n")
     return valueresult, nil
