@@ -372,7 +372,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
-			color: "#12b7e0",
+			color: "#12e027",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -454,7 +454,7 @@ $(function () {
 			type: "stackedBar",
 			showInLegend: true,
 			name: "Hards",
-			color: "#12b7e0",
+			color: "#e88707",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
 				{ y: 236, label: "China" },
@@ -473,7 +473,7 @@ $(function () {
 			type: "bar",
 			showInLegend: true,
 			name: "H -1Hrs",
-			color: "#e88707",
+			color: "#12b7e0",
 			dataPoints: [
 				{ y: 500, label: "Italy" },
 				{ y: 1172, label: "China" },
