@@ -326,7 +326,7 @@ $(function () {
 		data: [{
 			type: "stackedBar",
 			showInLegend: true,
-			name: "Hards",
+			name: "Acumulado",
 			color: "#12b7e0",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
@@ -371,7 +371,7 @@ $(function () {
 		data: [{
 			type: "stackedBar",
 			showInLegend: true,
-			name: "Hards",
+			name: "Acumulado",
 			color: "#4272e3",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
@@ -453,7 +453,7 @@ $(function () {
 		data: [{
 			type: "stackedBar",
 			showInLegend: true,
-			name: "Hards",
+			name: "Acumulado",
 			color: "#f2bb07",
 			dataPoints: [
 				{ y: 243, label: "Italy" },
