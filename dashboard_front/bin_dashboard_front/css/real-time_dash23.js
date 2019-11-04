@@ -338,42 +338,6 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
 			]
-		},
-		{
-			type: "stackedBar",
-			showInLegend: true,
-			name: "Invalid Merchant",
-			color: "#4272e3",
-			dataPoints: [
-				{ y: 212, label: "Italy" },
-				{ y: 186, label: "China" },
-				{ y: 272, label: "France" },
-				{ y: 299, label: "Great Britain" },
-				{ y: 270, label: "Germany" },
-				{ y: 165, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 896, label: "USA" }
-			]
-		},
-		{
-			type: "stackedBar",
-			showInLegend: true,
-			name: "Not Honor",
-			color: "#f2bb07",
-			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 172, label: "China" },
-				{ y: 309, label: "France" },
-				{ y: 302, label: "Great Britain" },
-				{ y: 285, label: "Germany" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 788, label: "USA" }
-			]
 		}
 		 ]
 	});
@@ -416,42 +380,6 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
-			]
-		},
-		{
-			type: "stackedBar",
-			showInLegend: true,
-			name: "Invalid Merchant",
-			color: "#4272e3",
-			dataPoints: [
-				{ y: 212, label: "Italy" },
-				{ y: 186, label: "China" },
-				{ y: 272, label: "France" },
-				{ y: 299, label: "Great Britain" },
-				{ y: 270, label: "Germany" },
-				{ y: 165, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 896, label: "USA" }
-			]
-		},
-		{
-			type: "stackedBar",
-			showInLegend: true,
-			name: "Not Honor",
-			color: "#f2bb07",
-			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 172, label: "China" },
-				{ y: 309, label: "France" },
-				{ y: 302, label: "Great Britain" },
-				{ y: 285, label: "Germany" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 788, label: "USA" }
 			]
 		} 
 /*		       ,
@@ -531,42 +459,6 @@ $(function () {
 				{ y: 188, label: "Russia" },
 				{ y: 188, label: "Russia" },
 				{ y: 1118, label: "USA" }
-			]
-		},
-		{
-			type: "stackedBar",
-			showInLegend: true,
-			name: "Invalid Merchant",
-			color: "#4272e3",
-			dataPoints: [
-				{ y: 212, label: "Italy" },
-				{ y: 186, label: "China" },
-				{ y: 272, label: "France" },
-				{ y: 299, label: "Great Britain" },
-				{ y: 270, label: "Germany" },
-				{ y: 165, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 896, label: "USA" }
-			]
-		},
-		{
-			type: "stackedBar",
-			showInLegend: true,
-			name: "Not Honor",
-			color: "#f2bb07",
-			dataPoints: [
-				{ y: 236, label: "Italy" },
-				{ y: 172, label: "China" },
-				{ y: 309, label: "France" },
-				{ y: 302, label: "Great Britain" },
-				{ y: 285, label: "Germany" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 788, label: "USA" }
 			]
 		}
 /*		       ,
@@ -964,16 +856,16 @@ function updateHOYChartWith30diasMenos2(item, index) {
 		updateUsersMediumPieChartWithDB();
 		
 		updateHOYChartWith("00");
-		updateHOYChartWith("01");
-		updateHOYChartWith("02");
+//only one		updateHOYChartWith("01");
+//only one		updateHOYChartWith("02");
 
 		updateChartWith7dias("70");
-		updateChartWith7dias("71");
-		updateChartWith7dias("72");
+//only one		updateChartWith7dias("71");
+//only one		updateChartWith7dias("72");
 		
 		updateChartWith30dias("30");
-		updateChartWith30dias("31");
-		updateChartWith30dias("32");
+//only one		updateChartWith30dias("31");
+//only one		updateChartWith30dias("32");
 		
 	}
 
