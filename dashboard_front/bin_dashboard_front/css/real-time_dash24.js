@@ -588,7 +588,7 @@ function myFunction0101(item, index) {
     function updateHOYChartWith(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=223&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=224&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -682,7 +682,7 @@ function updateHOYChartWithMenos2(item, index) {
     function updateChartWith7dias(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=223&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=224&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
@@ -769,7 +769,7 @@ function updateHOYChartWith7diasMenos2(item, index) {
     function updateChartWith30dias(paramDataType)
    {
              //use a parameter PageTitle {{.PageTitle}} set in net_v1.go with the server url
-        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=223&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
+        $.getJSON("{{.PageTitle}}/v1/getDash02Grafica02?reference="+previousGroupNumber0104+"&reference2=224&dato01="+paramDataType +"&dato02=88&dato03=V2", function(data) {
             var linea=0;
 
              var exito="0";//error/not found
