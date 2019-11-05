@@ -80,6 +80,12 @@ var Config_comandosql_frontdash23_70 string
 
 var Config_comandosql_frontdash23_30 string
 
+var Config_comandosql_frontdash24_00 string
+
+var Config_comandosql_frontdash24_70 string
+
+var Config_comandosql_frontdash24_30 string
+
 var Config_topCustomer[10] string
 //version 2:END
 /*    const (
@@ -239,6 +245,9 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 				    commandSqldash23_00, _ := n["comandosqlorigendash23_00"].(string)
 				    commandSqldash23_70, _ := n["comandosqlorigendash23_70"].(string)
 				    commandSqldash23_30, _ := n["comandosqlorigendash23_30"].(string)
+				    commandSqldash24_00, _ := n["comandosqlorigendash24_00"].(string)
+				    commandSqldash24_70, _ := n["comandosqlorigendash24_70"].(string)
+				    commandSqldash24_30, _ := n["comandosqlorigendash24_30"].(string)
 			//new version 2: end                    
 
 
@@ -294,6 +303,9 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 				    Config_comandosql_frontdash23_00 =commandSqldash23_00
 				    Config_comandosql_frontdash23_70 =commandSqldash23_70
 				    Config_comandosql_frontdash23_30 =commandSqldash23_30
+				    Config_comandosql_frontdash24_00 =commandSqldash24_00
+				    Config_comandosql_frontdash24_70 =commandSqldash24_70
+				    Config_comandosql_frontdash24_30 =commandSqldash24_30
 		//new version 2    END					
 				    log.Print("---- The DB values  was assigned "+Config_DB_server)                    
 				    log.Print("---- The DB values  was assigned "+Config_DB_user)
@@ -312,7 +324,10 @@ func (c *configDatabase) UnmarshalJSON(data []byte) error {
 					
 				    log.Print("---- ne sql 23 00 "+Config_comandosql_frontdash23_00)					
 				    log.Print("---- ne sql 23 70 "+Config_comandosql_frontdash23_70)					
-				    log.Print("---- ne sql 23 30 "+Config_comandosql_frontdash23_30)					
+				    log.Print("---- ne sql 23 30 "+Config_comandosql_frontdash23_30)	
+				    log.Print("---- ne sql 24 00 "+Config_comandosql_frontdash24_00)					
+				    log.Print("---- ne sql 24 70 "+Config_comandosql_frontdash24_70)					
+				    log.Print("---- ne sql 24 30 "+Config_comandosql_frontdash24_30)	
 		//new version 2   END					
 					if e := db.Connection.Set(db.NewPgDb(host, int(port), _db, user, pass)); e == nil {
 						log.Print("---- The postgresql database was loaded"+host)
