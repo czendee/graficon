@@ -329,16 +329,16 @@ $(function () {
 			name: "Acumulado",
 			color: "#12b7e0",
 			dataPoints: [
-				{ y: 243, label: "Italy" },
-				{ y: 236, label: "China" },
-				{ y: 243, label: "France" },
-				{ y: 273, label: "Great Britain" },
-				{ y: 269, label: "Germany" },
-				{ y: 196, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 1118, label: "USA" }
+				{ y: 10000, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." }
 			]
 		}
 		 ]
@@ -374,16 +374,16 @@ $(function () {
 			name: "Acumulado",
 			color: "#4272e3",
 			dataPoints: [
-				{ y: 243, label: "Italy" },
-				{ y: 236, label: "China" },
-				{ y: 243, label: "France" },
-				{ y: 273, label: "Great Britain" },
-				{ y: 269, label: "Germany" },
-				{ y: 196, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 1118, label: "USA" }
+				{ y: 10000, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." }
 			]
 		} 
 /*		       ,
@@ -456,16 +456,16 @@ $(function () {
 			name: "Acumulado",
 			color: "#f2bb07",
 			dataPoints: [
-				{ y: 243, label: "Italy" },
-				{ y: 236, label: "China" },
-				{ y: 243, label: "France" },
-				{ y: 273, label: "Great Britain" },
-				{ y: 269, label: "Germany" },
-				{ y: 196, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 188, label: "Russia" },
-				{ y: 1118, label: "USA" }
+				{ y: 10000, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." },
+				{ y: 100, label: "." }
 			]
 		}
 /*		       ,
