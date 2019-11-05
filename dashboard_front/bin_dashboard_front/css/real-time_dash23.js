@@ -300,18 +300,7 @@ $(function () {
 			
 		axisY: {
 			title: "Monto en $",
-			scaleBreaks: {
-				type: "wavy",
-				customBreaks: [{
-					startValue: 12000,
-					endValue: 30000
-					},
-					{
-						startValue: 42000,
-						endValue: 60000
-					}
-			]},
-			maximum: 120000
+			maximum: 500000
 		},
 		legend: {
 			cursor:"pointer"
@@ -356,7 +345,7 @@ $(function () {
 	      },			
 		axisY: {
 			title: "Monto en $",
-			maximum: 120000
+			maximum: 500000
 		},
 		legend: {
 			cursor:"pointer"
@@ -438,7 +427,7 @@ $(function () {
 	      },				
 		axisY: {
 			title: "Monto en $",
-			maximum: 120000
+			maximum: 500000
 		},
 		legend: {
 			cursor:"pointer"
