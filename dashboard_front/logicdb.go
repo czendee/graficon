@@ -93,6 +93,8 @@ import (
                                         requestData.Dash0202reference2="11"	 //transacciones
 				   case requestData.Dash0202reference2== "223" :
                                         requestData.Dash0202reference2="31"	 //aprobadas pro monto
+				   case requestData.Dash0202reference2== "224" :
+                                        requestData.Dash0202reference2="11"	 //aprobadas pro transaccciones
 				   case requestData.Dash0202reference2== "225" :
                                         requestData.Dash0202reference2="21"	 //rechazadas general 1005
 				   case requestData.Dash0202reference2== "226" :
@@ -369,7 +371,20 @@ resultLastHrDatadash:= []modelito.Datadash{}
 								cualConfig_comandosqlfront = Config_comandosql_frontdash23_30
 								 requestData.Dash0202reference2 ="31"
 								 cuantosMaxVisual=len(Config_topCustomer)
+
 								 
+							case requestData.Dash0202reference2== "224" && requestData.Dash0202Dato01 =="00" :
+								cualConfig_comandosqlfront = Config_comandosql_frontdash24_00
+								 requestData.Dash0202reference2 ="11"
+								 cuantosMaxVisual=len(Config_topCustomer)
+							   case requestData.Dash0202reference2== "224" && requestData.Dash0202Dato01 =="70" :
+								cualConfig_comandosqlfront = Config_comandosql_frontdash24_70
+								 requestData.Dash0202reference2 ="11"
+								 cuantosMaxVisual=len(Config_topCustomer)
+							   case requestData.Dash0202reference2== "224" && requestData.Dash0202Dato01 =="30" :
+								cualConfig_comandosqlfront = Config_comandosql_frontdash24_30
+								 requestData.Dash0202reference2 ="11"
+								 cuantosMaxVisual=len(Config_topCustomer)
 //1005
 							   case requestData.Dash0202reference2== "225" && requestData.Dash0202Dato01 =="00" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
