@@ -299,8 +299,8 @@ $(function () {
 	      },
 			
 		axisY: {
-			title: "Monto en $",
-			maximum: 500000
+			title: "Transacciones",
+			maximum: 1000
 		},
 		legend: {
 			cursor:"pointer"
@@ -344,8 +344,8 @@ $(function () {
 		labelFontSize: 20
 	      },			
 		axisY: {
-			title: "Monto en $",
-			maximum: 500000
+			title: "Transacciones",
+			maximum: 1000
 		},
 		legend: {
 			cursor:"pointer"
@@ -426,8 +426,8 @@ $(function () {
 		labelFontSize: 20
 	      },				
 		axisY: {
-			title: "Monto en $",
-			maximum: 500000
+			title: "Transacciones",
+			maximum: 1000
 		},
 		legend: {
 			cursor:"pointer"
