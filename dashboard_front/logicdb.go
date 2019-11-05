@@ -88,9 +88,11 @@ import (
 				   case requestData.Dash0202reference2== "81" :
                                         requestData.Dash0202reference2="71"
 				   case requestData.Dash0202reference2== "221" :
-                                        requestData.Dash0202reference2="31"
+                                        requestData.Dash0202reference2="31"       //aprobadas pro monto
 				   case requestData.Dash0202reference2== "222" :
                                         requestData.Dash0202reference2="11"	 //transacciones
+				   case requestData.Dash0202reference2== "223" :
+                                        requestData.Dash0202reference2="31"	 //aprobadas pro monto
 				   case requestData.Dash0202reference2== "225" :
                                         requestData.Dash0202reference2="21"	 //rechazadas general 1005
 				   case requestData.Dash0202reference2== "226" :
@@ -354,6 +356,20 @@ resultLastHrDatadash:= []modelito.Datadash{}
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_32
 								 requestData.Dash0202reference2 ="11" //transacciones aprobadas
 								 cuantosMaxVisual=len(Config_topCustomer)
+
+							   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="00" :
+								cualConfig_comandosqlfront = Config_comandosql_frontdash23_00
+								 requestData.Dash0202reference2 ="31"
+								 cuantosMaxVisual=len(Config_topCustomer)
+							   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="70" :
+								cualConfig_comandosqlfront = Config_comandosql_frontdash23_70
+								 requestData.Dash0202reference2 ="31"
+								 cuantosMaxVisual=len(Config_topCustomer)
+							   case requestData.Dash0202reference2== "223" && requestData.Dash0202Dato01 =="30" :
+								cualConfig_comandosqlfront = Config_comandosql_frontdash23_30
+								 requestData.Dash0202reference2 ="31"
+								 cuantosMaxVisual=len(Config_topCustomer)
+								 
 //1005
 							   case requestData.Dash0202reference2== "225" && requestData.Dash0202Dato01 =="00" :
 								cualConfig_comandosqlfront = Config_comandosql_frontdash21_00
