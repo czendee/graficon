@@ -338,7 +338,7 @@ $(function () {
 			var chart7dias = new CanvasJS.Chart("chartContainer7dias", {
 		animationEnabled: true,
 		title:{
-			text: "-1hr"
+			text: "Hace 7 dias"
 		},
 	      axisX:{
 		labelFontSize: 20
@@ -420,7 +420,7 @@ $(function () {
 			var chart30dias = new CanvasJS.Chart("chartContainer30dias", {
 		animationEnabled: true,
 		title:{
-			text: "-2hrs"
+			text: "Hace 30 dias"
 		},
 	      axisX:{
 		labelFontSize: 20
