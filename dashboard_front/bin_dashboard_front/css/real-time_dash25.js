@@ -294,22 +294,12 @@ $(function () {
 		title:{
 			text: "Hoy"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },	
 		axisY: {
 			title: "Monto en $",
-			scaleBreaks: {
-				type: "wavy",
-				customBreaks: [{
-					startValue: 50000,
-					endValue: 150000
-					}
-//					 ,
-//					{
-//						startValue: 42000,
-//						endValue: 60000
-//					}
-			]}
-//			,
-//			maximum: 120000
+			maximum: 120000	
 		},
 		legend: {
 			cursor:"pointer"
@@ -384,8 +374,12 @@ $(function () {
 		title:{
 			text: "Hace 7 dias"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },	
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			maximum: 120000	
 		},
 		legend: {
 			cursor:"pointer"
@@ -459,8 +453,12 @@ $(function () {
 		title:{
 			text: "Hace 30 dias"
 		},
+	      axisX:{
+		labelFontSize: 20
+	      },	
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			maximum: 120000	
 		},
 		legend: {
 			cursor:"pointer"
@@ -673,6 +671,10 @@ function updateHOYChartWithNow(item, index) {
    chartHoy.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
    chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
    chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+   chartHoy.options.data[1].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[1].dataPoints[index].name = item["data_name"];
+   chartHoy.options.data[2].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[2].dataPoints[index].name = item["data_name"];	
 
 
 
@@ -681,9 +683,12 @@ function updateHOYChartWithMenos1(item, index) {
    
 
    chartHoy.options.data[1].dataPoints[index].y = parseInt(item["data_valuea"]);
+      chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
    chartHoy.options.data[1].dataPoints[index].label = item["data_name"];
    chartHoy.options.data[1].dataPoints[index].name = item["data_name"];
-
+   chartHoy.options.data[2].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[2].dataPoints[index].name = item["data_name"]
 
 
 }
@@ -691,9 +696,12 @@ function updateHOYChartWithMenos2(item, index) {
    
 
    chartHoy.options.data[2].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chartHoy.options.data[0].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[0].dataPoints[index].name = item["data_name"];
+   chartHoy.options.data[1].dataPoints[index].label = item["data_name"];
+   chartHoy.options.data[1].dataPoints[index].name = item["data_name"];
    chartHoy.options.data[2].dataPoints[index].label = item["data_name"];
-   chartHoy.options.data[2].dataPoints[index].name = item["data_name"];
-
+   chartHoy.options.data[2].dataPoints[index].name = item["data_name"]
 
 
 }
@@ -760,7 +768,10 @@ function updateHOYChartWith7dias(item, index) {
    chart7dias.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
    chart7dias.options.data[0].dataPoints[index].label = item["data_name"];
    chart7dias.options.data[0].dataPoints[index].name = item["data_name"];
-
+   chart7dias.options.data[1].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[1].dataPoints[index].name = item["data_name"];
+   chart7dias.options.data[2].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[2].dataPoints[index].name = item["data_name"];
 
 
 }
@@ -768,9 +779,12 @@ function updateHOYChartWith7diasMenos1(item, index) {
    
 
    chart7dias.options.data[1].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart7dias.options.data[0].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[0].dataPoints[index].name = item["data_name"];
    chart7dias.options.data[1].dataPoints[index].label = item["data_name"];
    chart7dias.options.data[1].dataPoints[index].name = item["data_name"];
-
+   chart7dias.options.data[2].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[2].dataPoints[index].name = item["data_name"];
 
 
 }
@@ -778,9 +792,12 @@ function updateHOYChartWith7diasMenos2(item, index) {
    
 
    chart7dias.options.data[2].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart7dias.options.data[0].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[0].dataPoints[index].name = item["data_name"];
+   chart7dias.options.data[1].dataPoints[index].label = item["data_name"];
+   chart7dias.options.data[1].dataPoints[index].name = item["data_name"];
    chart7dias.options.data[2].dataPoints[index].label = item["data_name"];
    chart7dias.options.data[2].dataPoints[index].name = item["data_name"];
-
 
 
 }
@@ -847,6 +864,10 @@ function updateHOYChartWith30dias(item, index) {
    chart30dias.options.data[0].dataPoints[index].y = parseInt(item["data_valuea"]);
    chart30dias.options.data[0].dataPoints[index].label = item["data_name"];
    chart30dias.options.data[0].dataPoints[index].name = item["data_name"];
+   chart30dias.options.data[1].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[1].dataPoints[index].name = item["data_name"];
+   chart30dias.options.data[2].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[2].dataPoints[index].name = item["data_name"];
 
 
 
@@ -855,9 +876,12 @@ function updateHOYChartWith30diasMenos1(item, index) {
    
 
    chart30dias.options.data[1].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart30dias.options.data[0].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[0].dataPoints[index].name = item["data_name"];
    chart30dias.options.data[1].dataPoints[index].label = item["data_name"];
    chart30dias.options.data[1].dataPoints[index].name = item["data_name"];
-
+   chart30dias.options.data[2].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[2].dataPoints[index].name = item["data_name"];
 
 
 }
@@ -865,9 +889,12 @@ function updateHOYChartWith30diasMenos2(item, index) {
    
 
    chart30dias.options.data[2].dataPoints[index].y = parseInt(item["data_valuea"]);
+   chart30dias.options.data[0].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[0].dataPoints[index].name = item["data_name"];
+   chart30dias.options.data[1].dataPoints[index].label = item["data_name"];
+   chart30dias.options.data[1].dataPoints[index].name = item["data_name"];
    chart30dias.options.data[2].dataPoints[index].label = item["data_name"];
    chart30dias.options.data[2].dataPoints[index].name = item["data_name"];
-
 
 
 }
