@@ -374,8 +374,13 @@ $(function () {
 		title:{
 			text: "Hace 7 dias"
 		},
+				
+		axisX: {
+			labelFontSize: 20 
+		},
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			maximum:120000
 		},
 		legend: {
 			cursor:"pointer"
@@ -449,8 +454,12 @@ $(function () {
 		title:{
 			text: "Hace 30 dias"
 		},
+                axisX: {
+			labelFontSize: 20
+		},				
 		axisY: {
-			title: "Monto en $"
+			title: "Monto en $",
+			maximum: 120000
 		},
 		legend: {
 			cursor:"pointer"
