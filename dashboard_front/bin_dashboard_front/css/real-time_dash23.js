@@ -648,7 +648,7 @@ function updateHOYChartWithNow(item, index) {
 		//do not override the value
 	}else{
               chartHoy.options.title.text = "HOY"+item["data_time"].substring(0,16);;
-		/  chartHoy.options.title.text = "HOY "+item["data_time"].substring(0,10);;
+		//  chartHoy.options.title.text = "HOY "+item["data_time"].substring(0,10);;
 	}
     
 
