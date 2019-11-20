@@ -1032,7 +1032,7 @@ function updateHOYChartWith30diasMenos2(item, index) {
 
     function go_next2() {
 //        alert("next");
-        window.location.href = "/v2/dash02";  
+        window.location.href = "/v2/dash04";  
 
     }
 
@@ -1046,7 +1046,7 @@ function updateHOYChartWith30diasMenos2(item, index) {
                 updateChartsAtRandomIntervals();
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
 
- //       setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
+        setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
 
 		sidebarToggleOnClick();
 	})();
