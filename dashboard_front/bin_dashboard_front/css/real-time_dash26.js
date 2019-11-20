@@ -1038,7 +1038,7 @@ function updateHOYChartWith30diasMenos2(item, index) {
                 updateChartsAtRandomIntervals();
         setInterval(checkRotationValues, valueRotacionOriginal);//every 20 seconds
 
- //       setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
+        setInterval(go_next2, valuePasarNextOriginal);//every 150 seconds
 
 		sidebarToggleOnClick();
 	})();
