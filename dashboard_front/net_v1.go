@@ -36,7 +36,7 @@ func init() {
 
     var r = net.GetRouter()
 	//route for test
-	    log.Print("cz  init net_v1")
+	    log.Print("cz youtochi  init net_v1")
 
 	r.Handle("/v1/testdbcharly", netHandle(handleTestV1, nil)).Methods("GET")     //logicbusiness.go
 
